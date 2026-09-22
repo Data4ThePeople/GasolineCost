@@ -401,12 +401,11 @@ function drawDetail(){
 }
 
 /* ---------- matrix: what each $1 a gallon adds, by miles and mpg, at the selected household's income ---------- */
-var MX_MILES = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000], MX_MPG = [40, 35, 30, 25, 20, 15], MX_BAND = 0.05;
+var MX_MILES = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000], MX_MPG = [40, 35, 30, 25, 20, 15], MX_BAND = 0.15;
 function hexRgb(h){ h = h.trim(); return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
 function mixRgb(a, b, t){ return a.map(function(x, i){ return Math.round(x + (b[i] - x) * t); }); }
 function lumRgb(c){ var f = function(v){ v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
   return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]); }
-function cpiSlope(){ return (cpiAt(S.price + 0.01) - cpiAt(S.price - 0.01)) / 0.02; }
 function selected(){
   if (S.sel === "you" && S.you && S.edited) return {name: "Your household", at: S.you.t.afterTax, miles: S.you.miles, mpg: S.you.mpg};
   var p = D.profiles.filter(function(x){ return x.id === S.sel; })[0] || D.profiles[0];
@@ -414,21 +413,21 @@ function selected(){
 }
 function nearestIdx(arr, v){ var b = 0; arr.forEach(function(x, i){ if (Math.abs(x - v) < Math.abs(arr[b] - v)) b = i; }); return b; }
 function drawMatrix(){
-  var box = $("matrix"), h = selected(), cs = cpiSlope(), cst = getComputedStyle(root);
+  var box = $("matrix"), h = selected(), cs = cpiAt(S.price), cst = getComputedStyle(root);
   var NEU = hexRgb(cst.getPropertyValue("--mNeu")), GOOD = hexRgb(cst.getPropertyValue("--mGood")), BAD = hexRgb(cst.getPropertyValue("--mBad"));
-  var top = 100 * 40000 / 15 / 35000;      /* one fixed scale, so colors compare across incomes */
+  var top = 100 * (40000 / 15) * S.price / 35000;   /* one fixed scale, so colors compare across incomes */
   var mi = nearestIdx(MX_MILES, h.miles), gi = nearestIdx(MX_MPG, h.mpg);
   var whose = h.name.toLowerCase() === "your household" ? "your" : "the " + h.name.toLowerCase() + "'s";
-  var html = "<h2>If gas goes up $1 a gallon</h2>" +
-    "<p class='intro'>What a $1 rise costs, as a share of " + esc(whose) + " take-home pay of " + money(h.at) +
-    " a year, for any mix of miles and mpg. In the CPI, a $1 rise is about <b>" + cs.toFixed(1) + "% of what the average household spends</b>.</p>" +
-    "<div class='legend'><span><b style='color:var(--mGood)'>Green</b> under " + cs.toFixed(1) + "%</span><span><b style='color:var(--muted)'>Gray</b> about " + cs.toFixed(1) + "%</span><span><b style='color:var(--mBad)'>Red</b> over " + cs.toFixed(1) + "%</span><span><b>Outlined</b>: closest to this household</span></div>" +
+  var html = "<h2>Gasoline percent of take-home pay, sensitivity matrix</h2>" +
+    "<p class='intro'>At $" + S.price.toFixed(2) + " a gallon, for any mix of miles and mpg, against " + esc(whose) + " take-home pay of " + money(h.at) +
+    " a year. Gasoline is <b>" + pct(cs) + "</b> of consumer spending in the CPI at this price.</p>" +
+    "<div class='legend'><span><b style='color:var(--mGood)'>Green</b> under " + pct(cs) + "</span><span><b style='color:var(--muted)'>Gray</b> about " + pct(cs) + "</span><span><b style='color:var(--mBad)'>Red</b> over " + pct(cs) + "</span><span><b>Outlined</b>: closest to this household</span></div>" +
     "<div class='mx' role='table' aria-label='Points of after-tax income added by each $1 a gallon'><div class='h'>mpg</div>";
   MX_MILES.forEach(function(m){ html += "<div class='h'>" + (m / 1000) + "k</div>"; });
   MX_MPG.forEach(function(g, i){
     html += "<div class='h r'>" + g + "</div>";
     MX_MILES.forEach(function(m, j){
-      var v = 100 * m / g / h.at, c;
+      var v = 100 * (m / g) * S.price / h.at, c;
       if (Math.abs(v - cs) <= MX_BAND) c = NEU;
       else if (v < cs) c = mixRgb(NEU, GOOD, 0.35 + 0.65 * Math.min(1, (cs - v) / (cs - 0.1)));
       else c = mixRgb(NEU, BAD, 0.35 + 0.65 * Math.min(1, (v - cs) / (top - cs)));
@@ -436,8 +435,8 @@ function drawMatrix(){
       var word = Math.abs(v - cs) <= MX_BAND ? "about the same as" : v < cs ? "less than" : "more than";
       var gal = m / g;
       html += "<div class='c" + (i === gi && j === mi ? " me" : "") + "' style='background:rgb(" + c.join(",") + ");color:" + ink + "' data-tip='" +
-        esc(m.toLocaleString("en-US") + " miles a year at " + g + " mpg is " + Math.round(gal).toLocaleString("en-US") + " gallons. A $1 rise costs " +
-            money(gal) + " more a year, which is " + v.toFixed(1) + "% of take-home pay, " + word + " the " + cs.toFixed(1) + "% the CPI puts on the average household.") +
+        esc(m.toLocaleString("en-US") + " miles a year at " + g + " mpg is " + Math.round(gal).toLocaleString("en-US") + " gallons, or " +
+            money(gal * S.price) + " a year at $" + S.price.toFixed(2) + ". That is " + v.toFixed(1) + "% of take-home pay, " + word + " gasoline's " + pct(cs) + " share of spending in the CPI.") +
         "'>" + v.toFixed(1) + "%</div>";
     });
   });
