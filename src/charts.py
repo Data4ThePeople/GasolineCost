@@ -117,10 +117,116 @@ def chart_cex():
     f.savefig(OUT / '03-cex-by-income.png', facecolor=BG); plt.close(f)
 
 
+def mix(a, b, t):
+    a, b = [int(a[i:i + 2], 16) for i in (1, 3, 5)], [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return '#%02x%02x%02x' % tuple(round(x + (y - x) * t) for x, y in zip(a, b))
+
+
+def lum(h):
+    r, g, b = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    f = lambda c: c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+
+
+def cpi_slope(m):
+    """Points of CPI weight added per $1 a gallon, at today's price (near-constant from $2 to $7)."""
+    p, c = m['price'], m['cpi']
+    return (model.cpi_weight_at(p + 0.01, c) - model.cpi_weight_at(p - 0.01, c)) / 0.02
+
+
+def colored_line(f, x, y, parts, size=11.5):
+    """Draw [(text, color, bold), ...] left to right on one line, measuring each piece."""
+    r = f.canvas.get_renderer()
+    for text, color, bold in parts:
+        t = f.text(x, y, text, fontsize=size, color=color, va='top', fontweight='bold' if bold else 'normal')
+        x += t.get_window_extent(renderer=r).width / f.bbox.width
+
+
+NEU, GREEN, RED = '#383835', '#0ca30c', '#e34948'
+MILES = list(range(5_000, 40_001, 5_000))
+MPGS = [40, 35, 30, 25, 20, 15]
+BAND = 0.05          # within this many points of the CPI slope counts as "about the same"
+
+
+def cell_color(v, cs, inc):
+    lo = 100 * MILES[0] / MPGS[0] / inc
+    top = 100 * MILES[-1] / MPGS[-1] / 35_000     # fixed top of the red ramp, so panels share one scale
+    if abs(v - cs) <= BAND:
+        return NEU
+    if v < cs:
+        return mix(NEU, GREEN, 0.35 + 0.65 * min(1, (cs - v) / (cs - 0.1)))
+    return mix(NEU, RED, 0.35 + 0.65 * min(1, (v - cs) / (top - cs)))
+
+
+def draw_matrix(ax, inc, cs, fs=11):
+    for i, g in enumerate(MPGS):
+        for j, mi in enumerate(MILES):
+            v = 100 * mi / g / inc
+            col = cell_color(v, cs, inc)
+            ax.add_patch(plt.Rectangle((j + 0.03, i + 0.03), 0.94, 0.94, color=col, lw=0))
+            ax.text(j + 0.5, i + 0.5, f'+{v:.1f}', ha='center', va='center', fontsize=fs, fontweight='bold',
+                    color='#0b0b0b' if lum(col) > 0.28 else '#ffffff')
+    ax.set_xlim(0, len(MILES)); ax.set_ylim(len(MPGS), 0)
+    ax.set_xticks([j + 0.5 for j in range(len(MILES))], [f'{mi // 1000}k' for mi in MILES])
+    ax.set_yticks([i + 0.5 for i in range(len(MPGS))], [str(g) for g in MPGS])
+    ax.tick_params(axis='both', labelcolor=INK2, labelsize=10.5)
+
+
+def legend_line(f, y, cs):
+    colored_line(f, 0.03, y, [('The CPI gasoline weight rises about ', INK2, False), (f'{cs:.1f} points per $1', INK, True),
+                              ('.   ', INK2, False), ('Green', GREEN, True), (' slower,   ', INK2, False),
+                              ('gray', '#8C9094', True), (' about the same,   ', INK2, False), ('red', RED, True), (' faster.', INK2, False)])
+
+
+def chart_matrix(m):
+    """Each $1 a gallon adds miles/mpg/after-tax income to a household's gas share.
+    Rows mpg, columns total miles, income fixed at the median household's."""
+    med = m['profiles'][0]
+    inc, cs = med['after_tax'], cpi_slope(m)
+    f, ax = fig(6.2)
+    draw_matrix(ax, inc, cs)
+    ax.set_xlabel('Miles driven a year, all cars', color=MUTED, fontsize=10)
+    ax.set_ylabel('Average miles per gallon', color=MUTED, fontsize=10)
+    f.subplots_adjust(left=0.1, right=0.97, top=0.76, bottom=0.18)
+    title(f, 'What each $1 at the pump adds to a household\'s gas share',
+          f'Percentage points of after-tax income, at the median household\'s ${inc:,.0f} after federal taxes')
+    legend_line(f, 0.845, cs)
+    foot(f, 'Sources: BLS (CPI weight, our estimate from the July 2026 figure), Census Bureau, IRS. Married couple, no children.')
+    f.savefig(OUT / '04-slope-matrix.png', facecolor=BG); plt.close(f)
+
+
+def chart_matrix_income(m):
+    """The same matrix at three incomes: Census 20th percentile, median, 80th percentile (pretax)."""
+    from tax import after_tax
+    cs = cpi_slope(m)
+    pct = dict(model.INC_PCTL)
+    rows = [('20th percentile', pct[20]), ('Median', pct[50]), ('80th percentile', pct[80])]
+    f, axes = plt.subplots(3, 1, figsize=(8, 15), dpi=200)
+    f.patch.set_facecolor(BG)
+    for ax, (lab, pre) in zip(axes, rows):
+        ax.set_facecolor(BG)
+        for sp in ax.spines.values():
+            sp.set_visible(False)
+        ax.tick_params(length=0)
+        inc = after_tax('mfj', pre)['after_tax']
+        draw_matrix(ax, inc, cs, fs=10.5)
+        ax.set_title(f'{lab} household income: \\${pre:,} before tax, \\${inc:,.0f} after', loc='left', color=INK, fontsize=12.5,
+                     fontweight='bold', pad=8)
+        ax.set_ylabel('Miles per gallon', color=MUTED, fontsize=9.5)
+    axes[-1].set_xlabel('Miles driven a year, all cars', color=MUTED, fontsize=10)
+    f.subplots_adjust(left=0.1, right=0.97, top=0.885, bottom=0.075, hspace=0.32)
+    f.text(0.03, 0.985, 'What each $1 at the pump adds to a household\'s gas share, by income', fontsize=16, fontweight='bold', color=INK, va='top')
+    f.text(0.03, 0.962, 'Percentage points of after-tax income, for three household incomes', fontsize=11.5, color=INK2, va='top')
+    legend_line(f, 0.942, cs)
+    f.text(0.03, 0.03, 'Sources: BLS (CPI weight, our estimate from the July 2026 figure), Census Bureau (2025 income percentiles), IRS.\nMarried couple, no children, federal income and payroll taxes.', fontsize=8.5, color=MUTED, va='bottom')
+    f.text(0.03, 0.012, CREDIT, fontsize=9, color=INK2, va='bottom', fontweight='bold')
+    f.savefig(OUT / '05-slope-matrix-by-income.png', facecolor=BG); plt.close(f)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     m = json.loads((PROCESSED / 'model.json').read_text())
-    chart_profiles(m); chart_price(m); chart_cex()
+    chart_profiles(m); chart_price(m); chart_cex(); chart_matrix(m); chart_matrix_income(m)
     print('wrote', sorted(p.name for p in OUT.glob('*.png')))
 
 
