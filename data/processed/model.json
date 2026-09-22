@@ -7,13 +7,6 @@
   "Motor fuel": 2.981,
   "Motor fuel (CPI-W)": 4.078
  },
- "weight_model": {
-  "w0": 2.895,
-  "r": 1.0235165489486733,
-  "p_dec": 2.8944,
-  "latest_cpi_month": "2026-08",
-  "ri_latest_month": 3.853169991114827
- },
  "cpi": {
   "dec": 2.895,
   "month": "2026-07",

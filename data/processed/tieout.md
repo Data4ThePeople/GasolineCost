@@ -1,12 +1,16 @@
 # Tie-out
 
 Gas price: $4.478, week of 2026-09-21 (EIA). Shown as $4.48.
-December 2025 EIA average: $2.8944
 CPI gasoline relative importance, Dec 2025: 2.895% (motor fuel 2.981%)
 CPI gasoline weight, 2026-07, rebuilt from December: 3.770% (BLS published 3.77%)
 EIA average pump price, 2026-07: $3.9322; today $4.478 (+13.9%)
 All other CPI prices, 2026-07 to 2026-08: +0.23%
-CPI gasoline weight at today's price (est.), shown in the tool and charts: 4.261% -> 4.3%
+CPI gasoline weight at today's price (est.): 4.261% -> 4.3%
+  at $3.00: 2.90%
+  at $4.00: 3.82%
+  at $5.00: 4.73%
+  at $6.00: 5.63%
+  at $7.00: 6.51%
 
 ## Profiles at today's price
 

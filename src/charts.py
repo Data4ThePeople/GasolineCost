@@ -46,7 +46,7 @@ def ri_2023():
 
 
 def chart_profiles(m):
-    price, wm = m['price'], m['weight_model']
+    price = m['price']
     P = m['profiles']
     cpi0 = m['cpi']['now']
     f, ax = fig()
@@ -68,15 +68,14 @@ def chart_profiles(m):
 
 
 def chart_price(m):
-    wm = m['weight_model']
     xs = [2 + i * 0.05 for i in range(101)]
     f, ax = fig(5.8)
     ends = []
     for i, p in enumerate(m['profiles']):
         ys = [100 * model.gas_cost(p['cars'], x) / p['after_tax'] for x in xs]
         ax.plot(xs, ys, color=S[i], lw=2); ends.append((ys[-1], p['name'], S[i]))
-    cpi = m['cpi']['now']
-    ax.axhline(cpi, color=REF, lw=1.4); ends.append((cpi, f'CPI weight today, {cpi:.1f}%', REF))
+    cy = [model.cpi_weight_at(x, m['cpi']) for x in xs]
+    ax.plot(xs, cy, color=REF, lw=1.6); ends.append((cy[-1], 'CPI gasoline weight', REF))
     ends.sort()
     placed = []
     for y, n, c in ends:            # spread labels so they do not overlap
@@ -90,7 +89,7 @@ def chart_price(m):
     ax.grid(color=GRID, lw=0.8); ax.set_axisbelow(True); ax.set_xlabel('Price of regular gasoline, dollars per gallon', color=MUTED, fontsize=10)
     f.subplots_adjust(left=0.08, right=0.72, top=0.82, bottom=0.17)
     title(f, 'Share of after-tax income spent on gas, by gas price',
-          'Six households, with the CPI gasoline weight at today\'s price (our estimate) for comparison')
+          'Six households, with the CPI gasoline weight at each price (our estimate) for comparison')
     foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. Miles and cars held fixed at every price.')
     f.savefig(OUT / '02-share-by-price.png', facecolor=BG); plt.close(f)
 
