@@ -1,0 +1,239 @@
+{
+ "price": 4.478,
+ "price_date": "2026-09-21",
+ "ri": {
+  "Gasoline (all types)": 2.895,
+  "Gasoline (all types) (CPI-W)": 3.971,
+  "Motor fuel": 2.981,
+  "Motor fuel (CPI-W)": 4.078
+ },
+ "weight_model": {
+  "w0": 2.895,
+  "r": 1.0235165489486733,
+  "p_dec": 2.8944,
+  "latest_cpi_month": "2026-08",
+  "ri_latest_month": 3.853169991114827
+ },
+ "cpi_weight_now": 4.312155540697242,
+ "profiles": [
+  {
+   "id": "median",
+   "name": "Median household",
+   "blurb": "Married couple, two cars, median household income",
+   "income": 87460,
+   "tax": {
+    "status": "mfj",
+    "kids": 0
+   },
+   "cars": [
+    {
+     "miles": 11092,
+     "mpg": 23.4307,
+     "label": "Car 1"
+    },
+    {
+     "miles": 11092,
+     "mpg": 23.4307,
+     "label": "Car 2"
+    }
+   ],
+   "after_tax": 74634.11,
+   "tax_detail": {
+    "gross": 87460.0,
+    "agi": 87460.0,
+    "deduction": 32200.0,
+    "taxable": 55260.0,
+    "income_tax": 6135.2,
+    "ctc": 0.0,
+    "eitc": 0.0,
+    "federal": 6135.2,
+    "fica": 6690.69,
+    "after_tax": 74634.11
+   },
+   "cost": 4239.7347070296655,
+   "share": 5.680693059821663
+  },
+  {
+   "id": "single",
+   "name": "Single young adult",
+   "blurb": "One car, $50,000 salary",
+   "income": 50000,
+   "tax": {
+    "status": "single",
+    "kids": 0
+   },
+   "cars": [
+    {
+     "miles": 12188,
+     "mpg": 25.5857,
+     "label": "Car"
+    }
+   ],
+   "after_tax": 42355.0,
+   "tax_detail": {
+    "gross": 50000.0,
+    "agi": 50000.0,
+    "deduction": 16100.0,
+    "taxable": 33900.0,
+    "income_tax": 3820.0,
+    "ctc": 0.0,
+    "eitc": 0.0,
+    "federal": 3820.0,
+    "fica": 3825.0,
+    "after_tax": 42355.0
+   },
+   "cost": 2133.139370820419,
+   "share": 5.036334248188925
+  },
+  {
+   "id": "rural",
+   "name": "Rural family",
+   "blurb": "Married, two kids, a car and a pickup, median rural income",
+   "income": 68670,
+   "tax": {
+    "status": "mfj",
+    "kids": 2
+   },
+   "cars": [
+    {
+     "miles": 11782,
+     "mpg": 25.5857,
+     "label": "Car"
+    },
+    {
+     "miles": 11782,
+     "mpg": 18.4963,
+     "label": "Pickup"
+    }
+   ],
+   "after_tax": 63936.34500000001,
+   "tax_detail": {
+    "gross": 68670.0,
+    "agi": 68670.0,
+    "deduction": 32200.0,
+    "taxable": 36470.0,
+    "income_tax": 3880.3999999999996,
+    "ctc": 4400.0,
+    "eitc": 0.0,
+    "federal": -519.6000000000004,
+    "fica": 5253.255,
+    "after_tax": 63936.34500000001
+   },
+   "cost": 4914.532752166264,
+   "share": 7.6866025922599475
+  },
+  {
+   "id": "lower",
+   "name": "Lower-income family",
+   "blurb": "Married, two kids, two cars, 20th percentile income",
+   "income": 35800,
+   "tax": {
+    "status": "mfj",
+    "kids": 2
+   },
+   "cars": [
+    {
+     "miles": 9748,
+     "mpg": 23.4307,
+     "label": "Car 1"
+    },
+    {
+     "miles": 9748,
+     "mpg": 23.4307,
+     "label": "Car 2"
+    }
+   ],
+   "after_tax": 42800.12046115317,
+   "tax_detail": {
+    "gross": 35800.0,
+    "agi": 35800.0,
+    "deduction": 32200.0,
+    "taxable": 3600.0,
+    "income_tax": 360.0,
+    "ctc": 3760.0,
+    "eitc": 6338.820461153171,
+    "federal": -9738.820461153171,
+    "fica": 2738.7,
+    "after_tax": 42800.12046115317
+   },
+   "cost": 3726.012795178974,
+   "share": 8.705612869853551
+  },
+  {
+   "id": "retired",
+   "name": "Retired couple",
+   "blurb": "Both 65+, one car, Social Security plus a pension",
+   "income": 59680,
+   "tax": {
+    "status": "mfj",
+    "kids": 0,
+    "seniors": 2,
+    "social_security": 38496
+   },
+   "cars": [
+    {
+     "miles": 8928,
+     "mpg": 23.4307,
+     "label": "Car"
+    }
+   ],
+   "after_tax": 59680.0,
+   "tax_detail": {
+    "gross": 59680.0,
+    "agi": 25400.0,
+    "deduction": 47500.0,
+    "taxable": 0.0,
+    "income_tax": 0.0,
+    "ctc": 0.0,
+    "eitc": 0.0,
+    "federal": 0.0,
+    "fica": 0.0,
+    "after_tax": 59680.0
+   },
+   "cost": 1706.290635789797,
+   "share": 2.8590660787362547
+  },
+  {
+   "id": "suburban",
+   "name": "Suburban three-car family",
+   "blurb": "Married, two kids and a teen driver, median family income",
+   "income": 112900,
+   "tax": {
+    "status": "mfj",
+    "kids": 2
+   },
+   "cars": [
+    {
+     "miles": 9993,
+     "mpg": 23.4307,
+     "label": "Car 1"
+    },
+    {
+     "miles": 9993,
+     "mpg": 23.4307,
+     "label": "Car 2"
+    },
+    {
+     "miles": 9993,
+     "mpg": 23.4307,
+     "label": "Car 3"
+    }
+   ],
+   "after_tax": 99475.15,
+   "tax_detail": {
+    "gross": 112900.0,
+    "agi": 112900.0,
+    "deduction": 32200.0,
+    "taxable": 80700.0,
+    "income_tax": 9188.0,
+    "ctc": 4400,
+    "eitc": 0.0,
+    "federal": 4788.0,
+    "fica": 8636.85,
+    "after_tax": 99475.15
+   },
+   "cost": 5729.490028040134,
+   "share": 5.759719918029915
+  }
+ ]
+}
