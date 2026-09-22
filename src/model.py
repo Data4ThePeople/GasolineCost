@@ -18,10 +18,24 @@ NHTS = json.loads((PROCESSED / 'nhts_miles.json').read_text())['cells']
 # Read from the xlsx by ri_from_xlsx(); these anchors make a new vintage fail loudly.
 RI_ANCHORS = {'Gasoline (all types)': 2.895, 'Motor fuel': 2.981}
 
-# FHWA Highway Statistics 2024, Table VM-1 (published February 2026)
-MPG_ALL_LDV = 23.4307      # all light-duty vehicles
-MPG_SHORT_WB = 25.5857     # light-duty, short wheelbase (cars, small SUVs)
-MPG_LONG_WB = 18.4963      # light-duty, long wheelbase (pickups, large SUVs, vans)
+
+
+def vm1_mpg(year=2024):
+    """Miles per gallon from FHWA Highway Statistics 2024, Table VM-1 (published February 2026):
+    light-duty short wheelbase, long wheelbase, and all light-duty vehicles."""
+    import pandas as pd
+    df = pd.read_excel(RAW / 'driving' / 'fhwa_vm1_2024.xlsx', header=None)
+    label = df[1].astype(str)
+    rows = [i for i in df.index if label[i].strip().startswith('Average miles travele')
+            and 'gallon' in label.get(i + 1, '')]
+    assert len(rows) == 1, rows
+    r = df.iloc[rows[0]]
+    assert int(r[0]) == year and str(df.iloc[7, 2]).strip() == 'VEHICLES' and 'SHORT' in str(df.iloc[8, 2])
+    assert 'LONG' in str(df.iloc[8, 5]) and 'LIGHT DUTY' in str(df.iloc[7, 8])
+    return float(r[2]), float(r[5]), float(r[8])
+
+
+MPG_SHORT_WB, MPG_LONG_WB, MPG_ALL_LDV = vm1_mpg()   # about 25.59, 18.50, 23.43
 
 # Census P60-289, income year 2025 (released Sept 15, 2026)
 INC_MEDIAN_HH = 87_460         # Table 4, all households, median money income

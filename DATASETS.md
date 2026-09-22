@@ -96,6 +96,10 @@ since December 2025, solved from the latest CPI-U month (August 2026: all items 
 $4.478 it gives 4.31%. This holds the basket quantities at the 2024 weights, so it
 ignores people driving less when gas costs more.
 
+**December 2023 file.** `data/raw/cpi_relative_importance_2023.xlsx` (2022 weights):
+gasoline (all types) 3.261, motor fuel 3.372. Used only in chart 3, beside 2023 CEX
+spending, so both are from the same year.
+
 **License and attribution.** Public domain. Credit "U.S. Bureau of Labor Statistics".
 
 ## CPI-U index levels (U.S. Bureau of Labor Statistics)
