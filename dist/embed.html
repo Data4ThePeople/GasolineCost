@@ -110,6 +110,11 @@
     .gc.framed .sub{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     .gc .big{font-size:22px}
   }
+  .gc .privacy{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--ink);border-radius:10px;
+               padding:10px 12px;margin:4px 0 10px;background:var(--page)}
+  .gc .privacy svg{flex:none;width:22px;height:22px;margin-top:1px}
+  .gc .privacy b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px}
+  .gc .privacy span{font-size:13px;color:var(--ink2)}
   .gc [hidden]{display:none!important}
 </style>
 </head>
@@ -140,6 +145,11 @@
       <div class="card" id="custom">
         <h2>Your household</h2>
         <p class="intro">Enter your own numbers. We estimate your federal taxes to get your after-tax income.</p>
+        <div class="privacy" role="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <div><b>We do not store any data you enter.</b>
+          <span>Your numbers never leave your device. The math runs in your browser, nothing is sent to us or saved, and it is all gone when you close the page.</span></div>
+        </div>
         <div class="form">
           <label>Pre-tax income ($ a year)<input id="cIncome" type="number" min="0" step="1000" inputmode="numeric"></label>
           <label>Number of cars<select id="cCars"></select></label>
