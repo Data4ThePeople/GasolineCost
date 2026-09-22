@@ -3,8 +3,8 @@
 Gas price: $4.478, week of 2026-09-21 (EIA). Shown as $4.48.
 December 2025 EIA average: $2.8944
 CPI gasoline relative importance, Dec 2025: 2.895% (motor fuel 2.981%)
-CPI gasoline weight at the 2026-08 index (est.): 3.85%
-CPI gasoline weight at $4.48 (est.): 4.31%
+(Not shown in the tool) CPI gasoline weight at the 2026-08 index (est.): 3.85%
+(Not shown in the tool) CPI gasoline weight at $4.48 (est.): 4.31%
   at $3.00: 2.93%
   at $4.00: 3.87%
   at $5.00: 4.79%

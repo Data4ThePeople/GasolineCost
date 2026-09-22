@@ -23,8 +23,6 @@ def long_date(d):
 
 def data():
     m = json.loads((PROCESSED / 'model.json').read_text())
-    wm = m['weight_model']
-    y, mo = wm['latest_cpi_month'].split('-')
     tax_params = {k: getattr(tax, k) for k in dir(tax) if k.isupper()}
     profiles = [dict(id=p['id'], name=p['name'], blurb=p['blurb'], income=p['income'],
                      tax=dict(status=p['tax']['status'], kids=p['tax']['kids'], seniors=p['tax'].get('seniors', 0),
@@ -34,7 +32,6 @@ def data():
     ids = [p['id'] for p in profiles]
     assert len(ids) == len(set(ids)), 'duplicate profile id'
     return m, dict(price=m['price'], price_date=m['price_date'], ri=dict(gas=m['ri']['Gasoline (all types)'], motor=m['ri']['Motor fuel']),
-                   wm=dict(w0=wm['w0'], r=wm['r'], p_dec=wm['p_dec'], latestLabel=f'{MONTHS[int(mo) - 1]} {y}'),
                    tax=tax_params, profiles=profiles, pctl=model.INC_PCTL, built=long_date(date.today()))
 
 
@@ -68,8 +65,6 @@ def check_in_chrome(html, m, name):
     got = json.loads(re.search(r'data-check="([^"]*)"', dom).group(1).replace('&quot;', '"'))
     worst = 0.0
     for g in got:
-        wm = m['weight_model']
-        assert abs(g['cpi'] - model.cpi_weight_at(g['price'], wm)) < 1e-9, 'CPI weight mismatch'
         for pj, pp in zip(g['profiles'], m['profiles']):
             assert pj['id'] == pp['id']
             share_py = 100 * model.gas_cost(pp['cars'], g['price']) / pp['after_tax']
