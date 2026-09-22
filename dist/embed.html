@@ -143,7 +143,7 @@
         <div class="form">
           <label>Pre-tax income ($ a year)<input id="cIncome" type="number" min="0" step="1000" inputmode="numeric"></label>
           <label>Number of cars<select id="cCars"></select></label>
-          <label>Miles a year, all cars<input id="cMiles" type="number" min="0" step="500" inputmode="numeric"></label>
+          <label>Miles a year, per car<input id="cMiles" type="number" min="0" step="500" inputmode="numeric"></label>
           <label>Average mpg<input id="cMpg" type="number" min="5" max="80" step="0.1" inputmode="decimal"></label>
           <label class="wide">Household<select id="cHh"></select></label>
         </div>
@@ -402,7 +402,7 @@ function pctileBelow(inc){
 }
 function readCustom(){
   var inc = parseFloat($("cIncome").value), cars = parseInt($("cCars").value, 10),
-      miles = parseFloat($("cMiles").value), mpg = parseFloat($("cMpg").value), hhKey = $("cHh").value;
+      miles = cars * parseFloat($("cMiles").value), mpg = parseFloat($("cMpg").value), hhKey = $("cHh").value;
   if (!(inc > 0) || !(miles >= 0) || !(mpg > 0)){ S.you = null; $("cOut").innerHTML = "<p class='note'>Enter an income, miles and mpg to see your share.</p>"; return; }
   var key = hhKey === "auto" ? autoHh(cars) : hhKey, h = HH[key];
   var t = afterTax(h.status, inc, h.kids), gal = miles / mpg;
@@ -455,11 +455,11 @@ $("priceRange").addEventListener("input", function(){ setPrice(parseFloat(this.v
 $("priceNum").addEventListener("change", function(){ setPrice(parseFloat(this.value), "num"); });
 $("priceReset").addEventListener("click", function(){ setPrice(D.price); });
 var cc = $("cCars");
-for (var i = 1; i <= 5; i++){ var o = document.createElement("option"); o.value = i; o.textContent = i === 5 ? "5 or more" : i; cc.appendChild(o); }
+for (var i = 1; i <= 5; i++){ var o = document.createElement("option"); o.value = i; o.textContent = i; cc.appendChild(o); }
 var hs = $("cHh"), o0 = document.createElement("option"); o0.value = "auto"; hs.appendChild(o0);
 Object.keys(HH).forEach(function(k){ var o = document.createElement("option"); o.value = k; o.textContent = HH[k].label; hs.appendChild(o); });
 var med = D.profiles[0];
-$("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles").value = med.miles; $("cMpg").value = (med.miles / med.gal).toFixed(2);
+$("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles").value = Math.round(med.miles / med.cars.length); $("cMpg").value = (med.miles / med.gal).toFixed(2);
 ["cIncome", "cMiles", "cMpg", "cCars", "cHh"].forEach(function(id){
   $(id).addEventListener("input", function(){ S.edited = true; S.sel = "you"; update(); });
 });
