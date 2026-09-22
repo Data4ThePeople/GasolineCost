@@ -133,7 +133,7 @@
     <label for="priceRange">Gas price</label>
     <input type="range" id="priceRange" min="2" max="7" step="0.01" aria-label="Gas price, dollars per gallon">
     <span class="num">$<input id="priceNum" type="number" min="2" max="7" step="0.01" inputmode="decimal" aria-label="Gas price, dollars per gallon"></span>
-    <button type="button" id="priceReset">Today's price</button>
+    <button type="button" id="priceReset">Reset</button>
     <span class="hint" id="priceHint"></span>
   </div>
   <div class="main">
@@ -507,6 +507,7 @@ function update(){
 }
 $("priceRange").addEventListener("input", function(){ setPrice(parseFloat(this.value), "range"); });
 $("priceNum").addEventListener("change", function(){ setPrice(parseFloat(this.value), "num"); });
+$("priceReset").setAttribute("aria-label", "Reset to $" + D.price.toFixed(2) + ", the price on " + longDate(D.price_date));
 $("priceReset").addEventListener("click", function(){ setPrice(D.price); });
 var cc = $("cCars");
 for (var i = 1; i <= 5; i++){ var o = document.createElement("option"); o.value = i; o.textContent = i; cc.appendChild(o); }
@@ -516,9 +517,9 @@ $("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles")
   $(id).addEventListener("input", function(){ S.edited = true; S.sel = "you"; update(); });
 });
 
-$("sub").textContent = "At today's gas price, gasoline makes up about " + pct(D.cpi.now) + " of consumer spending in the Consumer Price Index. " +
+$("sub").textContent = "At the U.S. average gas price of $" + D.price.toFixed(2) + " on " + longDate(D.price_date) + ", gasoline makes up about " + pct(D.cpi.now) + " of consumer spending in the Consumer Price Index. " +
   "Here is what gas costs six typical households, measured against the income they have left after federal taxes. Move the price, or enter your own household.";
-$("priceHint").textContent = "Today's price: $" + D.price.toFixed(2) + " a gallon, U.S. average for regular, week of " + longDate(D.price_date) + " (EIA).";
+$("priceHint").textContent = "Starts at $" + D.price.toFixed(2) + " a gallon, the U.S. average for regular in the week of " + longDate(D.price_date) + " (EIA). Reset returns to it.";
 $("src").textContent = "Sources: EIA weekly retail gasoline prices; BLS CPI relative importance and CPI-U; Census Bureau income in 2025 (P60-289); FHWA 2022 National Household Travel Survey and Highway Statistics 2024 (VM-1); IRS Rev. Proc. 2025-32; SSA 2026 COLA fact sheet. " +
   "After-tax income counts federal income and payroll taxes only. Built by Data 4 The People, " + D.built + ".";
 
