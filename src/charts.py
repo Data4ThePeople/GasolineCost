@@ -48,7 +48,7 @@ def ri_2023():
 def chart_profiles(m):
     price, wm = m['price'], m['weight_model']
     P = m['profiles']
-    cpi0 = m['ri']['Gasoline (all types)']
+    cpi0 = m['cpi']['now']
     f, ax = fig()
     names = [p['name'] for p in P][::-1]; vals = [p['share'] for p in P][::-1]
     ax.barh(names, vals, color=S[0], height=0.55)
@@ -56,14 +56,14 @@ def chart_profiles(m):
         ax.text(v + 0.12, i, f'{v:.1f}%', va='center', color=INK, fontweight='bold', fontsize=11.5)
     ax.axvline(cpi0, color=REF, lw=1.4)
     top = len(P) - 0.45
-    ax.text(cpi0 + 0.08, top, f'CPI gasoline weight,\nDec. 2025: {cpi0:.1f}%', ha='left', va='bottom', fontsize=9.5, color=INK2, linespacing=1.15)
+    ax.text(cpi0 + 0.08, top, f'CPI gasoline weight at\ntoday\'s price (est.): {cpi0:.1f}%', ha='left', va='bottom', fontsize=9.5, color=INK2, linespacing=1.15)
     ax.set_xlim(0, max(vals) * 1.15); ax.set_ylim(-0.6, len(P) + 0.35)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%'); ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
     ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
-    f.subplots_adjust(left=0.27, right=0.96, top=0.8, bottom=0.15)
+    f.subplots_adjust(left=0.27, right=0.96, top=0.8, bottom=0.19)
     title(f, 'Gasoline as a share of after-tax income',
           f'Six households at ${price:.2f} a gallon, the U.S. average for regular on {pd.Timestamp(m["price_date"]):%B %-d, %Y}')
-    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. After-tax income subtracts federal income and payroll taxes only.')
+    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. After-tax income subtracts federal income and payroll taxes only.\nCPI weight: BLS July 2026 relative importance (3.8%) moved to today\'s pump price.')
     f.savefig(OUT / '01-share-by-household.png', facecolor=BG); plt.close(f)
 
 
@@ -75,8 +75,8 @@ def chart_price(m):
     for i, p in enumerate(m['profiles']):
         ys = [100 * model.gas_cost(p['cars'], x) / p['after_tax'] for x in xs]
         ax.plot(xs, ys, color=S[i], lw=2); ends.append((ys[-1], p['name'], S[i]))
-    cpi = m['ri']['Gasoline (all types)']
-    ax.axhline(cpi, color=REF, lw=1.4); ends.append((cpi, f'CPI weight, {cpi:.1f}%', REF))
+    cpi = m['cpi']['now']
+    ax.axhline(cpi, color=REF, lw=1.4); ends.append((cpi, f'CPI weight today, {cpi:.1f}%', REF))
     ends.sort()
     placed = []
     for y, n, c in ends:            # spread labels so they do not overlap
@@ -90,7 +90,7 @@ def chart_price(m):
     ax.grid(color=GRID, lw=0.8); ax.set_axisbelow(True); ax.set_xlabel('Price of regular gasoline, dollars per gallon', color=MUTED, fontsize=10)
     f.subplots_adjust(left=0.08, right=0.72, top=0.82, bottom=0.17)
     title(f, 'Share of after-tax income spent on gas, by gas price',
-          'Six households, with the CPI gasoline weight (December 2025) for comparison')
+          'Six households, with the CPI gasoline weight at today\'s price (our estimate) for comparison')
     foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. Miles and cars held fixed at every price.')
     f.savefig(OUT / '02-share-by-price.png', facecolor=BG); plt.close(f)
 

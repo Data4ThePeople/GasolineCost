@@ -31,7 +31,7 @@ def data():
                 for p in m['profiles']]
     ids = [p['id'] for p in profiles]
     assert len(ids) == len(set(ids)), 'duplicate profile id'
-    return m, dict(price=m['price'], price_date=m['price_date'], ri=dict(gas=m['ri']['Gasoline (all types)'], motor=m['ri']['Motor fuel']),
+    return m, dict(price=m['price'], price_date=m['price_date'], cpi=dict(now=m['cpi']['now'], monthRi=m['cpi']['month_ri'], monthLabel=f"{MONTHS[int(m['cpi']['month'][5:]) - 1]} {m['cpi']['month'][:4]}"),
                    tax=tax_params, profiles=profiles, pctl=model.INC_PCTL, built=long_date(date.today()))
 
 
