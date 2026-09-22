@@ -40,6 +40,16 @@ def page_js(html):
     return html[i:html.index('</script>', i)]
 
 
+NO_DATA_OUT = re.compile(r'fetch\(|XMLHttpRequest|sendBeacon|WebSocket|EventSource|localStorage|sessionStorage|indexedDB|document\.cookie|<form|<iframe|src="http|href="(?!https://www\.data4thepeople\.com")http', re.I)
+
+
+def check_no_data_out(html):
+    """The page promises it stores nothing a reader enters. Fail the build if it ever
+    gains a network call, browser storage, a form, or an external resource."""
+    hits = sorted({m.group(0) for m in NO_DATA_OUT.finditer(html)})
+    assert not hits, f'page would break the no-storage promise: {hits}'
+
+
 def check_parse(html):
     if not os.path.exists(JSC):
         print('jsc not found; parse check skipped'); return
@@ -86,6 +96,7 @@ def main():
         html = tpl.replace('__DATA__', json.dumps(d, separators=(',', ':'))).replace('__FORCE_FRAMED__', framed)
         for k, v in logos.items():
             html = html.replace(k, v)
+        check_no_data_out(html)
         check_parse(html)
         check_in_chrome(html, m, fname)
         (DIST / fname).write_text(html)
