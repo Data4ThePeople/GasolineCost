@@ -90,6 +90,34 @@ def cpi_weight_model(ri_dec):
                 ri_latest_month=100 * ri_dec * g_t / (ri_dec * g_t + (100 - ri_dec) * r))
 
 
+# Latest monthly relative importance BLS has published for gasoline (all types),
+# per Eric: July 2026, 3.77%. We rebuild it from the December 2025 table and the
+# CPI-U indexes, and the build fails if the two disagree.
+RI_LATEST_MONTH, RI_LATEST_PUBLISHED = '2026-07', 3.77
+
+
+def cpi_weight_today(ri_dec, price):
+    """The CPI gasoline weight at today's pump price.
+
+    Step 1: carry December 2025 to RI_LATEST_MONTH with the CPI-U indexes
+    (the way BLS updates relative importance between weight years) and check it
+    against the published figure. Step 2: carry that to today's price with the
+    EIA pump price change since that month, and the change in all other prices
+    since that month from the newest CPI-U release. This is our estimate.
+    """
+    G, A = CPI['gasoline_all_types'], CPI['all_items']
+    m0 = RI_LATEST_MONTH
+    ri0 = 100 * ri_dec * (G[m0] / G['2025-12']) / (100 * A[m0] / A['2025-12'])
+    assert abs(ri0 - RI_LATEST_PUBLISHED) < 0.005, f'rebuilt {m0} weight {ri0:.3f} != published {RI_LATEST_PUBLISHED}'
+    latest = [k for k, v in A.items() if v is not None][-1]
+    a, g_cpi = A[latest] / A[m0], G[latest] / G[m0]
+    r = (100 * a - ri0 * g_cpi) / (100 - ri0)          # everything except gasoline, since m0
+    p0 = month_avg(m0)
+    g = price / p0
+    now = 100 * ri0 * g / (ri0 * g + (100 - ri0) * r)
+    return dict(dec=ri_dec, month=m0, month_ri=ri0, month_price=p0, r=r, other_prices_through=latest, now=now)
+
+
 def cpi_weight_at(price, m):
     g = price / m['p_dec']
     return 100 * m['w0'] * g / (m['w0'] * g + (100 - m['w0']) * m['r'])
@@ -137,10 +165,12 @@ def main():
     ri = ri_from_xlsx()
     wm = cpi_weight_model(ri['Gasoline (all types)'])
     price_date, price = GAS[-1]
-    out = dict(price=price, price_date=price_date, ri=ri, weight_model=wm,
-               cpi_weight_now=cpi_weight_at(price, wm), profiles=[])
+    cw = cpi_weight_today(ri['Gasoline (all types)'], price)
+    out = dict(price=price, price_date=price_date, ri=ri, weight_model=wm, cpi=cw,
+               cpi_weight_now=cw['now'], profiles=[])
     print(f"Gas ${price} ({price_date}). CPI gasoline weight: Dec 2025 {ri['Gasoline (all types)']}%, "
-          f"{wm['latest_cpi_month']} {wm['ri_latest_month']:.2f}%, at today's price {out['cpi_weight_now']:.2f}% (est.)")
+          f"{cw['month']} {cw['month_ri']:.3f}% (rebuilt; published {RI_LATEST_PUBLISHED}%), "
+          f"at today's price {cw['now']:.3f}% (est., from {cw['month']} pump price ${cw['month_price']:.3f})")
     for p in PROFILES:
         t = taxes(p)
         cost = gas_cost(p['cars'], price)

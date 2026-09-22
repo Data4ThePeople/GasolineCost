@@ -14,7 +14,16 @@
   "latest_cpi_month": "2026-08",
   "ri_latest_month": 3.853169991114827
  },
- "cpi_weight_now": 4.312155540697242,
+ "cpi": {
+  "dec": 2.895,
+  "month": "2026-07",
+  "month_ri": 3.7698791700536454,
+  "month_price": 3.93225,
+  "r": 1.0023121308197707,
+  "other_prices_through": "2026-08",
+  "now": 4.261316881970689
+ },
+ "cpi_weight_now": 4.261316881970689,
  "profiles": [
   {
    "id": "median",

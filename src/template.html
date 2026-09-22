@@ -279,7 +279,7 @@ function rows(){
 }
 function drawBars(){
   var box = $("bars"), W = Math.max(280, box.clientWidth), R = rows();
-  var cpi = D.ri.gas;
+  var cpi = D.cpi.now;
   var narrow = W < 520, labW = narrow ? 0 : 190, rowH = narrow ? 50 : 34, top = 22, valW = 48;
   var maxV = Math.max(10, Math.ceil(Math.max.apply(null, R.map(function(r){ return r.share; }).concat([cpi])) / 2) * 2);
   var x0 = labW, x1 = W - valW, H = top + R.length * rowH + 4;
@@ -317,13 +317,13 @@ function drawBars(){
     el("line", {x1: sx(cpi), x2: sx(cpi), y1: y - 4, y2: y + 18, "class": "ref"}, svg);
   });
   $("barLegend").innerHTML = "<span><b style='color:var(--s1)'>Bars</b>: gas spending ÷ after-tax income</span>" +
-    "<span><b>Line</b>: CPI gasoline weight, " + pct(cpi) + " (December 2025)</span>";
+    "<span><b>Line</b>: CPI gasoline weight at today's price, " + pct(cpi) + " (our estimate from the BLS weight for " + D.cpi.monthLabel + ", " + pct(D.cpi.monthRi) + ")</span>";
 }
 
 /* ---------- line chart: share by price, selected ---------- */
 function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
   var W = Math.max(260, box.clientWidth), H = 150, l = 34, r = 10, t = 10, b = 24;
-  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, D.ri.gas) / 2) * 2);
+  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, D.cpi.now) / 2) * 2);
   var sx = function(p){ return l + (W - l - r) * (p - pMin) / (pMax - pMin); };
   var sy = function(v){ return t + (H - t - b) * (1 - v / maxV); };
   box.innerHTML = "";
@@ -337,7 +337,7 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
   var a = [];
   for (var q = pMin; q <= pMax + 1e-9; q += 0.05) a.push(sx(q).toFixed(1) + "," + sy(100 * costPerDollar * q / afterTaxInc).toFixed(1));
   el("line", {x1: sx(S.price), x2: sx(S.price), y1: t, y2: H - b, "class": "now"}, svg);
-  el("line", {x1: l, x2: W - r, y1: sy(D.ri.gas), y2: sy(D.ri.gas), "class": "ln cpi"}, svg);
+  el("line", {x1: l, x2: W - r, y1: sy(D.cpi.now), y2: sy(D.cpi.now), "class": "ln cpi"}, svg);
   var ln = el("polyline", {points: a.join(" "), "class": "ln s1"}, svg);
   if (isYou) ln.style.stroke = "var(--s2)";
   var dot = el("circle", {cx: sx(S.price), cy: sy(100 * costPerDollar * S.price / afterTaxInc), r: 4.5, "class": "dot"}, svg);
@@ -349,7 +349,7 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
     var q = Math.min(pMax, Math.max(pMin, pMin + (px - l) / (W - l - r) * (pMax - pMin)));
     cross.setAttribute("x1", sx(q)); cross.setAttribute("x2", sx(q)); cross.setAttribute("visibility", "visible");
     showTip("<div><b>Gas at $" + q.toFixed(2) + "</b></div><div class='v'>" + pct(100 * costPerDollar * q / afterTaxInc) + " of after-tax income</div>" +
-            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI gasoline weight: " + pct(D.ri.gas) + "</div>", e);
+            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI gasoline weight at today's price: " + pct(D.cpi.now) + "</div>", e);
   });
   hit.addEventListener("mouseleave", function(){ cross.setAttribute("visibility", "hidden"); hideTip(); });
 }
@@ -374,7 +374,7 @@ function drawDetail(){
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
     "<p class='note'>The chart below shows this household's share at every gas price from $2 to $7.</p>" +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
-    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight, " + pct(D.ri.gas) + "</span></div>" +
+    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at today's price, " + pct(D.cpi.now) + "</span></div>" +
     "<div id='line'></div>";
   drawLine($("line"), costPerDollar, at, name, isYou);
 }
@@ -407,7 +407,7 @@ function drawCustom(){
   $("cOut").innerHTML = "<div class='big'>" + pct(y.share) + " <small>of your after-tax income</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(y.cost) + "</b><span>Gas a month</span><b>" + money(y.cost / 12) + "</b>" +
     "<span>Estimated after-tax income</span><b>" + money(y.t.afterTax) + "</b></div>" +
-    "<p class='note'>The CPI counts gasoline as " + pct(D.ri.gas) + " of consumer spending (December 2025). Your share is " + pct(y.share) + ".</p>" +
+    "<p class='note'>At today's price, gasoline is about " + pct(D.cpi.now) + " of consumer spending in the CPI. Your share of income is " + pct(y.share) + ".</p>" +
     "<p class='note'>" + pctileBelow(y.income) + " U.S. households had a lower pre-tax income than this in 2025.</p>" +
     "<p class='note'>Household: " + esc(y.hhLabel) + ". Federal income tax and payroll tax only; state and local taxes would lower your after-tax income a little and raise your share.</p>";
 }
@@ -421,7 +421,7 @@ function drawTable(){
     var miles = p ? p.miles : S.you.miles, at = p ? p.t.afterTax : S.you.t.afterTax;
     return "<tr><td>" + esc(r.name) + "</td><td>" + Math.round(miles).toLocaleString("en-US") + "</td><td>" + money(r.cost) +
            "</td><td>" + money(at) + "</td><td>" + pct(r.share) + "</td></tr>";
-  }).join("") + "<tr><td>CPI gasoline weight, December 2025</td><td></td><td></td><td></td><td>" + pct(D.ri.gas) + "</td></tr>";
+  }).join("") + "<tr><td>CPI gasoline weight at today's price (estimate)</td><td></td><td></td><td></td><td>" + pct(D.cpi.now) + "</td></tr>";
 }
 
 /* ---------- wiring ---------- */
@@ -450,10 +450,10 @@ $("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles")
   $(id).addEventListener("input", function(){ S.edited = true; S.sel = "you"; update(); });
 });
 
-$("sub").textContent = "The Consumer Price Index counts gasoline as " + pct(D.ri.gas) + " of what Americans spend. " +
+$("sub").textContent = "At today's gas price, gasoline makes up about " + pct(D.cpi.now) + " of consumer spending in the Consumer Price Index. " +
   "Here is what gas costs six typical households, measured against the income they have left after federal taxes. Move the price, or enter your own household.";
 $("priceHint").textContent = "Today's price: $" + D.price.toFixed(2) + " a gallon, U.S. average for regular, week of " + longDate(D.price_date) + " (EIA).";
-$("src").textContent = "Sources: EIA weekly retail gasoline prices; BLS CPI relative importance (December 2025); Census Bureau income in 2025 (P60-289); FHWA 2022 National Household Travel Survey and Highway Statistics 2024 (VM-1); IRS Rev. Proc. 2025-32; SSA 2026 COLA fact sheet. " +
+$("src").textContent = "Sources: EIA weekly retail gasoline prices; BLS CPI relative importance and CPI-U; Census Bureau income in 2025 (P60-289); FHWA 2022 National Household Travel Survey and Highway Statistics 2024 (VM-1); IRS Rev. Proc. 2025-32; SSA 2026 COLA fact sheet. " +
   "After-tax income counts federal income and payroll taxes only. Built by Data 4 The People, " + D.built + ".";
 
 setPrice(D.price);
