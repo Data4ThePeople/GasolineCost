@@ -165,7 +165,7 @@ def draw_matrix(ax, inc, cs, fs=11):
             v = 100 * mi / g / inc
             col = cell_color(v, cs, inc)
             ax.add_patch(plt.Rectangle((j + 0.03, i + 0.03), 0.94, 0.94, color=col, lw=0))
-            ax.text(j + 0.5, i + 0.5, f'\\${mi / g:,.0f}', ha='center', va='center', fontsize=fs, fontweight='bold',
+            ax.text(j + 0.5, i + 0.5, f'{v:.1f}%', ha='center', va='center', fontsize=fs, fontweight='bold',
                     color='#0b0b0b' if lum(col) > 0.28 else '#ffffff')
     ax.set_xlim(0, len(MILES)); ax.set_ylim(len(MPGS), 0)
     ax.set_xticks([j + 0.5 for j in range(len(MILES))], [f'{mi // 1000}k' for mi in MILES])
@@ -176,7 +176,7 @@ def draw_matrix(ax, inc, cs, fs=11):
 def legend_line(f, y, cs, gap=0.028):
     colored_line(f, 0.03, y, [('In the CPI, a $1 rise adds about ', INK2, False),
                               (f'{cs:.1f}% of what the average household spends.', INK, True)])
-    colored_line(f, 0.03, y - gap, [('Green', GREEN, True), (' costs a household less than that share of take-home pay,   ', INK2, False),
+    colored_line(f, 0.03, y - gap, [('Green', GREEN, True), (' is less than that share of take-home pay,   ', INK2, False),
                                     ('gray', '#8C9094', True), (' about the same,   ', INK2, False), ('red', RED, True), (' more.', INK2, False)])
 
 
@@ -190,8 +190,8 @@ def chart_matrix(m):
     ax.set_xlabel('Miles driven a year, all cars', color=MUTED, fontsize=10)
     ax.set_ylabel('Average miles per gallon', color=MUTED, fontsize=10)
     f.subplots_adjust(left=0.1, right=0.97, top=0.76, bottom=0.18)
-    title(f, 'If gas goes up $1 a gallon, what it costs a year',
-          f'Dollars a year, by miles driven and mpg, next to the median household\'s take-home pay of \\${inc:,.0f}')
+    title(f, 'If gas goes up $1 a gallon, what it costs a household',
+          f'Share of take-home pay, by miles driven and mpg, at the median household\'s \\${inc:,.0f} a year')
     legend_line(f, 0.855, cs)
     foot(f, 'Sources: BLS (CPI weight, our estimate from the July 2026 figure), Census Bureau, IRS. Married couple, no children.')
     f.savefig(OUT / '04-slope-matrix.png', facecolor=BG); plt.close(f)
@@ -218,7 +218,7 @@ def chart_matrix_income(m):
     axes[-1].set_xlabel('Miles driven a year, all cars', color=MUTED, fontsize=10)
     f.subplots_adjust(left=0.1, right=0.97, top=0.885, bottom=0.075, hspace=0.32)
     f.text(0.03, 0.985, 'If gas goes up $1 a gallon: the same cost, three different incomes', fontsize=16, fontweight='bold', color=INK, va='top')
-    f.text(0.03, 0.962, 'Dollars a year, by miles driven and mpg. The cost is the same in every panel; what it takes out of a paycheck is not.', fontsize=11.5, color=INK2, va='top')
+    f.text(0.03, 0.962, 'Share of take-home pay, by miles driven and mpg. The dollar cost is the same in every panel; the share of a paycheck is not.', fontsize=11.5, color=INK2, va='top')
     legend_line(f, 0.944, cs, gap=0.013)
     f.text(0.03, 0.03, 'Sources: BLS (CPI weight, our estimate from the July 2026 figure), Census Bureau (2025 income percentiles), IRS.\nMarried couple, no children, federal income and payroll taxes.', fontsize=8.5, color=MUTED, va='bottom')
     f.text(0.03, 0.012, CREDIT, fontsize=9, color=INK2, va='bottom', fontweight='bold')
