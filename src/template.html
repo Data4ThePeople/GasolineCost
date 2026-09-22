@@ -242,6 +242,11 @@ function afterTax(st, wages, kids, seniors, pension, ss){
 }
 
 /* ---------- model, mirrors src/model.py ---------- */
+/* CPI gasoline weight at any pump price, from the latest published BLS weight */
+function cpiAt(price){
+  var c = D.cpi, g = price / c.monthPrice;
+  return 100 * c.monthRi * g / (c.monthRi * g + (100 - c.monthRi) * c.r);
+}
 function gallons(cars){ var g = 0; cars.forEach(function(c){ g += c.miles / c.mpg; }); return g; }
 function profileTax(p){
   var t = p.tax;
@@ -289,7 +294,7 @@ function rows(){
 }
 function drawBars(){
   var box = $("bars"), W = Math.max(280, box.clientWidth), R = rows();
-  var cpi = D.cpi.now;
+  var cpi = cpiAt(S.price);
   var narrow = W < 520, labW = narrow ? 0 : 190, rowH = narrow ? 50 : 34, top = 22, valW = 48;
   var maxV = Math.max(10, Math.ceil(Math.max.apply(null, R.map(function(r){ return r.share; }).concat([cpi])) / 2) * 2);
   var x0 = labW, x1 = W - valW, H = top + R.length * rowH + 4;
@@ -327,13 +332,13 @@ function drawBars(){
     el("line", {x1: sx(cpi), x2: sx(cpi), y1: y - 4, y2: y + 18, "class": "ref"}, svg);
   });
   $("barLegend").innerHTML = "<span><b style='color:var(--s1)'>Bars</b>: gas spending ÷ after-tax income</span>" +
-    "<span><b>Line</b>: CPI gasoline weight at today's price, " + pct(cpi) + " (our estimate from the BLS weight for " + D.cpi.monthLabel + ", " + pct(D.cpi.monthRi) + ")</span>";
+    "<span><b>Line</b>: CPI gasoline weight at $" + S.price.toFixed(2) + ", " + pct(cpi) + " (our estimate from the BLS weight for " + D.cpi.monthLabel + ", " + pct(D.cpi.monthRi) + ")</span>";
 }
 
 /* ---------- line chart: share by price, selected ---------- */
 function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
   var W = Math.max(260, box.clientWidth), H = 150, l = 34, r = 10, t = 10, b = 24;
-  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, D.cpi.now) / 2) * 2);
+  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, cpiAt(pMax)) / 2) * 2);
   var sx = function(p){ return l + (W - l - r) * (p - pMin) / (pMax - pMin); };
   var sy = function(v){ return t + (H - t - b) * (1 - v / maxV); };
   box.innerHTML = "";
@@ -344,10 +349,10 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
     el("text", {x: l - 6, y: sy(v) + 4, "text-anchor": "end", "class": "tick"}, svg).textContent = v + "%";
   }
   for (var p = pMin; p <= pMax; p++) el("text", {x: sx(p), y: H - 6, "text-anchor": "middle", "class": "tick"}, svg).textContent = "$" + p;
-  var a = [];
-  for (var q = pMin; q <= pMax + 1e-9; q += 0.05) a.push(sx(q).toFixed(1) + "," + sy(100 * costPerDollar * q / afterTaxInc).toFixed(1));
+  var a = [], c = [];
+  for (var q = pMin; q <= pMax + 1e-9; q += 0.05){ a.push(sx(q).toFixed(1) + "," + sy(100 * costPerDollar * q / afterTaxInc).toFixed(1)); c.push(sx(q).toFixed(1) + "," + sy(cpiAt(q)).toFixed(1)); }
   el("line", {x1: sx(S.price), x2: sx(S.price), y1: t, y2: H - b, "class": "now"}, svg);
-  el("line", {x1: l, x2: W - r, y1: sy(D.cpi.now), y2: sy(D.cpi.now), "class": "ln cpi"}, svg);
+  el("polyline", {points: c.join(" "), "class": "ln cpi"}, svg);
   var ln = el("polyline", {points: a.join(" "), "class": "ln s1"}, svg);
   if (isYou) ln.style.stroke = "var(--s2)";
   var dot = el("circle", {cx: sx(S.price), cy: sy(100 * costPerDollar * S.price / afterTaxInc), r: 4.5, "class": "dot"}, svg);
@@ -359,7 +364,7 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
     var q = Math.min(pMax, Math.max(pMin, pMin + (px - l) / (W - l - r) * (pMax - pMin)));
     cross.setAttribute("x1", sx(q)); cross.setAttribute("x2", sx(q)); cross.setAttribute("visibility", "visible");
     showTip("<div><b>Gas at $" + q.toFixed(2) + "</b></div><div class='v'>" + pct(100 * costPerDollar * q / afterTaxInc) + " of after-tax income</div>" +
-            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI gasoline weight at today's price: " + pct(D.cpi.now) + "</div>", e);
+            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI gasoline weight at this price: " + pct(cpiAt(q)) + "</div>", e);
   });
   hit.addEventListener("mouseleave", function(){ cross.setAttribute("visibility", "hidden"); hideTip(); });
 }
@@ -384,7 +389,7 @@ function drawDetail(){
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
     "<p class='note'>The chart below shows this household's share at every gas price from $2 to $7.</p>" +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
-    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at today's price, " + pct(D.cpi.now) + "</span></div>" +
+    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at each price</span></div>" +
     "<div id='line'></div>";
   drawLine($("line"), costPerDollar, at, name, isYou);
 }
@@ -417,7 +422,7 @@ function drawCustom(){
   $("cOut").innerHTML = "<div class='big'>" + pct(y.share) + " <small>of your after-tax income</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(y.cost) + "</b><span>Gas a month</span><b>" + money(y.cost / 12) + "</b>" +
     "<span>Estimated after-tax income</span><b>" + money(y.t.afterTax) + "</b></div>" +
-    "<p class='note'>At today's price, gasoline is about " + pct(D.cpi.now) + " of consumer spending in the CPI. Your share of income is " + pct(y.share) + ".</p>" +
+    "<p class='note'>At $" + S.price.toFixed(2) + " a gallon, gasoline would be about " + pct(cpiAt(S.price)) + " of consumer spending in the CPI. Your share of income is " + pct(y.share) + ".</p>" +
     "<p class='note'>" + pctileBelow(y.income) + " U.S. households had a lower pre-tax income than this in 2025.</p>" +
     "<p class='note'>Household: " + esc(y.hhLabel) + ". Federal income tax and payroll tax only; state and local taxes would lower your after-tax income a little and raise your share.</p>";
 }
@@ -431,7 +436,7 @@ function drawTable(){
     var miles = p ? p.miles : S.you.miles, at = p ? p.t.afterTax : S.you.t.afterTax;
     return "<tr><td>" + esc(r.name) + "</td><td>" + Math.round(miles).toLocaleString("en-US") + "</td><td>" + money(r.cost) +
            "</td><td>" + money(at) + "</td><td>" + pct(r.share) + "</td></tr>";
-  }).join("") + "<tr><td>CPI gasoline weight at today's price (estimate)</td><td></td><td></td><td></td><td>" + pct(D.cpi.now) + "</td></tr>";
+  }).join("") + "<tr><td>CPI gasoline weight at $" + S.price.toFixed(2) + " (estimate)</td><td></td><td></td><td></td><td>" + pct(cpiAt(S.price)) + "</td></tr>";
 }
 
 /* ---------- wiring ---------- */
@@ -473,7 +478,7 @@ if (window.ResizeObserver) new ResizeObserver(function(){ var w = root.clientWid
 /* test hook: build.py reads these to check the page agrees with src/model.py */
 window.__gcCheck = function(prices){
   return prices.map(function(pr){
-    return {price: pr, profiles: D.profiles.map(function(p){
+    return {price: pr, cpi: cpiAt(pr), profiles: D.profiles.map(function(p){
       return {id: p.id, afterTax: p.t.afterTax, share: 100 * p.gal * pr / p.t.afterTax};
     })};
   });

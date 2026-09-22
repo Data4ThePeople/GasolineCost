@@ -24,8 +24,9 @@ in this project; "not verified" means we are repeating the publisher or have not
    2026, 3.77% (figure from Eric; our rebuild from the December table gives 3.770%, and
    the build fails if they differ by 0.005 or more). We move it to today's price with the
    EIA pump price change since July ($3.932 to $4.478) and the change in all other CPI
-   prices since July (+0.23% through August). Result 4.261%, shown as 4.3%. It is fixed at
-   today's price and does not move with the tool's price slider. Decided September 22.
+   prices since July (+0.23% through August). Result 4.261%, shown as 4.3%. The same
+   formula moves the weight with the tool's price slider ($3: 2.9%, $5: 4.7%, $7: 6.5%),
+   so every comparison is at the same price. Decided September 22.
 6. **October 2025 CPI was never published** (federal shutdown). We do not use that month.
 
 ---

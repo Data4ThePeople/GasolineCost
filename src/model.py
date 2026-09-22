@@ -72,38 +72,20 @@ def month_avg(prefix):
     return sum(v) / len(v)
 
 
-def cpi_weight_model(ri_dec):
-    """Carry the December 2025 gasoline weight to any gas price.
-
-    Relative importance moves with relative prices: RI_t = w0*g / (w0*g + (100-w0)*r),
-    where g is the gasoline price relative to December 2025 and r is the price
-    relative for everything else. r comes from the latest CPI month, holding
-    non-gasoline prices where they are now. g at a pump price P is P divided by
-    the December 2025 EIA average. This is our estimate, not a BLS figure.
-    """
-    months = [m for m, v in CPI['all_items'].items() if v is not None]
-    latest = months[-1]
-    a = CPI['all_items'][latest] / CPI['all_items']['2025-12']
-    g_t = CPI['gasoline_all_types'][latest] / CPI['gasoline_all_types']['2025-12']
-    r = (100 * a - ri_dec * g_t) / (100 - ri_dec)
-    return dict(w0=ri_dec, r=r, p_dec=month_avg('2025-12'), latest_cpi_month=latest,
-                ri_latest_month=100 * ri_dec * g_t / (ri_dec * g_t + (100 - ri_dec) * r))
-
-
 # Latest monthly relative importance BLS has published for gasoline (all types),
 # per Eric: July 2026, 3.77%. We rebuild it from the December 2025 table and the
 # CPI-U indexes, and the build fails if the two disagree.
 RI_LATEST_MONTH, RI_LATEST_PUBLISHED = '2026-07', 3.77
 
 
-def cpi_weight_today(ri_dec, price):
-    """The CPI gasoline weight at today's pump price.
+def cpi_weight_basis(ri_dec):
+    """What the CPI gasoline weight needs to be computed at any pump price.
 
-    Step 1: carry December 2025 to RI_LATEST_MONTH with the CPI-U indexes
-    (the way BLS updates relative importance between weight years) and check it
-    against the published figure. Step 2: carry that to today's price with the
-    EIA pump price change since that month, and the change in all other prices
-    since that month from the newest CPI-U release. This is our estimate.
+    Step 1: carry December 2025 to RI_LATEST_MONTH with the CPI-U indexes (the way
+    BLS updates relative importance between weight years) and check it against the
+    published figure. Step 2: r = the change in all other CPI prices since that
+    month, from the newest CPI-U release. cpi_weight_at() then moves the weight to
+    any pump price, measured against that month's EIA average. Our estimate.
     """
     G, A = CPI['gasoline_all_types'], CPI['all_items']
     m0 = RI_LATEST_MONTH
@@ -112,15 +94,13 @@ def cpi_weight_today(ri_dec, price):
     latest = [k for k, v in A.items() if v is not None][-1]
     a, g_cpi = A[latest] / A[m0], G[latest] / G[m0]
     r = (100 * a - ri0 * g_cpi) / (100 - ri0)          # everything except gasoline, since m0
-    p0 = month_avg(m0)
-    g = price / p0
-    now = 100 * ri0 * g / (ri0 * g + (100 - ri0) * r)
-    return dict(dec=ri_dec, month=m0, month_ri=ri0, month_price=p0, r=r, other_prices_through=latest, now=now)
+    return dict(dec=ri_dec, month=m0, month_ri=ri0, month_price=month_avg(m0), r=r, other_prices_through=latest)
 
 
-def cpi_weight_at(price, m):
-    g = price / m['p_dec']
-    return 100 * m['w0'] * g / (m['w0'] * g + (100 - m['w0']) * m['r'])
+def cpi_weight_at(price, b):
+    """CPI gasoline weight (percent) at pump price `price`: RI = w*g / (w*g + (100-w)*r)."""
+    g = price / b['month_price']
+    return 100 * b['month_ri'] * g / (b['month_ri'] * g + (100 - b['month_ri']) * b['r'])
 
 
 def v(cell, mpg, label):
@@ -163,10 +143,10 @@ def gas_cost(cars, price):
 
 def main():
     ri = ri_from_xlsx()
-    wm = cpi_weight_model(ri['Gasoline (all types)'])
     price_date, price = GAS[-1]
-    cw = cpi_weight_today(ri['Gasoline (all types)'], price)
-    out = dict(price=price, price_date=price_date, ri=ri, weight_model=wm, cpi=cw,
+    cw = cpi_weight_basis(ri['Gasoline (all types)'])
+    cw['now'] = cpi_weight_at(price, cw)
+    out = dict(price=price, price_date=price_date, ri=ri, cpi=cw,
                cpi_weight_now=cw['now'], profiles=[])
     print(f"Gas ${price} ({price_date}). CPI gasoline weight: Dec 2025 {ri['Gasoline (all types)']}%, "
           f"{cw['month']} {cw['month_ri']:.3f}% (rebuilt; published {RI_LATEST_PUBLISHED}%), "

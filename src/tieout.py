@@ -20,17 +20,18 @@ def eia_year_avg(year):
 def main():
     m = json.loads((PROCESSED / 'model.json').read_text())
     nhts = json.loads((PROCESSED / 'nhts_miles.json').read_text())
-    wm, price = m['weight_model'], m['price']
+    price = m['price']
 
     out('# Tie-out'); out()
     out(f"Gas price: ${price:.3f}, week of {m['price_date']} (EIA). Shown as ${price:.2f}.")
-    out(f"December 2025 EIA average: ${wm['p_dec']:.4f}")
     out(f"CPI gasoline relative importance, Dec 2025: {m['ri']['Gasoline (all types)']}% (motor fuel {m['ri']['Motor fuel']}%)")
     cw = m['cpi']
     out(f"CPI gasoline weight, {cw['month']}, rebuilt from December: {cw['month_ri']:.3f}% (BLS published {model.RI_LATEST_PUBLISHED}%)")
     out(f"EIA average pump price, {cw['month']}: ${cw['month_price']:.4f}; today ${price:.3f} ({100*(price/cw['month_price']-1):+.1f}%)")
     out(f"All other CPI prices, {cw['month']} to {cw['other_prices_through']}: {100*(cw['r']-1):+.2f}%")
-    out(f"CPI gasoline weight at today's price (est.), shown in the tool and charts: {cw['now']:.3f}% -> {cw['now']:.1f}%")
+    out(f"CPI gasoline weight at today's price (est.): {cw['now']:.3f}% -> {cw['now']:.1f}%")
+    for p in (3.00, 4.00, 5.00, 6.00, 7.00):
+        out(f"  at ${p:.2f}: {model.cpi_weight_at(p, cw):.2f}%")
     out()
 
     out('## Profiles at today\'s price'); out()

@@ -31,7 +31,7 @@ def data():
                 for p in m['profiles']]
     ids = [p['id'] for p in profiles]
     assert len(ids) == len(set(ids)), 'duplicate profile id'
-    return m, dict(price=m['price'], price_date=m['price_date'], cpi=dict(now=m['cpi']['now'], monthRi=m['cpi']['month_ri'], monthLabel=f"{MONTHS[int(m['cpi']['month'][5:]) - 1]} {m['cpi']['month'][:4]}"),
+    return m, dict(price=m['price'], price_date=m['price_date'], cpi=dict(now=m['cpi']['now'], monthRi=m['cpi']['month_ri'], monthPrice=m['cpi']['month_price'], r=m['cpi']['r'], monthLabel=f"{MONTHS[int(m['cpi']['month'][5:]) - 1]} {m['cpi']['month'][:4]}"),
                    tax=tax_params, profiles=profiles, pctl=model.INC_PCTL, built=long_date(date.today()))
 
 
@@ -75,6 +75,7 @@ def check_in_chrome(html, m, name):
     got = json.loads(re.search(r'data-check="([^"]*)"', dom).group(1).replace('&quot;', '"'))
     worst = 0.0
     for g in got:
+        assert abs(g['cpi'] - model.cpi_weight_at(g['price'], m['cpi'])) < 1e-9, 'CPI weight mismatch'
         for pj, pp in zip(g['profiles'], m['profiles']):
             assert pj['id'] == pp['id']
             share_py = 100 * model.gas_cost(pp['cars'], g['price']) / pp['after_tax']
