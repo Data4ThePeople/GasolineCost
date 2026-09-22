@@ -1,0 +1,97 @@
+{
+ "k": 1.0708,
+ "fhwa_miles_per_hh_vehicle": 10375.3,
+ "nhts_clean100_miles_per_hh_vehicle": 9689.2,
+ "cells": {
+  "all_ldv": {
+   "n": 13467,
+   "nhts_mean": 10003.4,
+   "se": 189.8,
+   "scaled": 10712,
+   "scaled_moe95": 398,
+   "pickup_share": 0.1695,
+   "usable": true
+  },
+  "veh1": {
+   "n": 2489,
+   "nhts_mean": 11381.9,
+   "se": 498.9,
+   "scaled": 12188,
+   "scaled_moe95": 1047,
+   "pickup_share": 0.0862,
+   "usable": true
+  },
+  "veh2": {
+   "n": 6048,
+   "nhts_mean": 10358.6,
+   "se": 279.5,
+   "scaled": 11092,
+   "scaled_moe95": 587,
+   "pickup_share": 0.1626,
+   "usable": true
+  },
+  "veh3": {
+   "n": 2864,
+   "nhts_mean": 9332.4,
+   "se": 376.0,
+   "scaled": 9993,
+   "scaled_moe95": 789,
+   "pickup_share": 0.2005,
+   "usable": true
+  },
+  "young_single_veh1": {
+   "n": 239,
+   "nhts_mean": 15768.8,
+   "se": 2137.5,
+   "scaled": 16885,
+   "scaled_moe95": 4486,
+   "pickup_share": 0.041,
+   "usable": false
+  },
+  "rural_veh2": {
+   "n": 1241,
+   "nhts_mean": 11003.2,
+   "se": 671.7,
+   "scaled": 11782,
+   "scaled_moe95": 1410,
+   "pickup_share": 0.2948,
+   "usable": true
+  },
+  "inc25_50_veh2": {
+   "n": 871,
+   "nhts_mean": 9103.5,
+   "se": 792.9,
+   "scaled": 9748,
+   "scaled_moe95": 1664,
+   "pickup_share": 0.1918,
+   "usable": true
+  },
+  "inc100_150_veh3": {
+   "n": 757,
+   "nhts_mean": 10063.8,
+   "se": 731.5,
+   "scaled": 10776,
+   "scaled_moe95": 1535,
+   "pickup_share": 0.2091,
+   "usable": true
+  },
+  "all65_veh1": {
+   "n": 867,
+   "nhts_mean": 8337.2,
+   "se": 762.8,
+   "scaled": 8928,
+   "scaled_moe95": 1601,
+   "pickup_share": 0.0715,
+   "usable": true
+  },
+  "all65_veh2": {
+   "n": 1628,
+   "nhts_mean": 7651.4,
+   "se": 585.4,
+   "scaled": 8193,
+   "scaled_moe95": 1229,
+   "pickup_share": 0.2238,
+   "usable": true
+  }
+ }
+}

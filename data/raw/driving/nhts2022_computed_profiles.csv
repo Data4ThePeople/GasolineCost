@@ -1,0 +1,199 @@
+section,group,measure,mean,se,moe95,median,n_unweighted,weighted_total
+vehicle_raw,All household vehicles,annual miles per vehicle,13968.4476,408.0179,799.715,6667.0,14471,228967653
+vehicle_raw,Light-duty (car/van/SUV/pickup),annual miles per vehicle,14355.6698,416.6662,816.6657,7000.0,13805,218855402
+vehicle_raw,Car,annual miles per vehicle,14793.5491,611.4924,1198.5251,6000.0,6294,102151593
+vehicle_raw,Van,annual miles per vehicle,15107.9317,1668.2004,3269.6729,7500.0,651,10780492
+vehicle_raw,SUV,annual miles per vehicle,14246.5694,604.6617,1185.1369,8000.0,4502,69124762
+vehicle_raw,Pickup,annual miles per vehicle,13124.6902,745.061,1460.3195,6000.0,2358,36798555
+vehicle_raw,Urban,annual miles per light-duty vehicle,14566.3968,500.2117,980.4149,7000.0,10468,168117674
+vehicle_raw,Rural,annual miles per light-duty vehicle,13657.4333,690.7513,1353.8726,7800.0,3337,50737728
+household_raw,All households (incl. 0-vehicle),household annual vehicle miles,25274.2279,737.4042,1445.3122,12000.0,7775,125260735
+household_raw,Vehicle-owning households,household annual vehicle miles,27637.8598,792.5429,1553.384,13900.0,7299,114548246
+household_raw,HHVEHCNT=1,household annual vehicle miles,18340.3255,1059.159,2075.9517,7500.0,2595,41712363
+household_raw,HHVEHCNT=2,household annual vehicle miles,30231.0843,1276.7932,2502.5147,16000.0,3145,47385481
+household_raw,HHVEHCNT=3,household annual vehicle miles,35894.9557,2447.1065,4796.3288,22000.0,1023,16478989
+household_raw,HHVEHCNT=4+,household annual vehicle miles,42002.6362,3270.2467,6409.6836,28000.0,536,8971414
+household_raw,"Urban, all households",household annual vehicle miles,24374.2546,845.6538,1657.4815,11000.0,6214,101122191
+household_raw,"Urban, vehicle-owning",household annual vehicle miles,27054.4592,921.4693,1806.0798,12500.0,5768,91104317
+household_raw,"Rural, all households",household annual vehicle miles,29044.4333,1446.85,2835.8259,17000.0,1561,24138544
+household_raw,"Rural, vehicle-owning",household annual vehicle miles,29904.9847,1476.6843,2894.3012,17000.0,1531,23443929
+household_raw,"Income <$25k, all households",household annual vehicle miles,22239.3187,2287.9863,4484.4532,2000.0,1004,21028791
+household_raw,"Income <$25k, vehicle-owning",household annual vehicle miles,32220.1592,3153.6759,6181.2047,6500.0,753,14514701
+household_raw,"Income $25-50k, all households",household annual vehicle miles,22204.6287,1713.2554,3357.9806,9000.0,1367,23170940
+household_raw,"Income $25-50k, vehicle-owning",household annual vehicle miles,24161.7726,1840.4546,3607.2911,10000.0,1279,21294055
+household_raw,"Income $50-100k, all households",household annual vehicle miles,26600.1288,1353.0879,2652.0523,13000.0,2503,37647133
+household_raw,"Income $50-100k, vehicle-owning",household annual vehicle miles,27356.6577,1386.2478,2717.0457,14000.0,2440,36606028
+household_raw,"Income $100-150k, all households",household annual vehicle miles,26927.2626,1556.1997,3050.1514,16200.0,1506,20822436
+household_raw,"Income $100-150k, vehicle-owning",household annual vehicle miles,27712.8185,1593.7316,3123.714,17000.0,1468,20232197
+household_raw,"Income $150k+, all households",household annual vehicle miles,27514.4304,1402.3171,2748.5415,18000.0,1395,22591436
+household_raw,"Income $150k+, vehicle-owning",household annual vehicle miles,28381.4882,1434.1181,2810.8714,18500.0,1359,21901264
+household_raw,"Income <$10k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,45706.1938,7900.7139,15485.3992,7000.0,188,4114842
+household_raw,"Income $10-15k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,24267.0383,4559.3291,8936.2851,6000.0,169,3177510
+household_raw,"Income $15-25k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,28035.6775,3811.27,7470.0893,6500.0,396,7222349
+household_raw,"Income $25-35k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,26021.5324,3423.3974,6709.859,10000.0,505,8816476
+household_raw,"Income $35-50k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,22847.6935,1995.3694,3910.924,10000.0,774,12477579
+household_raw,"Income $50-75k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,27781.9514,2039.13,3996.6947,12600.0,1350,20364782
+household_raw,"Income $75-100k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,26823.385,1795.7368,3519.6442,15000.0,1090,16241246
+household_raw,"Income $100-125k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,28872.5614,2377.7739,4660.4369,16036.0,869,11968093
+household_raw,"Income $125-150k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,26033.2763,1827.7536,3582.3971,18000.0,599,8264104
+household_raw,"Income $150-200k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,28475.5196,1805.8591,3539.4838,19000.0,575,9524580
+household_raw,"Income $200k+ (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,28309.1256,2114.4767,4144.3743,18000.0,784,12376685
+household_raw,"Primary respondent (PERSONID 01) 65+, all households",household annual vehicle miles,16079.6037,1038.2012,2034.8744,8150.0,2530,33805849
+household_raw,"Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,17335.4501,1108.1324,2171.9395,9900.0,2413,31356824
+household_raw,"NOT Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,31521.083,999.101,1958.238,16000.0,4886,83191422
+household_raw,"All person-file members 65+, all households",household annual vehicle miles,14049.3462,878.8453,1722.5368,7200.0,2069,26799543
+household_raw,"All person-file members 65+, vehicle-owning",household annual vehicle miles,15316.9685,943.689,1849.6305,8000.0,1960,24581631
+household_raw,"NOT All person-file members 65+, vehicle-owning",household annual vehicle miles,31004.3042,966.6605,1894.6547,15700.0,5339,89966615
+vehicle_clean100,All household vehicles,annual miles per vehicle,9689.1616,186.2275,365.0059,6000.0,14125,222549584
+vehicle_clean100,Light-duty (car/van/SUV/pickup),annual miles per vehicle,10003.3543,189.7721,371.9533,7000.0,13467,212590045
+vehicle_clean100,Car,annual miles per vehicle,9695.1716,275.1878,539.368,6000.0,6114,98666957
+vehicle_clean100,Van,annual miles per vehicle,10583.4337,910.1658,1783.9249,7000.0,634,10448539
+vehicle_clean100,SUV,annual miles per vehicle,10475.2151,267.4217,524.1465,8000.0,4410,67444409
+vehicle_clean100,Pickup,annual miles per vehicle,9795.8083,388.4588,761.3793,6000.0,2309,36030140
+vehicle_clean100,Urban,annual miles per light-duty vehicle,9791.9161,211.7673,415.0639,6500.0,10201,162854515
+vehicle_clean100,Rural,annual miles per light-duty vehicle,10695.6896,421.181,825.5148,7200.0,3266,49735530
+household_clean100,All households (incl. 0-vehicle),household annual vehicle miles,17227.1188,351.4029,688.7498,11200.0,7501,120089305
+household_clean100,Vehicle-owning households,household annual vehicle miles,18914.3624,371.9111,728.9458,12634.0,7025,109376816
+household_clean100,HHVEHCNT=1,household annual vehicle miles,11482.5864,505.9724,991.7059,7000.0,2500,39917418
+household_clean100,HHVEHCNT=2,household annual vehicle miles,19977.1555,542.5228,1063.3447,15500.0,3017,44853001
+household_clean100,HHVEHCNT=3,household annual vehicle miles,26402.2109,1061.9392,2081.4007,21000.0,989,15857765
+household_clean100,HHVEHCNT=4+,household annual vehicle miles,33802.0965,1759.4476,3448.5174,27156.0,519,8748632
+household_clean100,"Urban, all households",household annual vehicle miles,16014.5157,376.4611,737.8637,10000.0,5995,96780700
+household_clean100,"Urban, vehicle-owning",household annual vehicle miles,17863.5957,402.8344,789.5554,12000.0,5549,86762826
+household_clean100,"Rural, all households",household annual vehicle miles,22262.0223,897.0862,1758.2889,16000.0,1506,23308605
+household_clean100,"Rural, vehicle-owning",household annual vehicle miles,22945.8265,910.8648,1785.295,16800.0,1476,22613990
+household_clean100,"Income <$25k, all households",household annual vehicle miles,9459.4675,978.5226,1917.9044,1360.0,948,19649054
+household_clean100,"Income <$25k, vehicle-owning",household annual vehicle miles,14150.7493,1391.3141,2726.9757,5300.0,697,13134964
+household_clean100,"Income $25-50k, all households",household annual vehicle miles,14227.9837,800.3921,1568.7686,8600.0,1319,22274024
+household_clean100,"Income $25-50k, vehicle-owning",household annual vehicle miles,15537.2009,851.1803,1668.3133,10000.0,1231,20397140
+household_clean100,"Income $50-100k, all households",household annual vehicle miles,18752.9703,674.0406,1321.1197,12200.0,2417,36125151
+household_clean100,"Income $50-100k, vehicle-owning",household annual vehicle miles,19309.457,688.5967,1349.6496,13000.0,2354,35084046
+household_clean100,"Income $100-150k, all households",household annual vehicle miles,19774.6226,651.0488,1276.0557,16000.0,1462,20099732
+household_clean100,"Income $100-150k, vehicle-owning",household annual vehicle miles,20372.8828,659.732,1293.0747,16180.0,1424,19509493
+household_clean100,"Income $150k+, all households",household annual vehicle miles,22381.9561,735.4614,1441.5043,18000.0,1355,21941344
+household_clean100,"Income $150k+, vehicle-owning",household annual vehicle miles,23108.8514,743.2143,1456.7001,18000.0,1319,21251173
+household_clean100,"Income <$10k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,10152.6521,1875.193,3675.3783,4000.0,163,3342710
+household_clean100,"Income $10-15k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,15162.251,3065.325,6008.0369,6000.0,159,3003992
+household_clean100,"Income $15-25k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,15671.8952,2130.024,4174.8471,6000.0,375,6788262
+household_clean100,"Income $25-35k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,15160.8939,1270.5537,2490.2853,9000.0,483,8363932
+household_clean100,"Income $35-50k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,15798.7609,1141.9266,2238.1761,10000.0,748,12033208
+household_clean100,"Income $50-75k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,18637.742,990.0185,1940.4363,12000.0,1295,19394066
+household_clean100,"Income $75-100k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,20139.7504,929.6847,1822.182,14600.0,1059,15689980
+household_clean100,"Income $100-125k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,19364.8108,830.8065,1628.3808,15010.0,841,11447131
+household_clean100,"Income $125-150k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,21804.1672,1070.3489,2097.8838,17500.0,583,8062362
+household_clean100,"Income $150-200k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,23897.0687,1265.7128,2480.7971,18500.0,555,9290811
+household_clean100,"Income $200k+ (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,22496.564,870.29,1705.7683,18000.0,764,11960361
+household_clean100,"Primary respondent (PERSONID 01) 65+, all households",household annual vehicle miles,12102.9528,502.1633,984.2401,8000.0,2486,33120170
+household_clean100,"Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,13069.3477,529.0082,1036.8561,9273.0,2369,30671145
+household_clean100,"NOT Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,21192.1308,466.8796,915.084,15000.0,4656,78705671
+household_clean100,"All person-file members 65+, all households",household annual vehicle miles,11113.3832,596.504,1169.1478,7000.0,2032,26318940
+household_clean100,"All person-file members 65+, vehicle-owning",household annual vehicle miles,12136.0995,637.126,1248.767,8000.0,1923,24101028
+household_clean100,"NOT All person-file members 65+, vehicle-owning",household annual vehicle miles,20830.0656,436.2311,855.0129,15000.0,5102,85275788
+vehicle_clean50,All household vehicles,annual miles per vehicle,8072.7941,112.4509,220.4038,6000.0,13843,217392022
+vehicle_clean50,Light-duty (car/van/SUV/pickup),annual miles per vehicle,8345.3395,112.9193,221.3219,6000.0,13189,207518531
+vehicle_clean50,Car,annual miles per vehicle,7887.9366,154.0248,301.8886,6000.0,5988,96194855
+vehicle_clean50,Van,annual miles per vehicle,8727.4381,520.456,1020.0937,6500.0,623,10170889
+vehicle_clean50,SUV,annual miles per vehicle,8949.5256,159.8346,313.2759,8000.0,4315,65879189
+vehicle_clean50,Pickup,annual miles per vehicle,8354.1349,259.2047,508.0411,6000.0,2263,35273598
+vehicle_clean50,Urban,annual miles per light-duty vehicle,8153.11,125.764,246.4973,6000.0,9993,159026548
+vehicle_clean50,Rural,annual miles per light-duty vehicle,8975.7448,251.3843,492.7133,7000.0,3196,48491983
+household_clean50,All households (incl. 0-vehicle),household annual vehicle miles,14375.1943,229.2661,449.3616,10600.0,7282,116012650
+household_clean50,Vehicle-owning households,household annual vehicle miles,15837.6243,237.2833,465.0753,12000.0,6806,105300161
+household_clean50,HHVEHCNT=1,household annual vehicle miles,8470.7008,225.6611,442.2958,6500.0,2421,38226355
+household_clean50,HHVEHCNT=2,household annual vehicle miles,17114.896,313.7868,615.0221,15000.0,2922,43356874
+household_clean50,HHVEHCNT=3,household annual vehicle miles,22913.077,668.4118,1310.0871,20500.0,957,15372409
+household_clean50,HHVEHCNT=4+,household annual vehicle miles,29914.5686,1348.6586,2643.3708,25733.0,506,8344523
+household_clean50,"Urban, all households",household annual vehicle miles,13355.8668,249.086,488.2085,10000.0,5828,93646136
+household_clean50,"Urban, vehicle-owning",household annual vehicle miles,14955.7732,260.6163,510.8079,11500.0,5382,83628262
+household_clean50,"Rural, all households",household annual vehicle miles,18643.0067,550.5761,1079.1291,15000.0,1454,22366514
+household_clean50,"Rural, vehicle-owning",household annual vehicle miles,19240.5416,551.3752,1080.6954,16000.0,1424,21671899
+household_clean50,"Income <$25k, all households",household annual vehicle miles,5672.0936,429.7375,842.2856,1000.0,914,18840211
+household_clean50,"Income <$25k, vehicle-owning",household annual vehicle miles,8669.6729,598.9417,1173.9258,5000.0,663,12326122
+household_clean50,"Income $25-50k, all households",household annual vehicle miles,11053.2958,474.468,929.9572,8000.0,1274,21308343
+household_clean50,"Income $25-50k, vehicle-owning",household annual vehicle miles,12120.9338,497.583,975.2626,9000.0,1186,19431458
+household_clean50,"Income $50-100k, all households",household annual vehicle miles,15614.3795,431.7614,846.2523,12000.0,2340,34866676
+household_clean50,"Income $50-100k, vehicle-owning",household annual vehicle miles,16094.9687,438.9217,860.2865,12000.0,2277,33825571
+household_clean50,"Income $100-150k, all households",household annual vehicle miles,18100.5456,491.2226,962.7962,15200.0,1434,19703749
+household_clean50,"Income $100-150k, vehicle-owning",household annual vehicle miles,18659.5035,493.968,968.1772,16000.0,1396,19113510
+household_clean50,"Income $150k+, all households",household annual vehicle miles,19923.4512,528.8824,1036.6095,17500.0,1320,21293671
+household_clean50,"Income $150k+, vehicle-owning",household annual vehicle miles,20590.8421,527.3857,1033.676,18000.0,1284,20603500
+household_clean50,"Income <$10k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,7142.6131,954.4337,1870.6901,3500.0,155,3228403
+household_clean50,"Income $10-15k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,8398.7463,1005.436,1970.6545,5000.0,151,2753173
+household_clean50,"Income $15-25k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,9564.2794,962.0978,1885.7116,5000.0,357,6344546
+household_clean50,"Income $25-35k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,11763.1571,780.5295,1529.8378,8000.0,463,7934266
+household_clean50,"Income $35-50k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,12367.8371,645.747,1265.6641,10000.0,723,11497192
+household_clean50,"Income $50-75k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,15071.838,532.3798,1043.4644,12000.0,1257,18741878
+household_clean50,"Income $75-100k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,17366.2348,722.9328,1416.9484,14000.0,1020,15083694
+household_clean50,"Income $100-125k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,17476.4653,626.3622,1227.6699,15000.0,822,11184126
+household_clean50,"Income $125-150k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,20328.1384,794.8586,1557.9228,17091.0,574,7929385
+household_clean50,"Income $150-200k (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,20667.7961,797.9956,1564.0713,18000.0,539,8953618
+household_clean50,"Income $200k+ (HHFAMINC_IMP), vehicle-owning",household annual vehicle miles,20531.6985,699.1595,1370.3526,18000.0,745,11649881
+household_clean50,"Primary respondent (PERSONID 01) 65+, all households",household annual vehicle miles,10395.3698,265.8024,520.9727,8000.0,2440,32436681
+household_clean50,"Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,11244.3366,269.6515,528.517,9000.0,2323,29987656
+household_clean50,"NOT Primary respondent (PERSONID 01) 65+, vehicle-owning",household annual vehicle miles,17666.5628,306.0774,599.9117,14000.0,4483,75312505
+household_clean50,"All person-file members 65+, all households",household annual vehicle miles,9295.8734,274.7509,538.5118,7000.0,1997,25760925
+household_clean50,"All person-file members 65+, vehicle-owning",household annual vehicle miles,10171.6082,280.9818,550.7244,8000.0,1888,23543012
+household_clean50,"NOT All person-file members 65+, vehicle-owning",household annual vehicle miles,17469.2258,287.127,562.769,14000.0,4918,81757149
+fleet,All,share pickup (of all HH vehicles),0.1605,0.0037,0.0073,,14684,232837104
+fleet,All,share SUV (of all HH vehicles),0.3016,0.0052,0.0101,,14684,232837104
+fleet,All,share pickup+SUV (of all HH vehicles),0.4622,0.0056,0.011,,14684,232837104
+fleet,All,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9471,0.0031,0.0061,,14684,232837104
+fleet,All,"vehicle age, light-duty (VEHAGE)",10.1443,0.1184,0.232,8.0,14008,222501746
+fleet,All,"model year, light-duty (VEHYEAR)",2011.8939,0.1189,0.2331,2014.0,14008,222501746
+fleet,All,vehicles per household (HHVEHCNT),1.8255,0.0182,0.0357,2.0,7893,127544707
+fleet,Urban,share pickup (of all HH vehicles),0.1243,0.0039,0.0077,,11084,178145774
+fleet,Urban,share SUV (of all HH vehicles),0.3081,0.0059,0.0116,,11084,178145774
+fleet,Urban,share pickup+SUV (of all HH vehicles),0.4324,0.0064,0.0126,,11084,178145774
+fleet,Urban,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9408,0.0038,0.0075,,11084,178145774
+fleet,Urban,"vehicle age, light-duty (VEHAGE)",9.7285,0.1055,0.2067,8.0,10625,170931515
+fleet,Urban,"model year, light-duty (VEHYEAR)",2012.3122,0.1062,0.2081,2014.0,10625,170931515
+fleet,Urban,vehicles per household (HHVEHCNT),1.7309,0.0198,0.0388,2.0,6306,102919310
+fleet,Rural,share pickup (of all HH vehicles),0.2785,0.008,0.0158,,3600,54691330
+fleet,Rural,share SUV (of all HH vehicles),0.2805,0.0105,0.0205,,3600,54691330
+fleet,Rural,share pickup+SUV (of all HH vehicles),0.559,0.0113,0.0221,,3600,54691330
+fleet,Rural,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9677,0.0047,0.0092,,3600,54691330
+fleet,Rural,"vehicle age, light-duty (VEHAGE)",11.5227,0.3565,0.6988,9.0,3383,51570230
+fleet,Rural,"model year, light-duty (VEHYEAR)",2010.5077,0.3575,0.7008,2013.0,3383,51570230
+fleet,Rural,vehicles per household (HHVEHCNT),2.2209,0.0442,0.0866,2.0,1587,24625397
+fleet,Income <$25k,share pickup (of all HH vehicles),0.1496,0.0133,0.0261,,1108,21331750
+fleet,Income <$25k,share SUV (of all HH vehicles),0.1866,0.0159,0.0311,,1108,21331750
+fleet,Income <$25k,share pickup+SUV (of all HH vehicles),0.3362,0.019,0.0373,,1108,21331750
+fleet,Income <$25k,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9516,0.0208,0.0408,,1108,21331750
+fleet,Income <$25k,"vehicle age, light-duty (VEHAGE)",14.1128,0.3355,0.6576,14.0,1046,20193953
+fleet,Income <$25k,"model year, light-duty (VEHYEAR)",2007.9064,0.3373,0.6611,2008.0,1046,20193953
+fleet,Income <$25k,vehicles per household (HHVEHCNT),1.0018,0.0409,0.0802,1.0,1016,21292446
+fleet,Income $25-50k,share pickup (of all HH vehicles),0.1669,0.0102,0.02,,2166,36505318
+fleet,Income $25-50k,share SUV (of all HH vehicles),0.2637,0.0134,0.0263,,2166,36505318
+fleet,Income $25-50k,share pickup+SUV (of all HH vehicles),0.4306,0.0152,0.0298,,2166,36505318
+fleet,Income $25-50k,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9687,0.0053,0.0103,,2166,36505318
+fleet,Income $25-50k,"vehicle age, light-duty (VEHAGE)",11.4072,0.2435,0.4773,10.0,2068,35000717
+fleet,Income $25-50k,"model year, light-duty (VEHYEAR)",2010.6161,0.2446,0.4795,2012.0,2068,35000717
+fleet,Income $25-50k,vehicles per household (HHVEHCNT),1.5385,0.0333,0.0653,1.0,1391,23728560
+fleet,Income $50-100k,share pickup (of all HH vehicles),0.184,0.0065,0.0128,,4854,75659131
+fleet,Income $50-100k,share SUV (of all HH vehicles),0.283,0.0088,0.0173,,4854,75659131
+fleet,Income $50-100k,share pickup+SUV (of all HH vehicles),0.4669,0.0095,0.0186,,4854,75659131
+fleet,Income $50-100k,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9596,0.0041,0.008,,4854,75659131
+fleet,Income $50-100k,"vehicle age, light-duty (VEHAGE)",10.3735,0.2678,0.5248,8.0,4642,72222672
+fleet,Income $50-100k,"model year, light-duty (VEHYEAR)",2011.6566,0.2684,0.526,2014.0,4642,72222672
+fleet,Income $50-100k,vehicles per household (HHVEHCNT),1.9633,0.0335,0.0656,2.0,2547,38537681
+fleet,Income $100-150k,share pickup (of all HH vehicles),0.1695,0.008,0.0157,,3289,46053190
+fleet,Income $100-150k,share SUV (of all HH vehicles),0.3456,0.0112,0.0219,,3289,46053190
+fleet,Income $100-150k,share pickup+SUV (of all HH vehicles),0.515,0.0123,0.0242,,3289,46053190
+fleet,Income $100-150k,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9497,0.0048,0.0094,,3289,46053190
+fleet,Income $100-150k,"vehicle age, light-duty (VEHAGE)",9.0273,0.1867,0.3659,7.0,3130,43808553
+fleet,Income $100-150k,"model year, light-duty (VEHYEAR)",2013.0205,0.1885,0.3694,2015.0,3130,43808553
+fleet,Income $100-150k,vehicles per household (HHVEHCNT),2.178,0.0386,0.0757,2.0,1526,21144257
+fleet,Income $150k+,share pickup (of all HH vehicles),0.1196,0.0066,0.013,,3267,53287714
+fleet,Income $150k+,share SUV (of all HH vehicles),0.3621,0.0108,0.0212,,3267,53287714
+fleet,Income $150k+,share pickup+SUV (of all HH vehicles),0.4817,0.0113,0.0221,,3267,53287714
+fleet,Income $150k+,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9104,0.0072,0.0141,,3267,53287714
+fleet,Income $150k+,"vehicle age, light-duty (VEHAGE)",8.3509,0.1945,0.3812,6.0,3122,51275852
+fleet,Income $150k+,"model year, light-duty (VEHYEAR)",2013.7083,0.1963,0.3847,2016.0,3122,51275852
+fleet,Income $150k+,vehicles per household (HHVEHCNT),2.3329,0.0381,0.0746,2.0,1413,22841764
+fleet,Primary respondent 65+,share pickup (of all HH vehicles),0.1737,0.0071,0.0139,,4555,58923217
+fleet,Primary respondent 65+,share SUV (of all HH vehicles),0.2977,0.0092,0.018,,4555,58923217
+fleet,Primary respondent 65+,share pickup+SUV (of all HH vehicles),0.4714,0.0108,0.0211,,4555,58923217
+fleet,Primary respondent 65+,share gas/diesel/biodiesel fuel (of all HH vehicles),0.9436,0.0081,0.0159,,4555,58923217
+fleet,Primary respondent 65+,"vehicle age, light-duty (VEHAGE)",10.54,0.1888,0.37,8.0,4329,55984035
+fleet,Primary respondent 65+,"model year, light-duty (VEHYEAR)",2011.4956,0.1895,0.3715,2014.0,4329,55984035
+fleet,Primary respondent 65+,vehicles per household (HHVEHCNT),1.6988,0.0292,0.0572,2.0,2582,34684511
