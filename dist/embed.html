@@ -61,10 +61,10 @@
   .gc svg .row{cursor:pointer} .gc svg .row .hit{fill:transparent}
   .gc svg .row:hover .hit,.gc svg .row.sel .hit{fill:var(--wash)}
   .gc svg .row:focus{outline:none} .gc svg .row:focus-visible .hit{stroke:var(--focus);stroke-width:2}
-  .gc svg .ref{stroke:var(--ref);stroke-width:1.5} .gc svg .ref.est{stroke-dasharray:4 3}
+  .gc svg .ref{stroke:var(--ref);stroke-width:1.5}
   .gc svg .reflab{fill:var(--ink2);font-size:11.5px}
   .gc svg .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-  .gc svg .ln.s1{stroke:var(--s1)} .gc svg .ln.cpi{stroke:var(--ref);stroke-dasharray:4 3}
+  .gc svg .ln.s1{stroke:var(--s1)} .gc svg .ln.cpi{stroke:var(--ref);stroke-width:1.5}
   .gc svg .now{stroke:var(--axis);stroke-width:1}
   .gc svg .dot{stroke:var(--surface);stroke-width:2}
   .gc .side{display:grid;gap:12px}
@@ -167,7 +167,7 @@
 <script>
 (function(){
 "use strict";
-var D = {"price":4.478,"price_date":"2026-09-21","ri":{"gas":2.895,"motor":2.981},"wm":{"w0":2.895,"r":1.0235165489486733,"p_dec":2.8944,"latestLabel":"August 2026"},"tax":{"ACTC_FLOOR":2500,"ACTC_MAX_PER_CHILD":1700,"ACTC_RATE":0.15,"ADDL_MEDICARE_RATE":0.009,"ADDL_MEDICARE_START":{"single":200000,"mfj":250000,"hoh":200000},"BRACKETS":{"single":[0,12400,50400,105700,201775,256225,640600],"mfj":[0,24800,100800,211400,403550,512450,768700],"hoh":[0,17700,67450,105700,201750,256200,640600]},"CTC_PER_CHILD":2200,"CTC_PHASEOUT_START":{"single":200000,"mfj":400000,"hoh":200000},"EITC_EARNED_FOR_MAX":[8680,13020,18290,18290],"EITC_MAX":[664,4427,7316,8231],"EITC_PHASEOUT_END":{"single":[19540,51593,58629,62974],"mfj":[26820,58863,65899,70244]},"EITC_PHASEOUT_START":{"single":[10860,23890,23890,23890],"mfj":[18140,31160,31160,31160]},"EXTRA_65":{"single":2050,"mfj":1650,"hoh":2050},"MEDICARE_RATE":0.0145,"RATES":[0.1,0.12,0.22,0.24,0.32,0.35,0.37],"SENIOR_DEDUCTION":6000,"SENIOR_PHASEOUT_RATE":0.06,"SENIOR_PHASEOUT_START":{"single":75000,"mfj":150000,"hoh":75000},"SS_BASE1":{"single":25000,"mfj":32000,"hoh":25000},"SS_BASE2":{"single":34000,"mfj":44000,"hoh":34000},"SS_RATE":0.062,"SS_WAGE_BASE":184500,"STD_DEDUCTION":{"single":16100,"mfj":32200,"hoh":24150}},"profiles":[{"id":"median","name":"Median household","blurb":"Married couple, two cars, median household income","income":87460,"tax":{"status":"mfj","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":11092,"mpg":23.43067321694461,"label":"Car 1"},{"miles":11092,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"single","name":"Single young adult","blurb":"One car, $50,000 salary","income":50000,"tax":{"status":"single","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":12188,"mpg":25.58574450748142,"label":"Car"}]},{"id":"rural","name":"Rural family","blurb":"Married, two kids, a car and a pickup, median rural income","income":68670,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":11782,"mpg":25.58574450748142,"label":"Car"},{"miles":11782,"mpg":18.49634843238923,"label":"Pickup"}]},{"id":"lower","name":"Lower-income family","blurb":"Married, two kids, two cars, 20th percentile income","income":35800,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9748,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9748,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"retired","name":"Retired couple","blurb":"Both 65+, one car, Social Security plus a pension","income":59680,"tax":{"status":"mfj","kids":0,"seniors":2,"social_security":38496},"cars":[{"miles":8928,"mpg":23.43067321694461,"label":"Car"}]},{"id":"suburban","name":"Suburban three-car family","blurb":"Married, two kids and a teen driver, median family income","income":112900,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9993,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 2"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 3"}]}],"pctl":[[10,20010],[20,35800],[40,68600],[50,87460],[60,110300],[80,182400],[90,261300],[95,354000]],"built":"September 22, 2026"};
+var D = {"price":4.478,"price_date":"2026-09-21","ri":{"gas":2.895,"motor":2.981},"tax":{"ACTC_FLOOR":2500,"ACTC_MAX_PER_CHILD":1700,"ACTC_RATE":0.15,"ADDL_MEDICARE_RATE":0.009,"ADDL_MEDICARE_START":{"single":200000,"mfj":250000,"hoh":200000},"BRACKETS":{"single":[0,12400,50400,105700,201775,256225,640600],"mfj":[0,24800,100800,211400,403550,512450,768700],"hoh":[0,17700,67450,105700,201750,256200,640600]},"CTC_PER_CHILD":2200,"CTC_PHASEOUT_START":{"single":200000,"mfj":400000,"hoh":200000},"EITC_EARNED_FOR_MAX":[8680,13020,18290,18290],"EITC_MAX":[664,4427,7316,8231],"EITC_PHASEOUT_END":{"single":[19540,51593,58629,62974],"mfj":[26820,58863,65899,70244]},"EITC_PHASEOUT_START":{"single":[10860,23890,23890,23890],"mfj":[18140,31160,31160,31160]},"EXTRA_65":{"single":2050,"mfj":1650,"hoh":2050},"MEDICARE_RATE":0.0145,"RATES":[0.1,0.12,0.22,0.24,0.32,0.35,0.37],"SENIOR_DEDUCTION":6000,"SENIOR_PHASEOUT_RATE":0.06,"SENIOR_PHASEOUT_START":{"single":75000,"mfj":150000,"hoh":75000},"SS_BASE1":{"single":25000,"mfj":32000,"hoh":25000},"SS_BASE2":{"single":34000,"mfj":44000,"hoh":34000},"SS_RATE":0.062,"SS_WAGE_BASE":184500,"STD_DEDUCTION":{"single":16100,"mfj":32200,"hoh":24150}},"profiles":[{"id":"median","name":"Median household","blurb":"Married couple, two cars, median household income","income":87460,"tax":{"status":"mfj","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":11092,"mpg":23.43067321694461,"label":"Car 1"},{"miles":11092,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"single","name":"Single young adult","blurb":"One car, $50,000 salary","income":50000,"tax":{"status":"single","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":12188,"mpg":25.58574450748142,"label":"Car"}]},{"id":"rural","name":"Rural family","blurb":"Married, two kids, a car and a pickup, median rural income","income":68670,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":11782,"mpg":25.58574450748142,"label":"Car"},{"miles":11782,"mpg":18.49634843238923,"label":"Pickup"}]},{"id":"lower","name":"Lower-income family","blurb":"Married, two kids, two cars, 20th percentile income","income":35800,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9748,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9748,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"retired","name":"Retired couple","blurb":"Both 65+, one car, Social Security plus a pension","income":59680,"tax":{"status":"mfj","kids":0,"seniors":2,"social_security":38496},"cars":[{"miles":8928,"mpg":23.43067321694461,"label":"Car"}]},{"id":"suburban","name":"Suburban three-car family","blurb":"Married, two kids and a teen driver, median family income","income":112900,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9993,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 2"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 3"}]}],"pctl":[[10,20010],[20,35800],[40,68600],[50,87460],[60,110300],[80,182400],[90,261300],[95,354000]],"built":"September 22, 2026"};
 var T = D.tax;
 var root = document.getElementById("root");
 var framed = true || window.self !== window.top;
@@ -233,10 +233,6 @@ function afterTax(st, wages, kids, seniors, pension, ss){
 }
 
 /* ---------- model, mirrors src/model.py ---------- */
-function cpiWeightAt(price){
-  var w = D.wm, g = price / w.p_dec;
-  return 100 * w.w0 * g / (w.w0 * g + (100 - w.w0) * w.r);
-}
 function gallons(cars){ var g = 0; cars.forEach(function(c){ g += c.miles / c.mpg; }); return g; }
 function profileTax(p){
   var t = p.tax;
@@ -285,9 +281,9 @@ function rows(){
 }
 function drawBars(){
   var box = $("bars"), W = Math.max(280, box.clientWidth), R = rows();
-  var cpiOff = D.ri.gas, cpiNow = cpiWeightAt(S.price);
+  var cpi = D.ri.gas;
   var narrow = W < 520, labW = narrow ? 0 : 190, rowH = narrow ? 50 : 34, top = 22, valW = 48;
-  var maxV = Math.max(10, Math.ceil(Math.max.apply(null, R.map(function(r){ return r.share; }).concat([cpiNow])) / 2) * 2);
+  var maxV = Math.max(10, Math.ceil(Math.max.apply(null, R.map(function(r){ return r.share; }).concat([cpi])) / 2) * 2);
   var x0 = labW, x1 = W - valW, H = top + R.length * rowH + 4;
   var sx = function(v){ return x0 + (x1 - x0) * v / maxV; };
   box.innerHTML = "";
@@ -315,24 +311,21 @@ function drawBars(){
     });
     g.addEventListener("mouseleave", hideTip);
   });
-  /* CPI reference lines: one continuous line when labels sit left of the bars,
+  /* CPI reference line: continuous when labels sit left of the bars,
      short segments across each bar when labels sit above them */
-  [[cpiOff, ""], [cpiNow, "est"]].forEach(function(d){
-    if (!narrow) { el("line", {x1: sx(d[0]), x2: sx(d[0]), y1: top - 4, y2: H - 4, "class": "ref " + d[1]}, svg); return; }
-    R.forEach(function(r, i){
-      var y = top + i * rowH + 24;
-      el("line", {x1: sx(d[0]), x2: sx(d[0]), y1: y - 4, y2: y + 18, "class": "ref " + d[1]}, svg);
-    });
+  if (!narrow) el("line", {x1: sx(cpi), x2: sx(cpi), y1: top - 4, y2: H - 4, "class": "ref"}, svg);
+  else R.forEach(function(r, i){
+    var y = top + i * rowH + 24;
+    el("line", {x1: sx(cpi), x2: sx(cpi), y1: y - 4, y2: y + 18, "class": "ref"}, svg);
   });
   $("barLegend").innerHTML = "<span><b style='color:var(--s1)'>Bars</b>: gas spending ÷ after-tax income</span>" +
-    "<span><b>Solid line</b>: CPI gasoline weight, " + pct(cpiOff) + " (December 2025)</span>" +
-    "<span><b>Dashed line</b>: CPI weight at $" + S.price.toFixed(2) + ", about " + pct(cpiNow) + " (our estimate)</span>";
+    "<span><b>Line</b>: CPI gasoline weight, " + pct(cpi) + " (December 2025)</span>";
 }
 
 /* ---------- line chart: share by price, selected ---------- */
 function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
   var W = Math.max(260, box.clientWidth), H = 150, l = 34, r = 10, t = 10, b = 24;
-  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, cpiWeightAt(pMax)) / 2) * 2);
+  var pMin = 2, pMax = 7, maxV = Math.max(6, Math.ceil(Math.max(100 * costPerDollar * pMax / afterTaxInc, D.ri.gas) / 2) * 2);
   var sx = function(p){ return l + (W - l - r) * (p - pMin) / (pMax - pMin); };
   var sy = function(v){ return t + (H - t - b) * (1 - v / maxV); };
   box.innerHTML = "";
@@ -343,10 +336,10 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
     el("text", {x: l - 6, y: sy(v) + 4, "text-anchor": "end", "class": "tick"}, svg).textContent = v + "%";
   }
   for (var p = pMin; p <= pMax; p++) el("text", {x: sx(p), y: H - 6, "text-anchor": "middle", "class": "tick"}, svg).textContent = "$" + p;
-  var a = [], c = [];
-  for (var q = pMin; q <= pMax + 1e-9; q += 0.05){ a.push(sx(q).toFixed(1) + "," + sy(100 * costPerDollar * q / afterTaxInc).toFixed(1)); c.push(sx(q).toFixed(1) + "," + sy(cpiWeightAt(q)).toFixed(1)); }
+  var a = [];
+  for (var q = pMin; q <= pMax + 1e-9; q += 0.05) a.push(sx(q).toFixed(1) + "," + sy(100 * costPerDollar * q / afterTaxInc).toFixed(1));
   el("line", {x1: sx(S.price), x2: sx(S.price), y1: t, y2: H - b, "class": "now"}, svg);
-  el("polyline", {points: c.join(" "), "class": "ln cpi"}, svg);
+  el("line", {x1: l, x2: W - r, y1: sy(D.ri.gas), y2: sy(D.ri.gas), "class": "ln cpi"}, svg);
   var ln = el("polyline", {points: a.join(" "), "class": "ln s1"}, svg);
   if (isYou) ln.style.stroke = "var(--s2)";
   var dot = el("circle", {cx: sx(S.price), cy: sy(100 * costPerDollar * S.price / afterTaxInc), r: 4.5, "class": "dot"}, svg);
@@ -358,7 +351,7 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
     var q = Math.min(pMax, Math.max(pMin, pMin + (px - l) / (W - l - r) * (pMax - pMin)));
     cross.setAttribute("x1", sx(q)); cross.setAttribute("x2", sx(q)); cross.setAttribute("visibility", "visible");
     showTip("<div><b>Gas at $" + q.toFixed(2) + "</b></div><div class='v'>" + pct(100 * costPerDollar * q / afterTaxInc) + " of after-tax income</div>" +
-            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI weight at this price: about " + pct(cpiWeightAt(q)) + "</div>", e);
+            "<div>" + money(costPerDollar * q) + " a year</div><div class='s'>CPI gasoline weight: " + pct(D.ri.gas) + "</div>", e);
   });
   hit.addEventListener("mouseleave", function(){ cross.setAttribute("visibility", "hidden"); hideTip(); });
 }
@@ -374,7 +367,7 @@ function drawDetail(){
     name = p.name; costPerDollar = p.gal; at = p.t.afterTax; pre = p.income;
     milesTxt = p.miles.toLocaleString("en-US"); mpgTxt = (p.miles / p.gal).toFixed(1); hhTxt = p.blurb;
   }
-  var cost = costPerDollar * S.price, share = 100 * cost / at, cpiNow = cpiWeightAt(S.price);
+  var cost = costPerDollar * S.price, share = 100 * cost / at;
   box.innerHTML = "<h2>" + esc(name) + "</h2><p class='intro'>" + esc(hhTxt) + "</p>" +
     "<div class='big'>" + pct(share) + " <small>of after-tax income goes to gas</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(cost) + "</b><span>Gas a month</span><b>" + money(cost / 12) + "</b>" +
@@ -383,7 +376,7 @@ function drawDetail(){
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
     "<p class='note'>The chart below shows this household's share at every gas price from $2 to $7.</p>" +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
-    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Dashed</b>: CPI weight (est.)</span></div>" +
+    "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight, " + pct(D.ri.gas) + "</span></div>" +
     "<div id='line'></div>";
   drawLine($("line"), costPerDollar, at, name, isYou);
 }
@@ -413,12 +406,11 @@ function drawCustom(){
   readCustom();
   $("cHh").options[0].textContent = "Assume from cars: " + HH[autoHh(parseInt($("cCars").value, 10))].label;
   if (!S.you) return;
-  var y = S.you, cpiNow = cpiWeightAt(S.price);
+  var y = S.you;
   $("cOut").innerHTML = "<div class='big'>" + pct(y.share) + " <small>of your after-tax income</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(y.cost) + "</b><span>Gas a month</span><b>" + money(y.cost / 12) + "</b>" +
     "<span>Estimated after-tax income</span><b>" + money(y.t.afterTax) + "</b></div>" +
-    "<p class='note'>The CPI counts gasoline as " + pct(D.ri.gas) + " of consumer spending (December 2025). At $" + S.price.toFixed(2) +
-    " a gallon that weight would be about " + pct(cpiNow) + ". Your share is " + pct(y.share) + ".</p>" +
+    "<p class='note'>The CPI counts gasoline as " + pct(D.ri.gas) + " of consumer spending (December 2025). Your share is " + pct(y.share) + ".</p>" +
     "<p class='note'>" + pctileBelow(y.income) + " U.S. households had a lower pre-tax income than this in 2025.</p>" +
     "<p class='note'>Household: " + esc(y.hhLabel) + ". Federal income tax and payroll tax only; state and local taxes would lower your after-tax income a little and raise your share.</p>";
 }
@@ -432,8 +424,7 @@ function drawTable(){
     var miles = p ? p.miles : S.you.miles, at = p ? p.t.afterTax : S.you.t.afterTax;
     return "<tr><td>" + esc(r.name) + "</td><td>" + Math.round(miles).toLocaleString("en-US") + "</td><td>" + money(r.cost) +
            "</td><td>" + money(at) + "</td><td>" + pct(r.share) + "</td></tr>";
-  }).join("") + "<tr><td>CPI gasoline weight, December 2025</td><td></td><td></td><td></td><td>" + pct(D.ri.gas) + "</td></tr>" +
-  "<tr><td>CPI gasoline weight at $" + S.price.toFixed(2) + " (our estimate)</td><td></td><td></td><td></td><td>" + pct(cpiWeightAt(S.price)) + "</td></tr>";
+  }).join("") + "<tr><td>CPI gasoline weight, December 2025</td><td></td><td></td><td></td><td>" + pct(D.ri.gas) + "</td></tr>";
 }
 
 /* ---------- wiring ---------- */
@@ -467,8 +458,7 @@ $("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles")
 $("sub").textContent = "The Consumer Price Index counts gasoline as " + pct(D.ri.gas) + " of what Americans spend. " +
   "Here is what gas costs six typical households, measured against the income they have left after federal taxes. Move the price, or enter your own household.";
 $("priceHint").textContent = "Today's price: $" + D.price.toFixed(2) + " a gallon, U.S. average for regular, week of " + longDate(D.price_date) + " (EIA).";
-$("src").textContent = "Sources: EIA weekly retail gasoline prices; BLS CPI relative importance (December 2025) and CPI-U through " + D.wm.latestLabel +
-  "; Census Bureau income in 2025 (P60-289); FHWA 2022 National Household Travel Survey and Highway Statistics 2024 (VM-1); IRS Rev. Proc. 2025-32; SSA 2026 COLA fact sheet. " +
+$("src").textContent = "Sources: EIA weekly retail gasoline prices; BLS CPI relative importance (December 2025); Census Bureau income in 2025 (P60-289); FHWA 2022 National Household Travel Survey and Highway Statistics 2024 (VM-1); IRS Rev. Proc. 2025-32; SSA 2026 COLA fact sheet. " +
   "After-tax income counts federal income and payroll taxes only. Built by Data 4 The People, " + D.built + ".";
 
 setPrice(D.price);
@@ -478,7 +468,7 @@ if (window.ResizeObserver) new ResizeObserver(function(){ var w = root.clientWid
 /* test hook: build.py reads these to check the page agrees with src/model.py */
 window.__gcCheck = function(prices){
   return prices.map(function(pr){
-    return {price: pr, cpi: cpiWeightAt(pr), profiles: D.profiles.map(function(p){
+    return {price: pr, profiles: D.profiles.map(function(p){
       return {id: p.id, afterTax: p.t.afterTax, share: 100 * p.gal * pr / p.t.afterTax};
     })};
   });

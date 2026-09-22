@@ -19,8 +19,9 @@ in this project; "not verified" means we are repeating the publisher or have not
    median profile is a married couple with no children. Checked; see tie-out.
 4. **BLS stopped publishing CEX after-tax income with the 2024 data.** The latest
    after-tax gas shares from one survey are for 2023.
-5. **The CPI weight "at today's price" is our estimate, not a BLS number.** Method in
-   the relative importance section.
+5. **Every comparison uses the published 2.9% (December 2025).** A price-adjusted
+   estimate of the weight was built and then dropped at Eric's direction (September 22);
+   it is kept below for reference only and appears nowhere in the tool or charts.
 6. **October 2025 CPI was never published** (federal shutdown). We do not use that month.
 
 ---
@@ -89,7 +90,7 @@ their total spending. Households with no car, households that drive little, and
 high-spending households all count. It is a share of spending, not of income, and not
 the share for any typical household. That is the gap this project measures.
 
-**Our estimate at other prices.** RI(P) = w0·g / (w0·g + (100 − w0)·r), with w0 = 2.895,
+**Our estimate at other prices (not shown anywhere).** RI(P) = w0·g / (w0·g + (100 − w0)·r), with w0 = 2.895,
 g = P / $2.8944 (December 2025 EIA average) and r = the price change of everything else
 since December 2025, solved from the latest CPI-U month (August 2026: all items up
 3.37%, gasoline up 37.59%, so r = 1.0235). At the August 2026 index this gives 3.85%; at
