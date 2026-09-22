@@ -5,8 +5,8 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 
 ## Current
 
-Post: none yet (slug set at step 2a)
-Step: 2a, not started
+Post: gasoline-share-of-income
+Step: 2a, in progress
 Since: 2026-09-22
 
 ## Steps
@@ -27,6 +27,8 @@ Since: 2026-09-22
 None.
 
 ## Log
+
+- 2026-09-22 Step 2a opened. Slug: gasoline-share-of-income.
 
 - 2026-09-22 Step 1 confirmed done. Interactive tool (dist/index.html, dist/embed.html) with price slider, six household profiles, custom calculator and sensitivity matrix; five static charts in charts/; DATASETS.md and data/processed/tieout.md.
 - 2026-09-22 Step 1 opened. Topic: gasoline's real share of household after-tax income versus its ~2.9% CPI relative importance. Interactive tool with preset profiles (median family, single young adult at $50K, others), a gas price slider, and a custom-input calculator.
