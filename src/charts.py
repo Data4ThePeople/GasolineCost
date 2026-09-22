@@ -56,14 +56,15 @@ def chart_profiles(m):
         ax.text(v + 0.12, i, f'{v:.1f}%', va='center', color=INK, fontweight='bold', fontsize=11.5)
     ax.axvline(cpi0, color=REF, lw=1.4)
     top = len(P) - 0.45
-    ax.text(cpi0 + 0.08, top, f'CPI gasoline weight at\ntoday\'s price (est.): {cpi0:.1f}%', ha='left', va='bottom', fontsize=9.5, color=INK2, linespacing=1.15)
+    ax.text(cpi0 + 0.08, top, f'CPI gasoline weight at\n${price:.2f} (est.): {cpi0:.1f}%', ha='left', va='bottom', fontsize=9.5, color=INK2, linespacing=1.15)
     ax.set_xlim(0, max(vals) * 1.15); ax.set_ylim(-0.6, len(P) + 0.35)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%'); ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
     ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
     f.subplots_adjust(left=0.27, right=0.96, top=0.8, bottom=0.19)
     title(f, 'Gasoline as a share of after-tax income',
           f'Six households at ${price:.2f} a gallon, the U.S. average for regular on {pd.Timestamp(m["price_date"]):%B %-d, %Y}')
-    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. After-tax income subtracts federal income and payroll taxes only.\nCPI weight: BLS July 2026 relative importance (3.8%) moved to today\'s pump price.')
+    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. After-tax income subtracts federal income and payroll taxes only.\n'
+             f'CPI weight: BLS July 2026 relative importance (3.8%) moved to the {pd.Timestamp(m["price_date"]):%B %-d, %Y} pump price.')
     f.savefig(OUT / '01-share-by-household.png', facecolor=BG); plt.close(f)
 
 
@@ -83,7 +84,7 @@ def chart_price(m):
         placed.append(y2)
         ax.text(7.08, y2, n, color=c if c != REF else INK2, fontsize=10, va='center', fontweight='bold')
     ax.axvline(m['price'], color=GRID, lw=1)
-    ax.text(m['price'], 0.25, f" today ${m['price']:.2f}", color=MUTED, fontsize=9)
+    ax.text(m['price'], 0.25, f" {pd.Timestamp(m['price_date']):%b. %-d}: ${m['price']:.2f}", color=MUTED, fontsize=9)
     ax.set_xlim(2, 7); ax.set_ylim(0, max(e[0] for e in ends) * 1.08)
     ax.xaxis.set_major_formatter(lambda x, _: f'${x:.0f}'); ax.yaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
     ax.grid(color=GRID, lw=0.8); ax.set_axisbelow(True); ax.set_xlabel('Price of regular gasoline, dollars per gallon', color=MUTED, fontsize=10)
