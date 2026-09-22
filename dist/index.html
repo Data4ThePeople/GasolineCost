@@ -418,10 +418,11 @@ function drawMatrix(){
   var NEU = hexRgb(cst.getPropertyValue("--mNeu")), GOOD = hexRgb(cst.getPropertyValue("--mGood")), BAD = hexRgb(cst.getPropertyValue("--mBad"));
   var top = 100 * 40000 / 15 / 35000;      /* one fixed scale, so colors compare across incomes */
   var mi = nearestIdx(MX_MILES, h.miles), gi = nearestIdx(MX_MPG, h.mpg);
-  var html = "<h2>What each $1 a gallon adds, at this income</h2>" +
-    "<p class='intro'>Points of after-tax income added by each $1 rise, for any mix of miles and mpg, at " + esc(h.name.toLowerCase() === "your household" ? "your" : "the " + h.name.toLowerCase() + "'s") +
-    " income (" + money(h.at) + " after federal taxes). The CPI gasoline weight rises about <b>" + cs.toFixed(1) + " points</b> per $1.</p>" +
-    "<div class='legend'><span><b style='color:var(--mGood)'>Green</b> slower than the CPI</span><span><b style='color:var(--muted)'>Gray</b> about the same</span><span><b style='color:var(--mBad)'>Red</b> faster</span><span><b>Outlined</b>: closest to this household</span></div>" +
+  var whose = h.name.toLowerCase() === "your household" ? "your" : "the " + h.name.toLowerCase() + "'s";
+  var html = "<h2>If gas goes up $1 a gallon</h2>" +
+    "<p class='intro'>What a $1 rise costs a year, for any mix of miles and mpg, next to " + esc(whose) + " take-home pay of " + money(h.at) +
+    ". In the CPI, a $1 rise adds about <b>" + cs.toFixed(1) + "% of what the average household spends</b>. Colors show whether it costs this household more or less than that share.</p>" +
+    "<div class='legend'><span><b style='color:var(--mGood)'>Green</b> under " + cs.toFixed(1) + "% of take-home pay</span><span><b style='color:var(--muted)'>Gray</b> about " + cs.toFixed(1) + "%</span><span><b style='color:var(--mBad)'>Red</b> over " + cs.toFixed(1) + "%</span><span><b>Outlined</b>: closest to this household</span></div>" +
     "<div class='mx' role='table' aria-label='Points of after-tax income added by each $1 a gallon'><div class='h'>mpg</div>";
   MX_MILES.forEach(function(m){ html += "<div class='h'>" + (m / 1000) + "k</div>"; });
   MX_MPG.forEach(function(g, i){
@@ -432,9 +433,12 @@ function drawMatrix(){
       else if (v < cs) c = mixRgb(NEU, GOOD, 0.35 + 0.65 * Math.min(1, (cs - v) / (cs - 0.1)));
       else c = mixRgb(NEU, BAD, 0.35 + 0.65 * Math.min(1, (v - cs) / (top - cs)));
       var ink = lumRgb(c) > 0.28 ? "#0b0b0b" : "#ffffff";
-      var word = Math.abs(v - cs) <= MX_BAND ? "about the same as" : v < cs ? "slower than" : "faster than";
+      var word = Math.abs(v - cs) <= MX_BAND ? "about the same as" : v < cs ? "less than" : "more than";
+      var gal = m / g;
       html += "<div class='c" + (i === gi && j === mi ? " me" : "") + "' style='background:rgb(" + c.join(",") + ");color:" + ink + "' data-tip='" +
-        esc(m.toLocaleString("en-US") + " miles at " + g + " mpg: each $1 a gallon adds " + v.toFixed(2) + " points of after-tax income, " + word + " the CPI weight (" + cs.toFixed(2) + ")") + "'>+" + v.toFixed(1) + "</div>";
+        esc(m.toLocaleString("en-US") + " miles a year at " + g + " mpg is " + Math.round(gal).toLocaleString("en-US") + " gallons of gas. If the price goes up $1 a gallon, that costs " +
+            money(gal) + " more a year, or " + v.toFixed(1) + "% of take-home pay. That is " + word + " the " + cs.toFixed(1) + "% the CPI puts on the average household.") +
+        "'>" + money(gal) + "</div>";
     });
   });
   html += "</div><div class='axisl'>Miles driven a year, all cars</div>";
