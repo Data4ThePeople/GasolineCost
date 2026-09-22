@@ -11,7 +11,7 @@
     container-type:inline-size;
     --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#6f6d68;
     --line:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10); --wash:#efeee9;
-    --s1:#2a78d6; --s2:#eb6834; --ref:#52514e; --focus:#2a78d6;
+    --s1:#2a78d6; --s2:#eb6834; --ref:#52514e; --focus:#2a78d6; --mNeu:#e4e3de; --mGood:#0a8a0a; --mBad:#d03b3b;
     background:var(--page); color:var(--ink);
     font-family:system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.45;
     padding:20px 16px 16px; box-sizing:border-box; -webkit-font-smoothing:antialiased;
@@ -21,7 +21,7 @@
     html:not([data-theme="light"]) .gc:not(.framed){
       --page:#181A1B; --surface:#1f2223; --ink:#E4E2DC; --ink2:#BBBDC0; --muted:#8C9094;
       --line:#33373A; --axis:#454a4d; --border:rgba(255,255,255,.10); --wash:#2a2e30;
-      --s1:#3987e5; --s2:#d95926; --ref:#BBBDC0; --focus:#6da7ec;
+      --s1:#3987e5; --s2:#d95926; --ref:#BBBDC0; --focus:#6da7ec; --mNeu:#383835; --mGood:#0ca30c; --mBad:#e34948;
     }
     html:not([data-theme="light"]) .gc:not(.framed) .brand img.logo-on-light{display:none}
     html:not([data-theme="light"]) .gc:not(.framed) .brand img.logo-on-dark{display:block}
@@ -115,6 +115,12 @@
   .gc .privacy svg{flex:none;width:22px;height:22px;margin-top:1px}
   .gc .privacy b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px}
   .gc .privacy span{font-size:13px;color:var(--ink2)}
+  .gc .mx{display:grid;grid-template-columns:30px repeat(8,1fr);gap:2px;font-variant-numeric:tabular-nums;margin-top:6px}
+  .gc .mx .c{border-radius:4px;text-align:center;font-size:11.5px;font-weight:650;padding:7px 0;cursor:default;position:relative}
+  .gc .mx .c.me{outline:2.5px solid var(--ink);outline-offset:-1px;z-index:1}
+  .gc .mx .h{font-size:11px;color:var(--muted);text-align:center;align-self:center}
+  .gc .mx .h.r{text-align:right;padding-right:4px}
+  .gc .axisl{font-size:11.5px;color:var(--muted);margin-top:4px;text-align:center}
   .gc [hidden]{display:none!important}
 </style>
 </head>
@@ -161,6 +167,7 @@
     </div>
     <div class="side">
       <div class="card" id="detail" aria-live="polite"></div>
+      <div class="card" id="matrix"></div>
     </div>
   </div>
   <div class="foot">
@@ -387,11 +394,55 @@ function drawDetail(){
     "<span>Miles a year</span><b>" + milesTxt + "</b><span>Average mpg</span><b>" + mpgTxt + "</b>" +
     "<span>Gallons a year</span><b>" + Math.round(costPerDollar).toLocaleString("en-US") + "</b>" +
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
-    "<p class='note'>The chart below shows this household's share at every gas price from $2 to $7.</p>" +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
     "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at each price</span></div>" +
     "<div id='line'></div>";
   drawLine($("line"), costPerDollar, at, name, isYou);
+}
+
+/* ---------- matrix: what each $1 a gallon adds, by miles and mpg, at the selected household's income ---------- */
+var MX_MILES = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000], MX_MPG = [40, 35, 30, 25, 20, 15], MX_BAND = 0.05;
+function hexRgb(h){ h = h.trim(); return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
+function mixRgb(a, b, t){ return a.map(function(x, i){ return Math.round(x + (b[i] - x) * t); }); }
+function lumRgb(c){ var f = function(v){ v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+  return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]); }
+function cpiSlope(){ return (cpiAt(S.price + 0.01) - cpiAt(S.price - 0.01)) / 0.02; }
+function selected(){
+  if (S.sel === "you" && S.you && S.edited) return {name: "Your household", at: S.you.t.afterTax, miles: S.you.miles, mpg: S.you.mpg};
+  var p = D.profiles.filter(function(x){ return x.id === S.sel; })[0] || D.profiles[0];
+  return {name: p.name, at: p.t.afterTax, miles: p.miles, mpg: p.miles / p.gal};
+}
+function nearestIdx(arr, v){ var b = 0; arr.forEach(function(x, i){ if (Math.abs(x - v) < Math.abs(arr[b] - v)) b = i; }); return b; }
+function drawMatrix(){
+  var box = $("matrix"), h = selected(), cs = cpiSlope(), cst = getComputedStyle(root);
+  var NEU = hexRgb(cst.getPropertyValue("--mNeu")), GOOD = hexRgb(cst.getPropertyValue("--mGood")), BAD = hexRgb(cst.getPropertyValue("--mBad"));
+  var top = 100 * 40000 / 15 / 35000;      /* one fixed scale, so colors compare across incomes */
+  var mi = nearestIdx(MX_MILES, h.miles), gi = nearestIdx(MX_MPG, h.mpg);
+  var html = "<h2>What each $1 a gallon adds, at this income</h2>" +
+    "<p class='intro'>Points of after-tax income added by each $1 rise, for any mix of miles and mpg, at " + esc(h.name.toLowerCase() === "your household" ? "your" : "the " + h.name.toLowerCase() + "'s") +
+    " income (" + money(h.at) + " after federal taxes). The CPI gasoline weight rises about <b>" + cs.toFixed(1) + " points</b> per $1.</p>" +
+    "<div class='legend'><span><b style='color:var(--mGood)'>Green</b> slower than the CPI</span><span><b style='color:var(--muted)'>Gray</b> about the same</span><span><b style='color:var(--mBad)'>Red</b> faster</span><span><b>Outlined</b>: closest to this household</span></div>" +
+    "<div class='mx' role='table' aria-label='Points of after-tax income added by each $1 a gallon'><div class='h'>mpg</div>";
+  MX_MILES.forEach(function(m){ html += "<div class='h'>" + (m / 1000) + "k</div>"; });
+  MX_MPG.forEach(function(g, i){
+    html += "<div class='h r'>" + g + "</div>";
+    MX_MILES.forEach(function(m, j){
+      var v = 100 * m / g / h.at, c;
+      if (Math.abs(v - cs) <= MX_BAND) c = NEU;
+      else if (v < cs) c = mixRgb(NEU, GOOD, 0.35 + 0.65 * Math.min(1, (cs - v) / (cs - 0.1)));
+      else c = mixRgb(NEU, BAD, 0.35 + 0.65 * Math.min(1, (v - cs) / (top - cs)));
+      var ink = lumRgb(c) > 0.28 ? "#0b0b0b" : "#ffffff";
+      var word = Math.abs(v - cs) <= MX_BAND ? "about the same as" : v < cs ? "slower than" : "faster than";
+      html += "<div class='c" + (i === gi && j === mi ? " me" : "") + "' style='background:rgb(" + c.join(",") + ");color:" + ink + "' data-tip='" +
+        esc(m.toLocaleString("en-US") + " miles at " + g + " mpg: each $1 a gallon adds " + v.toFixed(2) + " points of after-tax income, " + word + " the CPI weight (" + cs.toFixed(2) + ")") + "'>+" + v.toFixed(1) + "</div>";
+    });
+  });
+  html += "</div><div class='axisl'>Miles driven a year, all cars</div>";
+  box.innerHTML = html;
+  box.querySelectorAll(".c").forEach(function(c){
+    c.addEventListener("mousemove", function(e){ showTip("<div>" + c.getAttribute("data-tip") + "</div>", e); });
+    c.addEventListener("mouseleave", hideTip);
+  });
 }
 
 /* ---------- custom ---------- */
@@ -452,7 +503,7 @@ function update(){
   if (S.sel === "you" && !(S.you && S.edited)) S.sel = "median";
   $("barIntro").textContent = "Each bar is what that household spends on gas in a year at $" + S.price.toFixed(2) +
     " a gallon, divided by its income after federal taxes. Click a bar for details.";
-  drawBars(); drawDetail(); drawTable();
+  drawBars(); drawDetail(); drawTable(); drawMatrix();
 }
 $("priceRange").addEventListener("input", function(){ setPrice(parseFloat(this.value), "range"); });
 $("priceNum").addEventListener("change", function(){ setPrice(parseFloat(this.value), "num"); });
