@@ -462,10 +462,24 @@ function pctileBelow(inc){
   }
   return "More than 19 in 20";
 }
+/* Ranges a real household falls in. A half-typed number (75 on the way to 75,000)
+   lands outside them, so the page waits instead of drawing a 6,407% bar. */
+var LIMITS = {cIncome: [5000, 5000000, "a yearly income of $5,000 or more"],
+              cMiles: [100, 100000, "between 100 and 100,000 miles a car"],
+              cMpg: [5, 100, "a gas mileage between 5 and 100 mpg"]};
 function readCustom(){
   var inc = parseFloat($("cIncome").value), cars = parseInt($("cCars").value, 10),
       miles = cars * parseFloat($("cMiles").value), mpg = parseFloat($("cMpg").value);
-  if (!(inc > 0) || !(miles >= 0) || !(mpg > 0)){ S.you = null; $("cOut").innerHTML = "<p class='note'>Enter an income, miles and mpg to see your share.</p>"; return; }
+  var missing = [];
+  Object.keys(LIMITS).forEach(function(id){
+    var lim = LIMITS[id], v = parseFloat($(id).value);
+    if (!(v >= lim[0] && v <= lim[1])) missing.push(lim[2]);
+  });
+  if (missing.length){
+    S.you = null;
+    $("cOut").innerHTML = "<p class='note'>Enter " + missing.join(", ") + " to see your household.</p>";
+    return;
+  }
   var h = HH[autoHh(cars)];
   var t = afterTax(h.status, inc, h.kids), gal = miles / mpg;
   S.you = {income: inc, miles: miles, mpg: mpg, gal: gal, t: t, hhLabel: h.label + " (assumed from " + cars + (cars === 1 ? " car)" : " cars)"),
@@ -520,6 +534,7 @@ var med = D.profiles[0];
 $("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles").value = Math.round(med.miles / med.cars.length); $("cMpg").value = (med.miles / med.gal).toFixed(2);
 ["cIncome", "cMiles", "cMpg", "cCars"].forEach(function(id){
   $(id).addEventListener("input", function(){ S.edited = true; S.sel = "you"; update(); });
+  $(id).addEventListener("blur", function(){ update(); });
 });
 
 $("sub").textContent = "At the U.S. average gas price of $" + D.price.toFixed(2) + " on " + longDate(D.price_date) + ", gasoline makes up about " + pct(D.cpi.now) + " of consumer spending in the Consumer Price Index. " +
