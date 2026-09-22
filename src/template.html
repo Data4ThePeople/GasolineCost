@@ -432,18 +432,20 @@ function drawMatrix(){
       else if (v < cs) c = mixRgb(NEU, GOOD, 0.35 + 0.65 * Math.min(1, (cs - v) / (cs - 0.1)));
       else c = mixRgb(NEU, BAD, 0.35 + 0.65 * Math.min(1, (v - cs) / (top - cs)));
       var ink = lumRgb(c) > 0.28 ? "#0b0b0b" : "#ffffff";
-      var word = Math.abs(v - cs) <= MX_BAND ? "about the same as" : v < cs ? "less than" : "more than";
       var gal = m / g;
       html += "<div class='c" + (i === gi && j === mi ? " me" : "") + "' style='background:rgb(" + c.join(",") + ");color:" + ink + "' data-tip='" +
-        esc(m.toLocaleString("en-US") + " miles a year at " + g + " mpg is " + Math.round(gal).toLocaleString("en-US") + " gallons, or " +
-            money(gal * S.price) + " a year at $" + S.price.toFixed(2) + ". That is " + v.toFixed(1) + "% of take-home pay, " + word + " gasoline's " + pct(cs) + " share of spending in the CPI.") +
+        esc(m.toLocaleString("en-US") + " miles \u00f7 " + g + " mpg = " + Math.round(gal).toLocaleString("en-US") + " gallons \u00d7 $" + S.price.toFixed(2) + " = " +
+            money(gal * S.price) + " a year.|That is " + v.toFixed(1) + "% of take-home pay, compared with the " + pct(cs) + " the CPI assumes at this gas price.") +
         "'>" + v.toFixed(1) + "%</div>";
     });
   });
   html += "</div><div class='axisl'>Miles driven a year, all cars</div>";
   box.innerHTML = html;
   box.querySelectorAll(".c").forEach(function(c){
-    c.addEventListener("mousemove", function(e){ showTip("<div>" + c.getAttribute("data-tip") + "</div>", e); });
+    c.addEventListener("mousemove", function(e){
+      var t = c.getAttribute("data-tip").split("|");
+      showTip("<div>" + t[0] + "</div><div class='v' style='font-size:13px;margin-top:4px'>" + t[1] + "</div>", e);
+    });
     c.addEventListener("mouseleave", hideTip);
   });
 }
