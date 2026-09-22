@@ -301,7 +301,7 @@ SSA 2026 COLA fact sheet: aged couple, both receiving benefits, $3,208 a month a
 - Rural pickup: 29.5% of vehicles in rural 2-vehicle households are pickups (NHTS,
   checked), so a car and a pickup is a common pairing, not the average.
 - The "Your household" calculator assumes a household from the number of cars: 1 car,
-  single; 2 cars, a married couple; 3 or more, a married couple with two children. The
-  reader can change it.
+  single; 2 cars, a married couple; 3 or more, a married couple with two children, and
+  says so under the result.
 - "About N in 10 households earn less" interpolates linearly between Census's published
   pretax percentiles.

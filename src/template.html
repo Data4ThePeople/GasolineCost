@@ -145,7 +145,6 @@
           <label>Number of cars<select id="cCars"></select></label>
           <label>Miles a year, per car<input id="cMiles" type="number" min="0" step="500" inputmode="numeric"></label>
           <label>Average mpg<input id="cMpg" type="number" min="5" max="80" step="0.1" inputmode="decimal"></label>
-          <label class="wide">Household<select id="cHh"></select></label>
         </div>
         <div id="cOut"></div>
       </div>
@@ -243,7 +242,6 @@ D.profiles.forEach(function(p){ p.t = profileTax(p); p.gal = gallons(p.cars); p.
 
 var HH = {
   single:   {label: "Single, no kids",           status: "single", kids: 0},
-  hoh2:     {label: "Single parent, two kids",   status: "hoh",    kids: 2},
   mfj0:     {label: "Married, no kids",          status: "mfj",    kids: 0},
   mfj2:     {label: "Married, two kids",         status: "mfj",    kids: 2}
 };
@@ -395,16 +393,15 @@ function pctileBelow(inc){
 }
 function readCustom(){
   var inc = parseFloat($("cIncome").value), cars = parseInt($("cCars").value, 10),
-      miles = cars * parseFloat($("cMiles").value), mpg = parseFloat($("cMpg").value), hhKey = $("cHh").value;
+      miles = cars * parseFloat($("cMiles").value), mpg = parseFloat($("cMpg").value);
   if (!(inc > 0) || !(miles >= 0) || !(mpg > 0)){ S.you = null; $("cOut").innerHTML = "<p class='note'>Enter an income, miles and mpg to see your share.</p>"; return; }
-  var key = hhKey === "auto" ? autoHh(cars) : hhKey, h = HH[key];
+  var h = HH[autoHh(cars)];
   var t = afterTax(h.status, inc, h.kids), gal = miles / mpg;
-  S.you = {income: inc, miles: miles, mpg: mpg, gal: gal, t: t, hhLabel: h.label + (hhKey === "auto" ? " (assumed from " + cars + (cars === 1 ? " car)" : " cars)") : ""),
+  S.you = {income: inc, miles: miles, mpg: mpg, gal: gal, t: t, hhLabel: h.label + " (assumed from " + cars + (cars === 1 ? " car)" : " cars)"),
            cost: gal * S.price, share: 100 * gal * S.price / t.afterTax};
 }
 function drawCustom(){
   readCustom();
-  $("cHh").options[0].textContent = "Assume from cars: " + HH[autoHh(parseInt($("cCars").value, 10))].label;
   if (!S.you) return;
   var y = S.you;
   $("cOut").innerHTML = "<div class='big'>" + pct(y.share) + " <small>of your after-tax income</small></div>" +
@@ -447,11 +444,9 @@ $("priceNum").addEventListener("change", function(){ setPrice(parseFloat(this.va
 $("priceReset").addEventListener("click", function(){ setPrice(D.price); });
 var cc = $("cCars");
 for (var i = 1; i <= 5; i++){ var o = document.createElement("option"); o.value = i; o.textContent = i; cc.appendChild(o); }
-var hs = $("cHh"), o0 = document.createElement("option"); o0.value = "auto"; hs.appendChild(o0);
-Object.keys(HH).forEach(function(k){ var o = document.createElement("option"); o.value = k; o.textContent = HH[k].label; hs.appendChild(o); });
 var med = D.profiles[0];
 $("cIncome").value = med.income; cc.value = String(med.cars.length); $("cMiles").value = Math.round(med.miles / med.cars.length); $("cMpg").value = (med.miles / med.gal).toFixed(2);
-["cIncome", "cMiles", "cMpg", "cCars", "cHh"].forEach(function(id){
+["cIncome", "cMiles", "cMpg", "cCars"].forEach(function(id){
   $(id).addEventListener("input", function(){ S.edited = true; S.sel = "you"; update(); });
 });
 
