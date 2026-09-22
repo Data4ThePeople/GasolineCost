@@ -26,7 +26,8 @@ in this project; "not verified" means we are repeating the publisher or have not
    EIA pump price change since July ($3.932 to $4.478) and the change in all other CPI
    prices since July (+0.23% through August). Result 4.261%, shown as 4.3%. The same
    formula moves the weight with the tool's price slider ($3: 2.9%, $5: 4.7%, $7: 6.5%),
-   so every comparison is at the same price. Decided September 22.
+   so every comparison is at the same price. Decided September 22. The formula, its four
+   assumptions and the sensitivity test are in the relative importance section below.
 6. **October 2025 CPI was never published** (federal shutdown). We do not use that month.
 
 ---
@@ -95,12 +96,42 @@ their total spending. Households with no car, households that drive little, and
 high-spending households all count. It is a share of spending, not of income, and not
 the share for any typical household. That is the gap this project measures.
 
-**How relative importance moves with prices (the method behind open issue 5).** RI(P) = w0·g / (w0·g + (100 − w0)·r), with w0 = 2.895,
-g = P / $2.8944 (December 2025 EIA average) and r = the price change of everything else
-since December 2025, solved from the latest CPI-U month (August 2026: all items up
-3.37%, gasoline up 37.59%, so r = 1.0235). At the August 2026 index this gives 3.85%; at
-$4.478 it gives 4.31%. This holds the basket quantities at the 2024 weights, so it
-ignores people driving less when gas costs more.
+**How the CPI line is calculated (the method behind open issue 5).** In `src/model.py`,
+`cpi_weight_basis()` and `cpi_weight_at()`. At a pump price P:
+
+    weight(P) = w * g / (w * g + (100 - w) * r)
+
+- **w = 3.77**, the gasoline (all types) relative importance BLS published for July 2026,
+  the latest month available. Rebuilt here from the December 2025 table and the CPI-U
+  indexes as 3.770%; the build fails if that drifts from 3.77 by 0.005 or more.
+- **g = P / $3.9322**, the price against the July 2026 EIA average.
+- **r = 1.00231**, the price relative for everything except gasoline, solved from the
+  August 2026 CPI release: all items rose 0.318% from July, gasoline rose 2.53%, which
+  leaves the rest at +0.23%. It is held at that value at every price.
+
+At $4.478 this gives 4.261%, shown as 4.3%. The curve is nearly straight: 0.911 points
+per $1 at that price, and 0.911 averaged from $2 to $7.
+
+**The four assumptions in that line, and which way each one bends it.**
+
+1. **Quantities are fixed.** The same gallons are bought at $7 as at $2, and the rest of
+   the basket does not change. This is how BLS itself moves relative importance between
+   weight years, but drivers do cut back when prices spike, so at high prices our line
+   very likely sits above what BLS would publish. Bends the line **up**.
+2. **Everything else stays at its August 2026 level.** Non-gasoline prices do not respond
+   to gasoline at all here. Higher fuel does feed into airfares, delivery and food, which
+   would raise the denominator and lower gasoline's share. Bends the line **up**.
+3. **The pump price and the CPI gasoline index move one for one.** The weakest of the
+   four. From July to August 2026 the EIA average rose 3.20% while CPI gasoline rose
+   2.53%, a pass-through of 0.79. Collection timing differs and the CPI covers all
+   grades while we track regular. At that 0.79 rate the weight at $4.478 would be
+   **4.16% instead of 4.261%**. Bends the line **up** by about a tenth of a point.
+4. **The July base is sound.** It rests on BLS's 2024 spending weights, price-updated.
+   Checked against our own rebuild, as above.
+
+All four run the same way: the CPI line is, if anything, a little too high, so the gap
+between a driving household and the CPI is understated rather than overstated. Checked
+September 22, 2026.
 
 **December 2023 file.** `data/raw/cpi_relative_importance_2023.xlsx` (2022 weights):
 gasoline (all types) 3.261, motor fuel 3.372. Used only in chart 3, beside 2023 CEX
