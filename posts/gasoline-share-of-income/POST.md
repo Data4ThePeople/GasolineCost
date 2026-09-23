@@ -123,7 +123,19 @@ In 2023, the lowest fifth of households by income spent 8.2% of their after-tax 
 
 So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question almost nobody is asking, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. The only thing missing is the will to publish inflation as a distribution instead of a single point.
 
-[Eric's closing goes here.]
+## A start to the discussion, and a dream
+
+For those of you who have worked in the corporate world, you know that person (likely a supervisor) that reviews work you've done, tells you something is wrong with it, but doesn't give any ideas on how to fix it? There's always a handful lurking around.
+
+I've always hated that person. Tell me my idea is bad, there's no problem with that. But then you better be ready to offer your idea for us to discuss. Suffice it to say, I don't want to be that person, which is why I offered an alternative to CPI in this post. Is my idea the best one? Of course not. I am a generalist data journalist with a bunch of random life experience. I am certain that America is home to hundreds of creative PhD statistician / economists who could come up with far better ideas.
+
+But what do we reward these more qualified people for today? To predict what the broken tape deck will say in the future. You can make a nice career out of knowing the ins and outs of how the tape deck works and having an edge on what sounds it will spit out next.
+
+Here's my dream. One day, these brilliant people will get together and realize it's time to throw away the tape deck. And then they will pull up a whiteboard and redesign how we measure inflation for the streaming age. The redesign will start with one guiding mission. Does this process capture the lived experience of the people it is designed to measure? And they will build it.
+
+Maybe you think this dream is impossible. That says something, because with the technology we have it could be unbelievably easy to build. The impossible part may be to just get people to accept that the world has changed and realize that we need to adapt to better measure it.
+
+I don't have any power here beyond this report. All I can do is share data and send my dream out into the world. But who knows how things will play out? Maybe, one day it could come true.
 
 ::: divider
 
