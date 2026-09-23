@@ -100,12 +100,14 @@ Every dollar added at the pump costs the lower-income family 1.9% more of their 
 
 That is one price at one pump on one day, landing anywhere from 0.6% to 1.9% of a paycheck depending on who is filling the tank. And it comes from simple arithmetic: gallons burned divided by take-home pay. Drive more, drive a thirstier vehicle, or earn less, and the slope steepens.
 
-Income is the part people underestimate. The same driving, the same truck, the same commute costs the same dollars no matter who you are. What changes is what those dollars take out of a paycheck, and how hard the next price increase lands.
+Income is the part people underestimate. The same driving, the same truck, the same commute costs the same dollars no matter who you are. What changes is what those dollars take out of a paycheck.
 
-![Sensitivity to a $1 rise at the pump, at the 20th and 80th percentiles of income](images/05-slope-two-incomes.png)
+![Gasoline as a share of take-home pay, at the 20th and 80th percentiles of income](images/05-matrix-two-incomes.png)
 *Married couple with no children in both panels, same cars and same driving. Only income differs.*
 
-Read one square in each panel. A household driving 20,000 miles a year at 25 miles per gallon is doing ordinary American driving. When gas goes up a dollar, that costs the lower-income household 2.4% of its take-home pay and the higher-income household 0.5%. The CPI's number for the same dollar is 0.9%. Almost the entire left panel is above the CPI's line, and almost the entire right panel is below it.
+Find the same square in each panel. A household driving 20,000 miles a year at 25 miles per gallon is doing ordinary American driving. That costs the lower-income household 11% of its take-home pay and the higher-income household 2.5%. The CPI's number for the same gas at the same pump is 4.3%.
+
+Look at how much more ground the left panel covers. For the lower-income household the grid runs from 1.7% to 37% of take-home pay. For the higher-income household the whole grid fits between 0.4% and 8.2%. Add a few thousand miles or drop a few miles per gallon, and the lower-income household moves several points while the higher-income household barely moves at all. Most of the left panel is above the CPI's line, and most of the right panel is below it.
 
 You might reasonably ask whether these households are made up. They are built from published averages, so we checked them against what people told the government they actually spent.
 
