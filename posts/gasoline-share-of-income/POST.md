@@ -36,7 +36,7 @@ Go back to 1978. That was the year the modern CPI infrastructure was rolled out,
 
 What do these two completely unrelated events have in common?
 
-Well, think of what has happened since for music. Tapes were displaced by CDs, which were then displaced by MP3s (and Napster), which were then displaced by iPods. And then the entire music industry was turned upside down by streaming. Unless you are an audiophile and love your records, technology begot progress, and now we carry around the entire history of all music in our pockets on demand for $10 a month.
+Well, think of what has happened since for music. Tapes were displaced by CDs, which were then displaced by MP3s (and Napster), which put a thousand songs in your pocket once the iPod arrived. And then the entire music industry was turned upside down by streaming. Unless you are an audiophile and love your records, technology begot progress, and now we carry around the entire history of all music in our pockets on demand for $10 a month.
 
 Now, let's compare this to the enhancements to CPI over the same years. The BLS improved the surveys, introduced chained CPI, started using a geometric mean, and increased the frequency of weight changes. But the 1978 architecture remains the same.
 
