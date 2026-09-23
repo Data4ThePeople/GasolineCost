@@ -39,10 +39,20 @@ def foot(f, src):
 
 
 def ri_2023():
-    df = pd.read_excel(RAW / 'cpi_relative_importance_2023.xlsx', header=None)
+    """Average gasoline relative importance across 2023, the weight actually in force that year.
+
+    Calendar 2023 ran on the weights in the December 2022 table (2021 spending), price-updated
+    each month. The December 2023 table is not it: that one carries 2022 spending weights and
+    is the basis for calendar 2024. Full-year CEX spending needs a full-year weight, so we
+    average the twelve monthly values: 3.2% in January to 3.6% in September, 3.4% for the year.
+    """
+    df = pd.read_excel(RAW / 'cpi_relative_importance_2022.xlsx', header=None)
     r = df[df[1].astype(str).str.strip() == 'Gasoline (all types)']
     assert len(r) == 1
-    return float(r.iloc[0, 2])
+    w0 = float(r.iloc[0, 2])
+    G, A = model.CPI['gasoline_all_types'], model.CPI['all_items']
+    vals = [w0 * (G[f'2023-{m:02d}'] / G['2022-12']) / (A[f'2023-{m:02d}'] / A['2022-12']) for m in range(1, 13)]
+    return sum(vals) / len(vals)
 
 
 def chart_profiles(m):
@@ -107,7 +117,7 @@ def chart_cex():
     for i, v in enumerate(vals):
         ax.text(v + 0.12, i, f'{v:.1f}%', va='center', color=INK, fontweight='bold', fontsize=11.5)
     ax.axvline(ri, color=REF, lw=1.4)
-    ax.text(ri + 0.08, len(rows) - 0.45, f'CPI gasoline weight,\nDec. 2023: {ri:.1f}%', fontsize=9.5, color=INK2, va='bottom', linespacing=1.15)
+    ax.text(ri + 0.08, len(rows) - 0.45, f'CPI gasoline weight,\n2023 average: {ri:.1f}%', fontsize=9.5, color=INK2, va='bottom', linespacing=1.15)
     ax.set_xlim(0, max(vals) * 1.15); ax.set_ylim(-0.6, len(rows) + 0.35)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%'); ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
     ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
@@ -391,7 +401,7 @@ def chart_denominator():
         ax.text(v + 0.12, y - h / 2 - 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
     ri = ri_2023()
     ax.axvline(ri, color=REF, lw=1.4)
-    ax.text(ri + 0.1, 5.15, f'CPI gasoline weight, December 2023: {ri:.1f}%', color=INK2, fontsize=9.5, va='center')
+    ax.text(ri + 0.1, 5.15, f'CPI gasoline weight, 2023 average: {ri:.1f}%', color=INK2, fontsize=9.5, va='center')
     ax.set_yticks(ys, labels[::-1]); ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
     ax.set_xlim(0, max(income) * 1.15); ax.set_ylim(-0.7, 5.3)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
@@ -401,7 +411,7 @@ def chart_denominator():
     colored_line(f, 0.03, 0.845, [('Share of ', INK2, False), ('take-home pay', S[1], True), ('        Share of ', INK2, False),
                                   ('total spending', S[0], True), (', the way the CPI does it', INK2, False)])
     foot(f, 'Sources: BLS Consumer Expenditure Survey 2023, the last year BLS published income after taxes, and the CPI relative\n'
-            'importance table for December 2023. Everything here is 2023, when regular gasoline averaged $3.52 a gallon.')
+            'importance tables. Everything here is 2023, when regular gasoline averaged $3.52 a gallon.')
     f.savefig(OUT / '10-denominator.png', facecolor=BG); plt.close(f)
 
 
