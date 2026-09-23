@@ -118,6 +118,10 @@ In 2023, the lowest fifth of households by income spent 8.2% of their after-tax 
 
 So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question almost nobody is asking, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. The only thing missing is the will to publish inflation as a distribution instead of a single point.
 
+[Eric's closing goes here.]
+
+::: divider
+
 ## How we built this
 
 Every number above is recomputed from published data each time we rebuild the page.
@@ -136,5 +140,3 @@ Every number above is recomputed from published data each time we rebuild the pa
 - **Nobody drives the same at $7 as at $2.** Our lines hold miles fixed at every price, so the far right of the price chart is likely a little steep for every household, including the CPI's own line.
 - **Gasoline is not the whole story.** A household that spends less on gas may spend more on rent, insurance or medical care, and this post measures one item.
 - **October 2025 has no CPI.** The federal shutdown stopped collection for 43 days, and that month was never published. It is the first gap since January 1921.
-
-[Eric's closing goes here.]
