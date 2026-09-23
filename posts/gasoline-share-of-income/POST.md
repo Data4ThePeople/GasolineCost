@@ -84,7 +84,7 @@ The CPI divides gasoline spending by all other spending. We divide it by what a 
 
 Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the question in the car is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought.
 
-Then look at what a spending denominator quietly does. Spending includes what people put on a credit card, borrow, or pull out of savings. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. Measured against spending, their gasoline comes to 3.6%, which sounds mild. Measured against their income, it is 7.6%. The first number gets smaller precisely because their finances are stretched, since the borrowing that keeps the lights on sits in the denominator. We do not think a household should look better off in the statistics for going further into debt to buy necessities.
+Then look at what a spending denominator quietly does. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. That gap gets filled somehow: savings being drawn down, a retirement account being tapped, gifts and family money, help the survey does not count as income, and for some households, credit. Measured against their spending, their gasoline comes to 3.6%, which sounds mild. Measured against their income, it is 7.6%. Whatever is filling the gap sits in the denominator and makes gasoline look like a smaller part of life, at exactly the income level with the least room to absorb it.
 
 There is a second problem, and it is older than the CPI's current design. When you add up everyone's gasoline and divide by everyone's spending, households that spend more count more. Economists have a name for this, a plutocratic index, and it is not an insult, it is a description of the arithmetic. The top fifth of households spends about $150,000 a year and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves. Weight each household equally instead, and gasoline's share of spending in 2024 comes out at 3.6% rather than 3.4%. The gap is small in a single item, and it runs the same direction in every item where lower-income households buy more than their share.
 
@@ -131,7 +131,7 @@ So here is where the case study lands, in our view. The CPI's gasoline number is
 
 ### Why not measure gasoline as a share of spending, the way the CPI does?
 
-Because spending includes borrowing. A household that puts groceries and gas on a credit card shows up with more spending, which makes each item look like a smaller slice. Measured against what they earn, the picture changes, and it changes most for the households with the least room.
+Because spending can run well above income. Households fill that gap with savings, retirement accounts, family help and credit, and all of it lands in the denominator, which makes each item look like a smaller slice. Measured against what they earn, the picture changes, and it changes most for the households with the least room.
 
 ![Gasoline spending in 2023 measured against take-home pay and against total spending](images/06-denominator.png)
 *The two measures agree in the middle of the income range and part company at the ends.*
