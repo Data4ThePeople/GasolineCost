@@ -22,11 +22,11 @@ Last month the Bureau of Labor Statistics (BLS) told us that annual inflation wa
 
 If you go back over the entire history of CPI (back to 1913), the average annual inflation was 3.3%.
 
-In other words, the struggle with prices you are feeling right now is, as measured by our government - on average - what the typical American has felt over the entire recorded history of this country. It is no big deal. Your experience, if different, is not valid.
+In other words, the struggle with prices you are feeling right now is, as measured by our government—on average—what the typical American has felt over the entire recorded history of this country. It is no big deal. Your experience, if different, is not valid.
 
 How does it feel to be told by the government that your experience of prices as you go about your day is wrong?
 
-This is the problem. Something is not adding up here. The economic machinery of this country seems to be driven by a number that doesn't see the lives of a typical American. And CPI is just one example of this dynamic - of the structures and systems in power becoming tone deaf to the struggles of real people. Maybe this is why America is where it is now. People aren't feeling heard. What if fixing this destructive polarization started with finally seeing and hearing people, and the lives they have to live?
+This is the problem. Something is not adding up here. The economic machinery of this country seems to be driven by a number that doesn't see the lives of a typical American. And CPI is just one example of this dynamic—of the structures and systems in power becoming tone deaf to the struggles of real people. Maybe this is why America is where it is now. People aren't feeling heard. What if fixing this destructive polarization started with finally seeing and hearing people, and the lives they have to live?
 
 We're not going to fix this today. That's well beyond our pay grade. But we are going to show you why it needs to be fixed for the way we measure inflation. And we are going to show you how it can be fixed. In short, we are going to give our elected leaders the playbook for how to better measure the lived experience of the people they were elected to serve (reminder: that would be voters, not investors).
 
@@ -45,7 +45,7 @@ Here are both tracks since 1978, the year the CPI's current design was put in pl
 ![Two timelines since 1978: recorded music formats, and changes to the CPI](images/01-timeline.png)
 *Music dates are the year each format arrived for American listeners. CPI dates are when each change took effect.*
 
-And that's the problem. One highly competitive industry was dismantled and rebuilt from the ground up by technology. The other (our government's inflation measure) is a monopoly, with no competitive forces present to force innovation. And so, it improved a bit here and there. But it remains largely stuck in the 1970s. But look at the bright side, at least CPI is better off than our poverty measure, which was developed and stuck in the 1960s. [insert a link here to my Stuck in 1963 post]
+And that's the problem. One highly competitive industry was dismantled and rebuilt from the ground up by technology. The other (our government's inflation measure) is a monopoly, with no competitive forces present to force innovation. And so, it improved a bit here and there. But it remains largely stuck in the 1970s. But look at the bright side, at least CPI is better off than our poverty measure, which was developed and stuck in the 1960s ([we wrote about that one here](https://www.data4thepeople.com/p/frozen-in-1963)).
 
 Either way, imagine a world where cassette tapes (and music) had the same lack of competitive forces that CPI has. We would still all have Sony Walkmans. Maybe they would be smaller and have slightly better sound quality. But we'd be stuck in the past with our cassette tapes rather than all the music the world has to offer at our fingertips.
 
@@ -55,7 +55,7 @@ The reason why inflation is broken is not because CPI is broken. Think of CPI as
 
 And here's the deal. With late 1970s technology, that was the best we could do. We could put together an inordinately complex methodology to measure the experience of this one "person" as best as we could. And then we wired that one number into everything. It tells people what inflation was. It moves Social Security checks and federal retiree pensions. It adjusts tax brackets and the standard deduction. It sets the rebates drug makers owe Medicaid and Medicare when they raise prices faster than inflation. It updates the poverty guidelines that decide who qualifies for help, and the food plan behind SNAP benefits. It sets what inflation-protected savings bonds and Treasury securities pay. Outside the government, it raises union wages, commercial rents and alimony payments. And it sits on the table when the Federal Reserve decides what to do with interest rates.
 
-A lot has changed since then regarding technology. For example, the tool I have built and am sharing with you was built in minutes by team of AI agents which I control through PyCharm (a fantastic system btw), a day if you include all my reviews, stress testing, and writing of the post you are reading. We don't have to have one view of inflation anymore. We can quantify hundreds, thousands, or even millions of experiences of inflation. We could create an immense distribution curve of inflation as experienced by people up and down the economic spectrum and try to manage the distribution. We don't have to be beholden to error-prone single point estimates anymore (the statistical equivalent of a tape deck). We can do much better.
+A lot has changed since then regarding technology. For example, the tool I have built and am sharing with you was built in minutes by a team of AI agents that I direct, a day if you include all my reviews, stress testing, and writing of the post you are reading. We don't have to have one view of inflation anymore. We can quantify hundreds, thousands, or even millions of experiences of inflation. We could create an immense distribution curve of inflation as experienced by people up and down the economic spectrum and try to manage the distribution. We don't have to be beholden to error-prone single point estimates anymore (the statistical equivalent of a tape deck). We can do much better.
 
 That distribution already exists in the data. Here is what one month of gasoline looks like when you stop averaging it into a single household.
 
@@ -90,10 +90,10 @@ So we use take-home pay, after federal income and payroll taxes, because it answ
 
 We took six households that the government's own data says exist. The Census Bureau gave us their incomes. The Federal Highway Administration's travel survey gave us how far each one drives and the gas mileage of the cars they own. The IRS rules gave us their federal income and payroll taxes, because people buy gas with take-home pay, not with pre-tax pay. Then we did the only arithmetic that matters to a household: gallons burned, times the price, divided by what they actually take home.
 
-The gap shows up immediately. Every household that drives a normal amount spends more of its income on gas than the CPI's 4.3%, and the households that are furthest from that number are the ones with the least room to absorb it.
+The gap shows up immediately. Five of our six households spend more of their income on gas than the CPI's 4.3%, and the ones furthest above it have the least room to absorb it.
 
-![Six households, gasoline as a share of after-tax income, against the CPI's 4.3% line](images/03-share-by-household.png)
-*At $4.48 a gallon. After-tax income counts federal income and payroll taxes only.*
+![Six households, gasoline as a share of take-home pay, against the CPI's 4.3% line](images/03-share-by-household.png)
+*At $4.48 a gallon. Take-home pay counts federal income and payroll taxes only.*
 
 The median American household, a married couple with two cars and $87,460 of income before tax, spends $4,240 a year on gasoline. That is $353 a month, and it is 5.7% of what they take home. A family at the 20th percentile of income, $35,800 before tax, spends less on gas in dollars, $3,726, but that is 8.7% of their take-home pay. A rural family with a car and a pickup is at 7.7%. A retired couple with one car is at 2.9%, below the CPI's number, which is its own kind of finding.
 
@@ -112,10 +112,10 @@ Between $3 and $6 gas, the first household goes from 7.3% of its take-home pay t
 
 You might reasonably ask whether these households are made up. They are built from published averages, so we checked them against what people told the government they actually spent.
 
-![Gasoline as a share of after-tax income by income fifth, 2023](images/05-cex-by-income.png)
+![Gasoline as a share of take-home pay by income fifth, 2023](images/05-cex-by-income.png)
 *From the Consumer Expenditure Survey, the last year the BLS published income after taxes. Means per consumer unit.*
 
-In 2023, the lowest fifth of households by income spent 8.2% of their after-tax income on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is validation for the simple math that runs the tool.
+In 2023, the lowest fifth of households by income spent 8.2% of their take-home pay on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is validation for the simple math that runs the tool.
 
 So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question that is largely meaningless for you and me, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. Although harder, it's likely available for all the other expense items as well. The only thing missing is the will to publish inflation as a distribution instead of a single point.
 
@@ -156,7 +156,7 @@ Weight each household equally instead and gasoline's share of spending in 2024 c
 
 ### Is the CPI wrong?
 
-No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and interest rates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
+No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
 
 ### Why only federal taxes?
 
