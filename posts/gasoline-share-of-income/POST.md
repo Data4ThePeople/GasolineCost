@@ -123,7 +123,7 @@ So here is where the case study lands, in our view. The CPI's gasoline number is
 
 For those of you who have worked in the corporate world, you know that person (likely a supervisor) that reviews work you've done, tells you something is wrong with it, but doesn't give any ideas on how to fix it? There's always a handful lurking around.
 
-I've always hated that person. Tell me my idea is bad—there's no problem with that. But then you better be ready to offer your idea for us to discuss. Suffice it to say, I don't want to be that person, which is why I offered an alternative to CPI in this post. Is my idea the best one? Of course not. I am a generalist data journalist with a bunch of random life experience. I am certain that America is home to hundreds of creative PhD statistician / economists who could come up with far better ideas.
+I've always hated that person. Tell me my idea is bad—there's no problem with that. But then you better be ready to offer your idea for us to discuss. Suffice it to say, I don't want to be that person, which is why I offered an alternative to CPI in this post. Is my idea the best one? Of course not. I am a middle-aged generalist data journalist with a bunch of random life experience. I am certain that America is home to hundreds of creative PhD statistician / economists who could come up with far better ideas.
 
 But what do we reward these more qualified people for today? To predict what the broken tape deck will say in the future. You can make a nice career out of knowing the ins and outs of how the tape deck works and having an edge on what sounds it will spit out next.
 
