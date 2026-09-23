@@ -350,6 +350,13 @@ Consumer Expenditure Surveys".
 
 ---
 
+## U.S. population (U.S. Census Bureau)
+
+341.8 million on July 1, 2025, from the Vintage 2025 estimates released January 27, 2026
+(https://www.census.gov/newsroom/press-releases/2026/population-growth-slows.html). Used
+once in the post, rounded to 342 million. The CPI-U itself covers urban consumers, about
+93% of the population per BLS, which is not verified here.
+
 ## Tax parameters, tax year 2026 (IRS, SSA)
 
 IRS Rev. Proc. 2025-32 (brackets, standard deduction, extra deduction for 65+, child tax
