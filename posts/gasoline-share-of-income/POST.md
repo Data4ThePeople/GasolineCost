@@ -127,6 +127,27 @@ So here is where the case study lands, in our view. The CPI's gasoline number is
 
 ::: divider
 
+## Common questions
+
+### Why not measure gasoline as a share of spending, the way the CPI does?
+
+Because spending includes borrowing. A household that puts groceries and gas on a credit card shows up with more spending, which makes each item look like a smaller slice. Measured against what they earn, the picture changes, and it changes most for the households with the least room.
+
+![Gasoline spending in 2023 measured against take-home pay and against total spending](images/06-denominator.png)
+*The two measures agree in the middle of the income range and part company at the ends.*
+
+For the middle fifth of households the two measures give the same answer, 4.1%. For the lowest fifth, gasoline is 3.9% of spending and 8.2% of take-home pay. For the highest fifth it runs the other way, 2.6% of spending and 1.9% of take-home pay. The denominator decides which story gets told.
+
+### Is the CPI wrong?
+
+No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and interest rates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
+
+### Why only federal taxes?
+
+Because state income taxes vary by where you live, and adding them would mean picking a state for every household. Leaving them out makes take-home pay higher than it really is for most people, which makes every share in this post smaller than it really is. The direction of that error runs against our own argument, which is how we prefer it.
+
+::: divider
+
 ## How we built this
 
 Every number above is recomputed from published data each time we rebuild the page.
