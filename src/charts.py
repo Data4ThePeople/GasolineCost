@@ -371,11 +371,41 @@ def chart_lines_two_incomes(m):
     f.savefig(OUT / '09-lines-two-incomes.png', facecolor=BG); plt.close(f)
 
 
+def chart_denominator():
+    """The same spending, two denominators: share of total spending vs share of take-home pay."""
+    d = cex.read('cu-income-quintiles-before-taxes', 2023)
+    labels = ['Lowest fifth', 'Second fifth', 'Middle fifth', 'Fourth fifth', 'Highest fifth']
+    names = [n for n in d if n != 'All consumer units']
+    assert len(names) == 5
+    spend = [100 * d[n]['gas'] / d[n]['spending'] for n in names][::-1]
+    income = [100 * d[n]['gas'] / d[n]['income_after'] for n in names][::-1]
+    ys = list(range(5))
+    f, ax = fig(5.4)
+    h = 0.34
+    ax.barh([y + h / 2 + 0.02 for y in ys], income, height=h, color=S[1])
+    ax.barh([y - h / 2 - 0.02 for y in ys], spend, height=h, color=S[0])
+    for y, v in zip(ys, income):
+        ax.text(v + 0.12, y + h / 2 + 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
+    for y, v in zip(ys, spend):
+        ax.text(v + 0.12, y - h / 2 - 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
+    ax.set_yticks(ys, labels[::-1]); ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
+    ax.set_xlim(0, max(income) * 1.15); ax.set_ylim(-0.7, 4.7)
+    ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
+    ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
+    f.subplots_adjust(left=0.19, right=0.96, top=0.76, bottom=0.16)
+    title(f, 'Same gas, two denominators', 'Gasoline spending in 2023, measured two ways, by fifth of household income')
+    colored_line(f, 0.03, 0.845, [('Share of ', INK2, False), ('take-home pay', S[1], True), ('        Share of ', INK2, False),
+                                  ('total spending', S[0], True), (', the way the CPI does it', INK2, False)])
+    foot(f, 'Source: BLS Consumer Expenditure Survey 2023, the last year BLS published income after taxes. Means per consumer unit.\n'
+            'The lowest fifth reports spending about twice its income, which is why its two bars are so far apart.')
+    f.savefig(OUT / '10-denominator.png', facecolor=BG); plt.close(f)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     m = json.loads((PROCESSED / 'model.json').read_text())
     chart_profiles(m); chart_price(m); chart_cex(); chart_matrix(m); chart_matrix_income(m)
-    chart_distribution(m); chart_timeline(); chart_two_incomes(m); chart_lines_two_incomes(m)
+    chart_distribution(m); chart_timeline(); chart_two_incomes(m); chart_lines_two_incomes(m); chart_denominator()
     print('wrote', sorted(p.name for p in OUT.glob('*.png')))
 
 
