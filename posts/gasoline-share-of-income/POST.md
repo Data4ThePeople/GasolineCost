@@ -22,17 +22,17 @@ Last month the Bureau of Labor Statistics (BLS) told us that annual inflation wa
 
 If you go back over the entire history of CPI (back to 1913), the average annual inflation was 3.3%.
 
-In other words, the struggle with prices you are feeling right now is, as measured by our government, what the typical American has felt over the entire recorded history of this country. It is no big deal. Your experience, if different, is not valid.
+In other words, the struggle with prices you are feeling right now is, as measured by our government - on average - what the typical American has felt over the entire recorded history of this country. It is no big deal. Your experience, if different, is not valid.
 
 How does it feel to be told by the government that your experience of prices as you go about your day is wrong?
 
-This is the problem. Something is not adding up here. The economic machinery of this country seems to be driven by a number that doesn't see the lives of a typical American. And CPI is just one example of this dynamic, of the structures and systems in power becoming tone deaf to the struggles of real people. Maybe this is why America is where it is now. People aren't feeling heard. What if fixing this destructive polarization started with finally seeing and hearing people, and the lives they have to live?
+This is the problem. Something is not adding up here. The economic machinery of this country seems to be driven by a number that doesn't see the lives of a typical American. And CPI is just one example of this dynamic - of the structures and systems in power becoming tone deaf to the struggles of real people. Maybe this is why America is where it is now. People aren't feeling heard. What if fixing this destructive polarization started with finally seeing and hearing people, and the lives they have to live?
 
-We're not going to fix this today. That's well beyond our pay grade. But we are going to show you why it needs to be fixed for the way we measure inflation. And then we are going to show you how it can be fixed. In short, we are going to give our elected leaders the playbook for how to better measure the lived experience of the people they were elected to serve (that would be voters, not investors).
+We're not going to fix this today. That's well beyond our pay grade. But we are going to show you why it needs to be fixed for the way we measure inflation. And we are going to show you how it can be fixed. In short, we are going to give our elected leaders the playbook for how to better measure the lived experience of the people they were elected to serve (reminder: that would be voters, not investors).
 
 ## Illustrating the problem: we're still using a tape deck when we could stream
 
-1978. That was the year the modern infrastructure was rolled out, introducing the same item and outlet sample design we use today. One year later, Sony released the Walkman, popularizing personal cassette tapes.
+1978. That was the year the modern CPI infrastructure was rolled out, introducing the same item and outlet sample design we use today. [please fact check this!] One year later, Sony released the Walkman, popularizing personal cassette tapes.
 
 What do these two completely unrelated events have in common?
 
