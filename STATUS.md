@@ -6,7 +6,7 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2a, in progress
+Step: 2b, in progress
 Since: 2026-09-23
 
 ## Steps
@@ -14,7 +14,7 @@ Since: 2026-09-23
 | Step | What | Confirmed | Notes |
 |---|---|---|---|
 | 1  | Exploration and analysis | 2026-09-22 | Tool, 5 charts, DATASETS.md, tie-out |
-| 2a | Draft with brackets resolved | | Case study written, 6 charts, tool embedded; closing still to write |
+| 2a | Draft with brackets resolved | 2026-09-23 | Case study, 6 charts, tool embedded, closing in |
 | 2b | Eric's edit, Claude's look-over | | |
 | 2c | Slice markup | | |
 | 2d | Hero 1680x1080 + alt text | | |
@@ -27,6 +27,8 @@ Since: 2026-09-23
 None.
 
 ## Log
+
+- 2026-09-23 Step 2a confirmed done. Step 2b opened: Eric edits POST.md directly, then Claude looks it over.
 
 - 2026-09-23 Step 2a reopened right after being marked done: Eric still has the closing to write. 2b not started.
 
