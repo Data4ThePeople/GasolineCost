@@ -223,12 +223,74 @@ def chart_matrix_income(m):
     f.savefig(OUT / '05-slope-matrix-by-income.png', facecolor=BG); plt.close(f)
 
 
+def chart_distribution(m):
+    """What one CPI number hides: gasoline's share of after-tax income across the income
+    distribution, from CEX deciles, moved to the current pump price."""
+    d = cex.read('cu-income-deciles-before-taxes', 2023)
+    price23 = sum(p for dt, p in model.GAS if dt.startswith('2023')) / len([1 for dt, p in model.GAS if dt.startswith('2023')])
+    k = m['price'] / price23
+    names = [n for n in d if n != 'All consumer units']
+    assert len(names) == 10, names
+    shares = [100 * d[n]['gas'] / d[n]['income_after'] * k for n in names]
+    cpi = cpi_weight(m)
+    f, ax = fig(5.8)
+    xs = list(range(1, 11))
+    ax.plot(xs, shares, color=S[0], lw=2.5, marker='o', ms=7, mfc=S[0], mec=BG, mew=2)
+    ax.axhline(cpi, color=REF, lw=1.6)
+    ax.text(10.35, cpi, f'What the CPI\nreports: {cpi:.1f}%', color=INK2, fontsize=10.5, va='center', linespacing=1.2)
+    for i, dx in ((0, 14), (9, -6)):
+        ax.annotate(f'{shares[i]:.1f}%', (xs[i], shares[i]), xytext=(dx, 12), textcoords='offset points',
+                    ha='center', color=INK, fontsize=11.5, fontweight='bold')
+    ax.set_xlim(0.5, 10.5); ax.set_ylim(0, max(shares) * 1.18)
+    ax.set_xticks(xs, ['Poorest\n10%', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', 'Richest\n10%'])
+    ax.tick_params(axis='x', labelcolor=INK2, labelsize=10)
+    ax.yaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
+    ax.grid(axis='y', color=GRID, lw=0.8); ax.set_axisbelow(True)
+    f.subplots_adjust(left=0.09, right=0.84, top=0.8, bottom=0.2)
+    title(f, 'One number, ten very different experiences',
+          f'Gasoline as a share of take-home pay at \\${m["price"]:.2f} a gallon, households ranked by income in tenths')
+    foot(f, 'Source: BLS Consumer Expenditure Survey 2023, the last year BLS published income after taxes, moved to the current\n'
+            'pump price at the same gallons. The poorest tenth reports spending far above its income, so its share runs high.')
+    f.savefig(OUT / '06-distribution.png', facecolor=BG); plt.close(f)
+
+
+def chart_timeline():
+    """Two tracks since 1978: how recorded music changed, and how the CPI changed."""
+    music = [(1979, 'Sony Walkman'), (1983, 'CDs reach the U.S.'), (1999, 'Napster'), (2001, 'iPod'),
+             (2007, 'iPhone'), (2011, 'Spotify in the U.S.')]
+    cpi = [(1978, 'Item and outlet\nsample design'), (1983, 'Rental equivalence\nfor homeowners'), (1999, 'Geometric mean\nformula'),
+           (2002, 'Chained CPI\npublished'), (2021, 'Gas prices from\noutside data'), (2023, 'Annual weight\nupdates')]
+    f, ax = fig(5.0)
+    x0, x1 = 1976, 2028
+    for y, lab, col, side in [(1, music, S[2], 1), (0, cpi, S[0], -1)]:
+        ax.plot([x0, x1], [y, y], color=col, lw=2.5, solid_capstyle='round')
+        for i, (yr, name) in enumerate(lab):
+            ax.plot(yr, y, 'o', ms=9, mfc=col, mec=BG, mew=2, zorder=3)
+            off = 24 if (i % 2 == 0) else 64
+            ax.annotate(f'{yr}\n{name}', (yr, y), xytext=(0, side * off), textcoords='offset points', ha='center',
+                        va='bottom' if side > 0 else 'top', color=INK, fontsize=9.5, linespacing=1.25,
+                        arrowprops=dict(arrowstyle='-', color=col, lw=1, shrinkA=0, shrinkB=4))
+    ax.text(x0 - 0.5, 1, 'Recorded\nmusic', color=S[2], fontsize=12, fontweight='bold', ha='right', va='center', linespacing=1.2)
+    ax.text(x0 - 0.5, 0, 'The CPI', color=S[0], fontsize=12, fontweight='bold', ha='right', va='center')
+    ax.set_xlim(x0 - 9, x1 + 1); ax.set_ylim(-1.5, 2.1)
+    ax.set_yticks([])
+    ax.set_xticks([1980, 1990, 2000, 2010, 2020, 2026], ['1980', '1990', '2000', '2010', '2020', '2026'])
+    ax.tick_params(axis='x', labelcolor=MUTED, labelsize=10.5, pad=6)
+    f.subplots_adjust(left=0.02, right=0.98, top=0.8, bottom=0.16)
+    title(f, 'Same starting line, 1978',
+          'One industry was rebuilt from the ground up. The other improved around the edges.')
+    foot(f, 'Sources: BLS CPI Handbook of Methods and BLS announcements; company and industry records for the music dates.')
+    f.savefig(OUT / '07-timeline.png', facecolor=BG); plt.close(f)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     m = json.loads((PROCESSED / 'model.json').read_text())
     chart_profiles(m); chart_price(m); chart_cex(); chart_matrix(m); chart_matrix_income(m)
+    chart_distribution(m); chart_timeline()
     print('wrote', sorted(p.name for p in OUT.glob('*.png')))
 
 
 if __name__ == '__main__':
     main()
+
