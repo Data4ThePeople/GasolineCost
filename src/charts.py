@@ -283,11 +283,61 @@ def chart_timeline():
     f.savefig(OUT / '07-timeline.png', facecolor=BG); plt.close(f)
 
 
+def chart_slope_two(m):
+    """Sensitivity to a $1 rise at two incomes, everything else held the same:
+    married couple, no children, same cars, same driving."""
+    from tax import after_tax
+    cs = cpi_slope_now(m)
+    pct = dict(model.INC_PCTL)
+    panels = [('Lower-income household', pct[20]), ('Higher-income household', pct[80])]
+    f, axes = plt.subplots(1, 2, figsize=(11.5, 5.6), dpi=200)
+    f.patch.set_facecolor(BG)
+    for ax, (lab, pre) in zip(axes, panels):
+        ax.set_facecolor(BG)
+        for sp in ax.spines.values():
+            sp.set_visible(False)
+        ax.tick_params(length=0)
+        inc = after_tax('mfj', pre)['after_tax']
+        for i, g in enumerate(MPGS):
+            for j, mi in enumerate(MILES):
+                v = 100 * (mi / g) / inc          # points of take-home pay per $1 a gallon
+                col = cell_color(v, cs, 1.0)
+                ax.add_patch(plt.Rectangle((j + 0.03, i + 0.03), 0.94, 0.94, color=col, lw=0))
+                ax.text(j + 0.5, i + 0.5, f'{v:.1f}', ha='center', va='center', fontsize=10,
+                        fontweight='bold', color='#0b0b0b' if lum(col) > 0.28 else '#ffffff')
+        ax.set_xlim(0, len(MILES)); ax.set_ylim(len(MPGS), 0)
+        ax.set_xticks([j + 0.5 for j in range(len(MILES))], [f'{mi // 1000}k' for mi in MILES])
+        ax.set_yticks([i + 0.5 for i in range(len(MPGS))], [str(g) for g in MPGS])
+        ax.tick_params(axis='both', labelcolor=INK2, labelsize=10)
+        ax.set_title(f'{lab}: \\${pre:,} before tax, \\${inc:,.0f} take-home', loc='left', color=INK,
+                     fontsize=12, fontweight='bold', pad=8)
+        ax.set_xlabel('Miles driven a year, all cars', color=MUTED, fontsize=9.5)
+    axes[0].set_ylabel('Miles per gallon', color=MUTED, fontsize=9.5)
+    f.subplots_adjust(left=0.06, right=0.98, top=0.72, bottom=0.2, wspace=0.12)
+    f.text(0.03, 0.965, 'The same $1 at the pump, two very different bites', fontsize=16, fontweight='bold', color=INK, va='top')
+    f.text(0.03, 0.925, 'Percentage points of take-home pay added by each $1 a gallon. Married couple, no children, '
+                        'in both panels: only income differs.', fontsize=11, color=INK2, va='top')
+    colored_line(f, 0.03, 0.885, [('In the CPI, a $1 rise adds about ', INK2, False), (f'{cs:.1f} points.', INK, True),
+                                  ('   ', INK2, False), ('Green', GREEN, True), (' is less than that,   ', INK2, False),
+                                  ('gray', '#8C9094', True), (' about the same,   ', INK2, False), ('red', RED, True),
+                                  (' more.', INK2, False)], size=11)
+    f.text(0.03, 0.055, 'Sources: BLS (CPI weight, our estimate from the July 2026 figure), Census Bureau (2025 income percentiles: '
+                       '20th and 80th), IRS.\nFederal income and payroll taxes only.', fontsize=8.5, color=MUTED, va='bottom')
+    f.text(0.03, 0.02, CREDIT, fontsize=9, color=INK2, va='bottom', fontweight='bold')
+    f.savefig(OUT / '08-slope-two-incomes.png', facecolor=BG); plt.close(f)
+
+
+def cpi_slope_now(m):
+    """Points the CPI gasoline weight adds per $1 a gallon, at the current price."""
+    p, c = m['price'], m['cpi']
+    return (model.cpi_weight_at(p + 0.01, c) - model.cpi_weight_at(p - 0.01, c)) / 0.02
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     m = json.loads((PROCESSED / 'model.json').read_text())
     chart_profiles(m); chart_price(m); chart_cex(); chart_matrix(m); chart_matrix_income(m)
-    chart_distribution(m); chart_timeline()
+    chart_distribution(m); chart_timeline(); chart_slope_two(m)
     print('wrote', sorted(p.name for p in OUT.glob('*.png')))
 
 

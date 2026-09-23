@@ -100,12 +100,12 @@ Every dollar added at the pump costs the lower-income family 1.9% more of their 
 
 That is one price at one pump on one day, landing anywhere from 0.6% to 1.9% of a paycheck depending on who is filling the tank. And it comes from simple arithmetic: gallons burned divided by take-home pay. Drive more, drive a thirstier vehicle, or earn less, and the slope steepens.
 
-Income is the part people underestimate. The same driving, the same truck, the same commute costs the same dollars no matter who you are. What changes is what those dollars take out of a paycheck.
+Income is the part people underestimate. The same driving, the same truck, the same commute costs the same dollars no matter who you are. What changes is what those dollars take out of a paycheck, and how hard the next price increase lands.
 
-![The same driving at three incomes: 20th percentile, median and 80th percentile](images/05-matrix-by-income.png)
-*Each cell is gasoline as a share of take-home pay at $4.48 a gallon. Green is under the CPI's 4.3%, red is over.*
+![Sensitivity to a $1 rise at the pump, at the 20th and 80th percentiles of income](images/05-slope-two-incomes.png)
+*Married couple with no children in both panels, same cars and same driving. Only income differs.*
 
-Look at the top panel and then the bottom one. The middle of the grid, 20,000 miles a year at 25 miles per gallon, is ordinary American driving. At the 20th percentile of income it takes 11.0% of take-home pay. At the median it takes 4.8%. At the 80th percentile it takes 2.5%. Same car, same commute, same pump.
+Read one square in each panel. A household driving 20,000 miles a year at 25 miles per gallon is doing ordinary American driving. When gas goes up a dollar, that costs the lower-income household 2.4% of its take-home pay and the higher-income household 0.5%. The CPI's number for the same dollar is 0.9%. Almost the entire left panel is above the CPI's line, and almost the entire right panel is below it.
 
 You might reasonably ask whether these households are made up. They are built from published averages, so we checked them against what people told the government they actually spent.
 
