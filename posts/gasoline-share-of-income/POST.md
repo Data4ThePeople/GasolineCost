@@ -59,10 +59,10 @@ A lot has changed since then regarding technology. For example, the tool I have 
 
 That distribution already exists in the data. Here is what one month of gasoline looks like when you stop averaging it into a single household.
 
-![Gasoline as a share of take-home pay across ten income groups, against the CPI's 4.3%](images/02-distribution.png)
-*The poorest tenth reports spending well above its income, which is a known limit of the survey, so read that point as a direction and not a precise level.*
+![Gasoline as a share of take-home pay across eight income groups, against the CPI's 4.3%](images/02-distribution.png)
+*The top and bottom tenths are left out. Their reported income is the least reliable part of the survey, and the pattern is clear without them.*
 
-The CPI reports 4.3%. The poorest tenth of households is at 16.4% and the richest tenth is at 1.9%. One number is standing in for all of that.
+The CPI reports 4.3%. Working up the income ladder, the share runs from 8.1% to 3.2%, crossing the CPI's number somewhere between the seventh and eighth tenths. One number is standing in for all of that.
 
 ## Why we need to fix this: a case study using gasoline prices
 
