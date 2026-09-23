@@ -71,9 +71,9 @@ def chart_profiles(m):
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%'); ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
     ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
     f.subplots_adjust(left=0.27, right=0.96, top=0.8, bottom=0.19)
-    title(f, 'Gasoline as a share of after-tax income',
+    title(f, 'Gasoline as a share of take-home pay',
           f'Six households at ${price:.2f} a gallon, the U.S. average for regular on {pd.Timestamp(m["price_date"]):%B %-d, %Y}')
-    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. After-tax income subtracts federal income and payroll taxes only.\n'
+    foot(f, 'Sources: EIA, BLS, Census Bureau, FHWA, IRS. Take-home pay subtracts federal income and payroll taxes only.\n'
              f'CPI weight: BLS July 2026 relative importance (3.8%) moved to the {pd.Timestamp(m["price_date"]):%B %-d, %Y} pump price.')
     f.savefig(OUT / '01-share-by-household.png', facecolor=BG); plt.close(f)
 
@@ -123,7 +123,7 @@ def chart_cex():
     ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
     f.subplots_adjust(left=0.2, right=0.96, top=0.8, bottom=0.15)
     title(f, 'What households actually spent on gas in 2023',
-          'Gasoline and other fuels as a share of after-tax income, by fifth of pretax income')
+          'Gasoline and other fuels as a share of take-home pay, by fifth of pretax income')
     foot(f, 'Source: BLS Consumer Expenditure Survey 2023 (the last year BLS published after-tax income). Means per consumer unit.')
     f.savefig(OUT / '03-cex-by-income.png', facecolor=BG); plt.close(f)
 
