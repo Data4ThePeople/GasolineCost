@@ -333,11 +333,49 @@ def cpi_slope_now(m):
     return (model.cpi_weight_at(p + 0.01, c) - model.cpi_weight_at(p - 0.01, c)) / 0.02
 
 
+def chart_lines_two_incomes(m):
+    """Same household, same driving, two incomes, against the CPI weight, at every price."""
+    from tax import after_tax
+    pct = dict(model.INC_PCTL)
+    miles, mpg = 20_000, 25            # ordinary driving, held the same in both cases
+    xs = [2 + i * 0.05 for i in range(101)]
+    gal = miles / mpg
+    rows = [('Lower-income household', pct[20], S[1]), ('Higher-income household', pct[80], S[2])]
+    f, ax = fig(5.8)
+    ends = []
+    for name, pre, col in rows:
+        inc = after_tax('mfj', pre)['after_tax']
+        ys = [100 * gal * x / inc for x in xs]
+        ax.plot(xs, ys, color=col, lw=2.5)
+        ends.append((ys[-1], f'{name}\n\\${pre:,} income', col))
+    cy = [model.cpi_weight_at(x, m['cpi']) for x in xs]
+    ax.plot(xs, cy, color=REF, lw=2)
+    ends.append((cy[-1], 'What the CPI reports', REF))
+    ends.sort()
+    placed = []
+    for y, n, c in ends:
+        y2 = max([y] + [q + 1.4 for q in placed[-1:]])
+        placed.append(y2)
+        ax.text(7.1, y2, n, color=c if c != REF else INK2, fontsize=10.5, va='center', fontweight='bold', linespacing=1.25)
+    ax.axvline(m['price'], color=GRID, lw=1)
+    ax.text(m['price'], 0.3, f' {pd.Timestamp(m["price_date"]):%b. %-d}: \${m["price"]:.2f}', color=MUTED, fontsize=9.5)
+    ax.set_xlim(2, 7); ax.set_ylim(0, max(e[0] for e in ends) * 1.08)
+    ax.xaxis.set_major_formatter(lambda x, _: f'${x:.0f}'); ax.yaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
+    ax.grid(color=GRID, lw=0.8); ax.set_axisbelow(True)
+    ax.set_xlabel('Price of regular gasoline, dollars per gallon', color=MUTED, fontsize=10)
+    f.subplots_adjust(left=0.08, right=0.68, top=0.79, bottom=0.17)
+    title(f, 'Same car, same commute, two incomes',
+          f'Gasoline as a share of take-home pay, {miles:,} miles a year at {mpg} miles per gallon, at every price')
+    foot(f, 'Sources: EIA, BLS, Census Bureau (2025 income percentiles: 20th and 80th), IRS. Married couple with no children in both\n'
+            'cases: only income differs. Miles held fixed at every price.')
+    f.savefig(OUT / '09-lines-two-incomes.png', facecolor=BG); plt.close(f)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     m = json.loads((PROCESSED / 'model.json').read_text())
     chart_profiles(m); chart_price(m); chart_cex(); chart_matrix(m); chart_matrix_income(m)
-    chart_distribution(m); chart_timeline(); chart_two_incomes(m)
+    chart_distribution(m); chart_timeline(); chart_two_incomes(m); chart_lines_two_incomes(m)
     print('wrote', sorted(p.name for p in OUT.glob('*.png')))
 
 
