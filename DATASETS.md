@@ -133,6 +133,47 @@ All four run the same way: the CPI line is, if anything, a little too high, so t
 between a driving household and the CPI is understated rather than overstated. Checked
 September 22, 2026.
 
+**How much of the CPI is actually collected (response rates).** From BLS's own
+response rate tables, Table R-1, CPI-U U.S. city average:
+https://www.bls.gov/cpi/tables/response-rates/ (2016 as PDF, 2019, 2024 and 2025 as
+xlsx). Rates computed in `data/raw/NOTES_cpi_items.md` from the published counts.
+
+| | 2016 | 2019 | 2024 | 2025 |
+|---|---|---|---|---|
+| Price quotes collected, all items | 81.8% | 79.1% | 72.6% | 69.5% |
+| Housing units that reported a rent | 70.0% | 62.5% | 56.1% | 49.3% |
+| Medical care quotes collected | 47.4% | 47.2% | 32.0% | 39.5% |
+
+In 2025, BLS got a rent from fewer than half the units in its housing sample (35,985
+of 73,015 eligible), in the category carrying 35.6% of the index. The eligible sample
+is shrinking too: 1,144,695 price quotes in 2016 and 1,163,081 in 2024, down to 950,134
+in 2025. What is not collected is imputed.
+
+Points to keep straight when writing about this:
+
+- Imputation is normal and always has been; 2016 was not 100% either. The trend is the
+  story, not the existence.
+- **2025 is contaminated.** The April and June 2025 collection cuts and the 43-day
+  shutdown all fall in that year, so 2025 mixes the long decline with one-off events.
+  The 2016 to 2024 comparison is the cleaner one and is bad enough on its own.
+- **Apparel's low rate is by design**: the sample is doubled and half is deliberately
+  out of season at any time. It is not evidence of decline.
+- These are annual figures; monthly rates move around.
+- **The widely repeated "36% of CPI prices are imputed" is wrong.** That figure is the
+  different-cell share *among prices already being imputed*, from
+  https://www.bls.gov/cpi/tables/imputation.htm, where BLS states the columns "do not
+  represent an overall imputation rate for each survey." Use the response rates above.
+
+**Gasoline is not in that table at all.** Since the June 2021 release BLS has not
+collected gasoline prices itself: the index is built from roughly 6.1 million
+observations a month from about 91,272 stations a day, supplied by a crowd-sourced data
+provider BLS does not name, priced with sales and excise taxes included, aggregated with
+a geometric mean and county-level weights. Gasoline is among the most directly measured
+items in the index, while owners' equivalent rent (26.2% of the CPI-U) is the largest
+modeled one. Full item-by-item detail, with the dates each method changed, is in
+`data/raw/NOTES_cpi_items.md`; the program's history and its major revisions are in
+`data/raw/NOTES_cpi_history.md`. Checked September 23, 2026.
+
 **December 2023 file.** `data/raw/cpi_relative_importance_2023.xlsx` (2022 weights):
 gasoline (all types) 3.261, motor fuel 3.372. Used only in chart 3, beside 2023 CEX
 spending, so both are from the same year.
