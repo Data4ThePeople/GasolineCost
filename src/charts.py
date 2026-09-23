@@ -390,7 +390,7 @@ def chart_denominator():
         ax.text(v + 0.12, y - h / 2 - 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
     ri = ri_2023()
     ax.axvline(ri, color=REF, lw=1.4)
-    ax.text(ri + 0.1, 4.62, f'CPI gasoline weight,\nDecember 2023: {ri:.1f}%', color=INK2, fontsize=9.5, va='top', linespacing=1.15)
+    ax.text(ri + 0.1, 5.15, f'CPI gasoline weight, December 2023: {ri:.1f}%', color=INK2, fontsize=9.5, va='center')
     ax.set_yticks(ys, labels[::-1]); ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
     ax.set_xlim(0, max(income) * 1.15); ax.set_ylim(-0.7, 5.3)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
