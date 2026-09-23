@@ -36,7 +36,7 @@ Go back to 1978. That was the year the modern CPI infrastructure was rolled out,
 
 What do these two completely unrelated events have in common?
 
-Well, think of what has happened since for music. Tapes were displaced by CDs, which were then displaced by MP3s (and Napster), which put a thousand songs in your pocket once the iPod arrived. And then the entire music industry was turned upside down by streaming. Unless you are an audiophile and love your records, technology begot progress, and now we carry around the entire history of all music in our pockets on demand for $10 a month.
+Well, think of what has happened since for music. Tapes were displaced by CDs, which were then displaced by MP3s (and Napster), which put a thousand songs in your pocket once the iPod arrived. And then the entire music industry was turned upside down by streaming. Unless you are an audiophile and love your records, technology begot progress, and now we carry around the entire history of all music in our pockets on demand for $12 a month.
 
 Now, let's compare this to the enhancements to CPI over the same years. The BLS improved the surveys, introduced chained CPI, started using a geometric mean, and increased the frequency of weight changes. But the 1978 architecture remains the same.
 
@@ -45,7 +45,7 @@ Here are both tracks since 1978, the year the CPI's current design was put in pl
 ![Two timelines since 1978: recorded music formats, and changes to the CPI](images/01-timeline.png)
 *Music dates are the year each format arrived for American listeners. CPI dates are when each change took effect.*
 
-And that's the problem. One highly competitive industry was literally destroyed and rebuilt from the ground up by technology. The other (our government's inflation measure) is a monopoly, with no competitive forces present to force innovation. And so, it improved a bit here and there. But it remains largely stuck in the 1970s. But look at the bright side, at least CPI is better off than our poverty measure, which was developed and stuck in the 1960s.
+And that's the problem. One highly competitive industry was dismantled and rebuilt from the ground up by technology. The other (our government's inflation measure) is a monopoly, with no competitive forces present to force innovation. And so, it improved a bit here and there. But it remains largely stuck in the 1970s. But look at the bright side, at least CPI is better off than our poverty measure, which was developed and stuck in the 1960s. [insert a link here to my Stuck in 1963 post]
 
 Either way, imagine a world where cassette tapes (and music) had the same lack of competitive forces that CPI has. We would still all have Sony Walkmans. Maybe they would be smaller and have slightly better sound quality. But we'd be stuck in the past with our cassette tapes rather than all the music the world has to offer at our fingertips.
 
@@ -53,7 +53,7 @@ Either way, imagine a world where cassette tapes (and music) had the same lack o
 
 The reason why inflation is broken is not because CPI is broken. Think of CPI as one "person" out of 330 million. It is based on a set of weights, shares of wallet, that this "person" pays for stuff. It just so happens that in July 2026, CPI spent 3.8% of its money on gasoline, and 2.6% of its money on auto insurance, and 1.0% of its money on airfares. Cool. That's CPI's experience, and I am willing to bet that it does not jibe with lots of people's experience out there.
 
-And here's the deal. With late 1970s technology, that was the best we could do. We could put together an inordinately complex methodology to measure the experience of this one "person" as best as we could. And then we used that to set monetary policy and tell people what inflation was.
+And here's the deal. With late 1970s technology, that was the best we could do. We could put together an inordinately complex methodology to measure the experience of this one "person" as best as we could. And then we wired that one number into everything. It tells people what inflation was. It moves Social Security checks and federal retiree pensions. It adjusts tax brackets and the standard deduction. It sets the rebates drug makers owe Medicaid and Medicare when they raise prices faster than inflation. It updates the poverty guidelines that decide who qualifies for help, and the food plan behind SNAP benefits. It pays the interest on savings bonds and Treasury notes that are supposed to protect people from inflation. And it sits on the table when the Federal Reserve decides what to do with interest rates.
 
 A lot has changed since then regarding technology. For example, the tool I have built and am sharing with you was built in minutes by AI, a day if you include all my reviews, stress testing, and writing of the post you are reading. We don't have to have one view of inflation anymore. We can have hundreds, thousands, or even millions of experiences of inflation. We could create an immense distribution curve of inflation as experienced by people up and down the economic spectrum and try to manage the distribution. We don't have to be beholden to error-prone single point estimates anymore (the statistical equivalent of a tape deck). We can do much better.
 

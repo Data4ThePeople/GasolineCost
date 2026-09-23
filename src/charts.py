@@ -256,17 +256,18 @@ def chart_distribution(m):
 
 def chart_timeline():
     """Two tracks since 1978: how recorded music changed, and how the CPI changed."""
-    music = [(1979, 'Sony Walkman'), (1983, 'CDs reach the U.S.'), (1999, 'Napster'), (2001, 'iPod'),
-             (2007, 'iPhone'), (2011, 'Spotify in the U.S.')]
-    cpi = [(1978, 'Item and outlet\nsample design'), (1983, 'Rental equivalence\nfor homeowners'), (1999, 'Geometric mean\nformula'),
-           (2002, 'Chained CPI\npublished'), (2021, 'Gas prices from\noutside data'), (2023, 'Annual weight\nupdates')]
+    # (year, label, how far the label sits from the line) - long labels take the outer row
+    music = [(1979, 'Sony Walkman', 24), (1983, 'CDs reach the U.S.', 64), (1999, 'Napster and MP3s', 64),
+             (2001, 'iPod', 24), (2007, 'iPhone', 24), (2011, 'Spotify in the U.S.', 64)]
+    cpi = [(1978, 'Item and outlet\nsample design', 24), (1983, 'Rental equivalence\nfor homeowners', 64),
+           (1999, 'Geometric mean\nformula', 24), (2002, 'Chained CPI\npublished', 64),
+           (2021, 'Gas prices from\noutside data', 24), (2023, 'Annual weight\nupdates', 64)]
     f, ax = fig(5.0)
     x0, x1 = 1976, 2028
     for y, lab, col, side in [(1, music, S[2], 1), (0, cpi, S[0], -1)]:
         ax.plot([x0, x1], [y, y], color=col, lw=2.5, solid_capstyle='round')
-        for i, (yr, name) in enumerate(lab):
+        for yr, name, off in lab:
             ax.plot(yr, y, 'o', ms=9, mfc=col, mec=BG, mew=2, zorder=3)
-            off = 24 if (i % 2 == 0) else 64
             ax.annotate(f'{yr}\n{name}', (yr, y), xytext=(0, side * off), textcoords='offset points', ha='center',
                         va='bottom' if side > 0 else 'top', color=INK, fontsize=9.5, linespacing=1.25,
                         arrowprops=dict(arrowstyle='-', color=col, lw=1, shrinkA=0, shrinkB=4))
