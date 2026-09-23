@@ -100,14 +100,14 @@ Every dollar added at the pump costs the lower-income family 1.9% more of their 
 
 That is one price at one pump on one day, landing anywhere from 0.6% to 1.9% of a paycheck depending on who is filling the tank. And it comes from simple arithmetic: gallons burned divided by take-home pay. Drive more, drive a thirstier vehicle, or earn less, and the slope steepens.
 
-Income is the part people underestimate. The same driving, the same truck, the same commute costs the same dollars no matter who you are. What changes is what those dollars take out of a paycheck.
+Income is the part people underestimate. The same driving, the same car, the same commute costs the same dollars no matter who you are. What changes is the share of a paycheck it takes, and how steeply that share climbs when the price moves.
 
-![Gasoline as a share of take-home pay, at the 20th and 80th percentiles of income](images/05-matrix-two-incomes.png)
-*Married couple with no children in both panels, same cars and same driving. Only income differs.*
+![Gasoline as a share of take-home pay at every price, at two incomes, against the CPI](images/05-lines-two-incomes.png)
+*Married couple with no children in both cases, 20,000 miles a year at 25 miles per gallon. Only income differs.*
 
-Find the same square in each panel. A household driving 20,000 miles a year at 25 miles per gallon is doing ordinary American driving. That costs the lower-income household 11% of its take-home pay and the higher-income household 2.5%. The CPI's number for the same gas at the same pump is 4.3%.
+Two households drive exactly the same way. One earns $35,800 before tax, the other $182,400. At $4.48 a gallon, gas is 11.0% of take-home pay for the first and 2.5% for the second. The CPI reports 4.3%.
 
-Look at how much more ground the left panel covers. For the lower-income household the grid runs from 1.7% to 37% of take-home pay. For the higher-income household the whole grid fits between 0.4% and 8.2%. Add a few thousand miles or drop a few miles per gallon, and the lower-income household moves several points while the higher-income household barely moves at all. Most of the left panel is above the CPI's line, and most of the right panel is below it.
+Now watch the slopes. Every dollar at the pump adds 2.4 points to the lower-income household's share and 0.6 points to the higher-income household's. The CPI's line rises about 0.9 points. Between $3 and $6 gas, the first household goes from 7.3% of its pay to 14.7%, while the second moves from 1.6% to 3.3%. The same price increase is a different event depending on the size of the paycheck it lands on, and the CPI's single line runs down the middle of all of it.
 
 You might reasonably ask whether these households are made up. They are built from published averages, so we checked them against what people told the government they actually spent.
 
