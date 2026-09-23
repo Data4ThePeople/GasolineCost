@@ -84,13 +84,7 @@ The CPI divides gasoline spending by all other spending. We divide it by what a 
 
 Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the question in the car is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought.
 
-Then look at what a spending denominator quietly does. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. That gap gets filled somehow: savings being drawn down, a retirement account being tapped, gifts and family money, help the survey does not count as income, and for some households, credit. Measured against their spending, their gasoline comes to 3.6%, which sounds mild. Measured against their income, it is 7.6%. Whatever is filling the gap sits in the denominator and makes gasoline look like a smaller part of life, at exactly the income level with the least room to absorb it.
-
-There is a second problem, and it is older than the CPI's current design. When you add up everyone's gasoline and divide by everyone's spending, households that spend more count more. Economists have a name for this, a plutocratic index, and it is not an insult, it is a description of the arithmetic. The top fifth of households spends about $150,000 a year and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves. Weight each household equally instead, and gasoline's share of spending in 2024 comes out at 3.6% rather than 3.4%. The gap is small in a single item, and it runs the same direction in every item where lower-income households buy more than their share.
-
-None of this makes the BLS wrong. The CPI was built to measure the price of a fixed basket, not to tell you whether a family can cover its bills, and it does the first job with real care. But that number does not stay in its lane. It sets Social Security raises, adjusts tax brackets, anchors wage talks and guides interest rates, all of which land on incomes. Once a spending-based number is used to make decisions about paychecks, the denominator stops being a technical footnote.
-
-So we use take-home pay, after federal income and payroll taxes, because it answers the question a household actually asks: can we afford this on what we earn? Every figure in this post is built that way, and we say so on every chart.
+So we use take-home pay, after federal income and payroll taxes, because it answers the question a household actually asks: can we afford this on what we earn? Every figure in this post is built that way, and we say so on every chart. There is more on the arithmetic in the questions at the end.
 
 We took six households that the government's own data says exist. The Census Bureau gave us their incomes. The Federal Highway Administration's travel survey gave us how far each one drives and the gas mileage of the cars they own. The IRS rules gave us their federal income and payroll taxes, because people buy gas with take-home pay, not with pre-tax pay. Then we did the only arithmetic that matters to a household: gallons burned, times the price, divided by what they actually take home.
 
@@ -143,7 +137,7 @@ I don't have any power here beyond this report. All I can do is share data and s
 
 ### Why not measure gasoline as a share of spending, the way the CPI does?
 
-Because spending can run well above income. Households fill that gap with savings, retirement accounts, family help and credit, and all of it lands in the denominator, which makes each item look like a smaller slice. Measured against what they earn, the picture changes, and it changes most for the households with the least room.
+Because spending can run well above income. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. That gap gets filled somehow: savings drawn down, a retirement account tapped, family help, assistance the survey does not count as income, and for some households, credit. All of it lands in the denominator, which makes every item look like a smaller slice of life at exactly the income level with the least room to absorb it. Measured against what they earn, the picture changes.
 
 ![Gasoline spending in 2023 measured against take-home pay and against total spending](images/06-denominator.png)
 *The two measures agree in the middle of the income range and part company at the ends.*
@@ -151,6 +145,12 @@ Because spending can run well above income. Households fill that gap with saving
 Everything in this chart is 2023, the last year the BLS published income after taxes, when regular gasoline averaged $3.52 a gallon rather than today's $4.48. The CPI's gasoline weight that December was 3.3%, so read these numbers against that line and not against the 4.3% used earlier in this post.
 
 For the middle fifth of households the two measures give the same answer, 4.1%. For the lowest fifth, gasoline is 3.9% of spending and 8.2% of take-home pay. For the highest fifth it runs the other way, 2.6% of spending and 1.9% of take-home pay. The denominator decides which story gets told.
+
+### Does the CPI already average everyone's spending?
+
+It averages the spending, not the people. When you add up all the gasoline everyone bought and divide by everything everyone bought, households that spend more count for more. Economists call this a plutocratic index, which is a description of the arithmetic rather than an insult. In 2024 the top fifth of households spent about $150,000 and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves.
+
+Weight each household equally instead and gasoline's share of spending in 2024 comes out at 3.6% rather than 3.4%. That gap is small for one item, and it leans the same way for every item where lower-income households buy more than their share of the total.
 
 ### Is the CPI wrong?
 
