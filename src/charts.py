@@ -388,16 +388,19 @@ def chart_denominator():
         ax.text(v + 0.12, y + h / 2 + 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
     for y, v in zip(ys, spend):
         ax.text(v + 0.12, y - h / 2 - 0.02, f'{v:.1f}%', va='center', color=INK, fontsize=10.5, fontweight='bold')
+    ri = ri_2023()
+    ax.axvline(ri, color=REF, lw=1.4)
+    ax.text(ri + 0.1, 4.62, f'CPI gasoline weight,\nDecember 2023: {ri:.1f}%', color=INK2, fontsize=9.5, va='top', linespacing=1.15)
     ax.set_yticks(ys, labels[::-1]); ax.tick_params(axis='y', labelcolor=INK, labelsize=11.5)
-    ax.set_xlim(0, max(income) * 1.15); ax.set_ylim(-0.7, 4.7)
+    ax.set_xlim(0, max(income) * 1.15); ax.set_ylim(-0.7, 5.3)
     ax.xaxis.set_major_formatter(lambda x, _: f'{x:.0f}%')
     ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
     f.subplots_adjust(left=0.19, right=0.96, top=0.76, bottom=0.16)
     title(f, 'Same gas, two denominators', 'Gasoline spending in 2023, measured two ways, by fifth of household income')
     colored_line(f, 0.03, 0.845, [('Share of ', INK2, False), ('take-home pay', S[1], True), ('        Share of ', INK2, False),
                                   ('total spending', S[0], True), (', the way the CPI does it', INK2, False)])
-    foot(f, 'Source: BLS Consumer Expenditure Survey 2023, the last year BLS published income after taxes. Means per consumer unit.\n'
-            'The lowest fifth reports spending about twice its income, which is why its two bars are so far apart.')
+    foot(f, 'Sources: BLS Consumer Expenditure Survey 2023, the last year BLS published income after taxes, and the CPI relative\n'
+            'importance table for December 2023. Everything here is 2023, when regular gasoline averaged $3.52 a gallon.')
     f.savefig(OUT / '10-denominator.png', facecolor=BG); plt.close(f)
 
 
