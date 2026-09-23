@@ -144,7 +144,7 @@ Because spending can run well above income. In 2024 the lowest fifth of househol
 ![Gasoline spending in 2023 measured against take-home pay and against total spending](images/06-denominator.png)
 *The two measures agree in the middle of the income range and part company at the ends.*
 
-Everything in this chart is 2023, the last year the BLS published income after taxes, when regular gasoline averaged $3.52 a gallon rather than today's $4.48. The CPI's gasoline weight that December was 3.3%, so read these numbers against that line and not against the 4.3% used earlier in this post.
+Everything in this chart is 2023, the last year the BLS published income after taxes, when regular gasoline averaged $3.52 a gallon rather than today's $4.48. The CPI's gasoline weight averaged 3.4% across that year, so read these numbers against that line and not against the 4.3% used earlier in this post.
 
 For the middle fifth of households the two measures give the same answer, 4.1%. For the lowest fifth, gasoline is 3.9% of spending and 8.2% of take-home pay. For the highest fifth it runs the other way, 2.6% of spending and 1.9% of take-home pay. The denominator decides which story gets told.
 
