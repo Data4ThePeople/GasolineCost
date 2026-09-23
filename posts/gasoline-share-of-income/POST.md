@@ -76,13 +76,21 @@ Here is what that number actually is. The BLS adds up all the gasoline bought by
 
 So we built the people back in.
 
-::: blurb Why we divide by take-home pay
-The CPI divides gasoline spending by all the other spending. We divide it by what a household actually brings home after federal taxes.
+### Why we divide by take-home pay
 
-That choice matters. Spending includes whatever people put on a credit card, borrow, or pull out of savings to get through the month. A measure built on spending can call a household fine while it quietly goes further into debt buying necessities. Take-home pay asks the question people ask themselves at the pump: can I afford this on what I earn?
+We expect this to be the part people argue with, so let us make the case plainly.
 
-The survey the CPI leans on shows why this is not a small point. The lowest fifth of households by income reports spending about twice what it takes in. That gap is not comfort. It is credit, help from family, and savings running down.
-:::
+The CPI divides gasoline spending by all other spending. We divide it by what a household brings home after federal taxes. That single choice changes the answer, and we think ours is the one that matches how people live.
+
+Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the question in the car is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought.
+
+Then look at what a spending denominator quietly does. Spending includes what people put on a credit card, borrow, or pull out of savings. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. Measured against spending, their gasoline comes to 3.6%, which sounds mild. Measured against their income, it is 7.6%. The first number gets smaller precisely because their finances are stretched, since the borrowing that keeps the lights on sits in the denominator. We do not think a household should look better off in the statistics for going further into debt to buy necessities.
+
+There is a second problem, and it is older than the CPI's current design. When you add up everyone's gasoline and divide by everyone's spending, households that spend more count more. Economists have a name for this, a plutocratic index, and it is not an insult, it is a description of the arithmetic. The top fifth of households spends about $150,000 a year and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves. Weight each household equally instead, and gasoline's share of spending in 2024 comes out at 3.6% rather than 3.4%. The gap is small in a single item, and it runs the same direction in every item where lower-income households buy more than their share.
+
+None of this makes the BLS wrong. The CPI was built to measure the price of a fixed basket, not to tell you whether a family can cover its bills, and it does the first job with real care. But that number does not stay in its lane. It sets Social Security raises, adjusts tax brackets, anchors wage talks and guides interest rates, all of which land on incomes. Once a spending-based number is used to make decisions about paychecks, the denominator stops being a technical footnote.
+
+So we use take-home pay, after federal income and payroll taxes, because it answers the question a household actually asks: can we afford this on what we earn? Every figure in this post is built that way, and we say so on every chart.
 
 We took six households that the government's own data says exist. The Census Bureau gave us their incomes. The Federal Highway Administration's travel survey gave us how far each one drives and the gas mileage of the cars they own. The IRS rules gave us their federal income and payroll taxes, because people buy gas with take-home pay, not with pre-tax pay. Then we did the only arithmetic that matters to a household: gallons burned, times the price, divided by what they actually take home.
 
