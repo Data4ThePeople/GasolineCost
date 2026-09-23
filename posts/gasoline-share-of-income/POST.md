@@ -76,6 +76,14 @@ Here is what that number actually is. The BLS adds up all the gasoline bought by
 
 So we built the people back in.
 
+::: blurb Why we divide by take-home pay
+The CPI divides gasoline spending by all the other spending. We divide it by what a household actually brings home after federal taxes.
+
+That choice matters. Spending includes whatever people put on a credit card, borrow, or pull out of savings to get through the month. A measure built on spending can call a household fine while it quietly goes further into debt buying necessities. Take-home pay asks the question people ask themselves at the pump: can I afford this on what I earn?
+
+The survey the CPI leans on shows why this is not a small point. The lowest fifth of households by income reports spending about twice what it takes in. That gap is not comfort. It is credit, help from family, and savings running down.
+:::
+
 We took six households that the government's own data says exist. The Census Bureau gave us their incomes. The Federal Highway Administration's travel survey gave us how far each one drives and the gas mileage of the cars they own. The IRS rules gave us their federal income and payroll taxes, because people buy gas with take-home pay, not with pre-tax pay. Then we did the only arithmetic that matters to a household: gallons burned, times the price, divided by what they actually take home.
 
 The gap shows up immediately. Every household that drives a normal amount spends more of its income on gas than the CPI's 4.3%, and the households that are furthest from that number are the ones with the least room to absorb it.
