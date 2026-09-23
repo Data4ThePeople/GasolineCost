@@ -86,6 +86,8 @@ Start with the obvious. Nobody pays for gas out of a share of their consumption 
 
 So we use take-home pay, after federal income and payroll taxes, because it answers the question a household actually asks: can we afford this on what we earn? Every figure in this post is built that way, and we say so on every chart. There is more on the arithmetic in the questions at the end.
 
+### The six households
+
 We took six households that the government's own data says exist. The Census Bureau gave us their incomes. The Federal Highway Administration's travel survey gave us how far each one drives and the gas mileage of the cars they own. The IRS rules gave us their federal income and payroll taxes, because people buy gas with take-home pay, not with pre-tax pay. Then we did the only arithmetic that matters to a household: gallons burned, times the price, divided by what they actually take home.
 
 The gap shows up immediately. Every household that drives a normal amount spends more of its income on gas than the CPI's 4.3%, and the households that are furthest from that number are the ones with the least room to absorb it.
