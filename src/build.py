@@ -11,6 +11,8 @@ from datetime import date
 import tax, model
 from common import ROOT, SRC, DIST, PROCESSED
 
+DOCS = ROOT / 'docs'      # what GitHub Pages serves: data4thepeople.github.io/GasolineCost/
+
 JSC = '/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc'
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 CHECK_PRICES = [3.0, None, 6.25]   # None = today's price
@@ -101,7 +103,9 @@ def main():
         check_parse(html)
         check_in_chrome(html, m, fname)
         (DIST / fname).write_text(html)
-        print(f'wrote dist/{fname}  {len(html) / 1024:.0f} KB')
+        DOCS.mkdir(exist_ok=True)
+        (DOCS / fname).write_text(html)
+        print(f'wrote dist/{fname} and docs/{fname}  {len(html) / 1024:.0f} KB')
 
 
 if __name__ == '__main__':
