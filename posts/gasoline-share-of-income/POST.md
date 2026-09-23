@@ -91,27 +91,16 @@ Try it yourself. The tool below has those six households and a slider for the pr
 
 Now the part that the single number hides completely.
 
-A share is a snapshot. What matters when prices move is the slope: how fast your share climbs when the price at the pump climbs. Drag the price slider in the tool and watch the lines pull apart. That spread is the whole argument of this post in one picture.
+A share is a snapshot. What matters when prices move is the slope: how fast your share climbs when the price at the pump climbs. Take two households that drive exactly the same way, 20,000 miles a year in a car that gets 25 miles to the gallon. One earns $35,800 before tax, the other $182,400. Put their shares next to the CPI's at every price from $2 to $7, and the three lines fan apart. Each dollar at the pump adds 2.4 points to the lower-income household's share, 0.9 points in the CPI, and 0.6 points to the higher-income household's.
 
-![Share of after-tax income by gas price, six households and the CPI weight](images/04-share-by-price.png)
-*Miles and cars held fixed at every price, so the lines show price alone.*
-
-Every dollar added at the pump costs the lower-income family 1.9% more of their take-home pay. For the rural family it is 1.7%. For the median household it is 1.3%. In the CPI, a dollar adds about 0.9%. For the retired couple it is 0.6%.
-
-That is one price at one pump on one day, landing anywhere from 0.6% to 1.9% of a paycheck depending on who is filling the tank. And it comes from simple arithmetic: gallons burned divided by take-home pay. Drive more, drive a thirstier vehicle, or earn less, and the slope steepens.
-
-Income is the part people underestimate. The same driving, the same car, the same commute costs the same dollars no matter who you are. What changes is the share of a paycheck it takes, and how steeply that share climbs when the price moves.
-
-![Gasoline as a share of take-home pay at every price, at two incomes, against the CPI](images/05-lines-two-incomes.png)
+![Gasoline as a share of take-home pay at every price, at two incomes, against the CPI](images/04-lines-two-incomes.png)
 *Married couple with no children in both cases, 20,000 miles a year at 25 miles per gallon. Only income differs.*
 
-Two households drive exactly the same way. One earns $35,800 before tax, the other $182,400. At $4.48 a gallon, gas is 11.0% of take-home pay for the first and 2.5% for the second. The CPI reports 4.3%.
-
-Now watch the slopes. Every dollar at the pump adds 2.4 points to the lower-income household's share and 0.6 points to the higher-income household's. The CPI's line rises about 0.9 points. Between $3 and $6 gas, the first household goes from 7.3% of its pay to 14.7%, while the second moves from 1.6% to 3.3%. The same price increase is a different event depending on the size of the paycheck it lands on, and the CPI's single line runs down the middle of all of it.
+Between $3 and $6 gas, the first household goes from 7.3% of its take-home pay to 14.7%, while the second moves from 1.6% to 3.3%. Same car, same commute, same pump, and the CPI's single line runs down the middle of both.
 
 You might reasonably ask whether these households are made up. They are built from published averages, so we checked them against what people told the government they actually spent.
 
-![Gasoline as a share of after-tax income by income fifth, 2023](images/06-cex-by-income.png)
+![Gasoline as a share of after-tax income by income fifth, 2023](images/05-cex-by-income.png)
 *From the Consumer Expenditure Survey, the last year the BLS published income after taxes. Means per consumer unit.*
 
 In 2023, the lowest fifth of households by income spent 8.2% of their after-tax income on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is the check we wanted.
