@@ -115,7 +115,7 @@ You might reasonably ask whether these households are made up. They are built fr
 ![Gasoline as a share of after-tax income by income fifth, 2023](images/05-cex-by-income.png)
 *From the Consumer Expenditure Survey, the last year the BLS published income after taxes. Means per consumer unit.*
 
-In 2023, the lowest fifth of households by income spent 8.2% of their after-tax income on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is the check we wanted.
+In 2023, the lowest fifth of households by income spent 8.2% of their after-tax income on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is validation for the simple math that runs the tool.
 
 So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question almost nobody is asking, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. The only thing missing is the will to publish inflation as a distribution instead of a single point.
 
