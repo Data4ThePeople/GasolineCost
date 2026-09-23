@@ -32,7 +32,7 @@ We're not going to fix this today. That's well beyond our pay grade. But we are 
 
 ## Illustrating the problem: we're still using a tape deck when we could stream
 
-1978. That was the year the modern CPI infrastructure was rolled out, introducing the same item and outlet sample design we use today. [please fact check this!] One year later, Sony released the Walkman, popularizing personal cassette tapes.
+Go back to 1978. That was the year the modern CPI infrastructure was rolled out, introducing the same item and outlet sample design we use today. One year later, Sony released the Walkman, popularizing personal cassette tapes.
 
 What do these two completely unrelated events have in common?
 
