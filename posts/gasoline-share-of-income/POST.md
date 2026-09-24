@@ -159,7 +159,7 @@ Weight each household equally instead and gasoline's share of spending in 2024 c
 
 ### Is the CPI wrong?
 
-No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: [how the CPI handles health insurance](https://www.data4thepeople.com/p/cpi-merry-go-round) and [how grocery shelf prices compare with the CPI's food basket](https://www.data4thepeople.com/p/kroger-shelf-vs-cpi-thrifty-food-plan). Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
+No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: [how the CPI handles health insurance](https://www.data4thepeople.com/p/cpi-merry-go-round) and [how grocery shelf prices compare with the CPI's food basket](https://www.data4thepeople.com/p/kroger-shelf-vs-cpi-thrifty-food-plan). Our argument is about what the single-point estimate is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
 
 ### Why only federal taxes?
 
