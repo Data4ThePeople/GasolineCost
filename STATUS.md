@@ -6,7 +6,7 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2d, not started
+Step: 2d, in progress
 Since: 2026-09-24
 
 ## Steps
