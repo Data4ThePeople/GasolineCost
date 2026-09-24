@@ -1,6 +1,6 @@
 ---
 title: We still measure inflation with a tape deck
-subtitle: The government says gasoline is 3.8% of what Americans spend. For a rural family with a car and a pickup, it is 7.7% of their take-home pay. Here is a tool that shows where you land.
+subtitle: The CPI says gasoline is 4.3% of what Americans spend. For a family at the 20th percentile of income it is 8.7% of their take-home pay. Here is a tool that shows where you land.
 slug: gasoline-share-of-income
 date: 2026-09-23
 section: Data 4 Thought
