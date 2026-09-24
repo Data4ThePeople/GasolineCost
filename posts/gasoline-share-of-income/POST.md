@@ -6,9 +6,9 @@ date: 2026-09-23
 section: Data 4 Thought
 hero: images/gasoline-share-of-income-hero-1680x1080.png
 hero_alt: A cracked audio cassette lies in a pool of spilled gasoline on rough concrete, its brown tape pulled out and tangled in loops across the wet ground. The fuel spreads under the cassette in a slick that catches the light in bands of pink, blue and gold. A dented, rust-streaked red gasoline can stands in the shadow behind it.
-meta_title:
-description:
-keywords:
+meta_title: What gas really costs: your income vs. the CPI
+description: Gasoline is 4.3% of spending in the CPI. For a lower-income family it is 8.7% of take-home pay. See where your household lands.
+keywords: gasoline share of income, CPI gasoline weight, gas prices percent of income, cost of gas calculator, inflation by income, consumer price index weights, take-home pay
 schema_type: article
 drop_cap: true
 heading_spacer: 20px
@@ -97,7 +97,7 @@ The gap shows up immediately. Five of our six households spend more of their inc
 
 The median American household, a married couple with two cars and $87,460 of income before tax, spends $4,240 a year on gasoline. That is $353 a month, and it is 5.7% of what they take home. A family at the 20th percentile of income, $35,800 before tax, spends less on gas in dollars, $3,726, but that is 8.7% of their take-home pay. A rural family with a car and a pickup is at 7.7%. A retired couple with one car is at 2.9%, below the CPI's number, which is its own kind of finding.
 
-Try it yourself. The tool below has those six households and a slider for the price, and you can put in your own miles, mileage and income. Nothing you type leaves your browser.
+Try it yourself. The tool below has those six households and a slider for the price, and you can put in your own miles, mileage and income. Nothing you type leaves your browser. It is free to use, it works on a phone, and you can share a link to it. It runs on weekly gasoline prices from the Energy Information Administration, income from the Census Bureau, driving data from the Federal Highway Administration, and the 2026 federal tax rules.
 
 <iframe src="https://data4thepeople.github.io/GasolineCost/embed.html" width="100%" height="780" frameborder="0" scrolling="no" title="What gas really costs a household"></iframe>
 
@@ -156,7 +156,7 @@ Weight each household equally instead and gasoline's share of spending in 2024 c
 
 ### Is the CPI wrong?
 
-No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
+No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: [how the CPI handles health insurance](https://www.data4thepeople.com/p/cpi-merry-go-round) and [how grocery shelf prices compare with the CPI's food basket](https://www.data4thepeople.com/p/kroger-shelf-vs-cpi-thrifty-food-plan). Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.
 
 ### Why only federal taxes?
 
