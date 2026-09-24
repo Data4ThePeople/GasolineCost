@@ -60,5 +60,8 @@ watermark, no people, no brand names.
 
 ## Chosen
 
-File: images/gasoline-share-of-income-hero-source.<ext>
-Alt (under 500 characters): <written once the image is in>
+Prompt 3 (the tight one), generated in Gemini at 2816x1536, cropped from the center by `hero fit`.
+
+File: images/gasoline-share-of-income-hero-source.jpg
+Hero: images/gasoline-share-of-income-hero-1680x1080.png
+Alt (324 characters): A cracked audio cassette lies in a pool of spilled gasoline on rough concrete, its brown tape pulled out and tangled in loops across the wet ground. The fuel spreads under the cassette in a slick that catches the light in bands of pink, blue and gold. A dented, rust-streaked red gasoline can stands in the shadow behind it.

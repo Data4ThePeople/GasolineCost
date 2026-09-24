@@ -117,6 +117,7 @@ def main():
 <body>
 <div class="banner">EMBARGOED DRAFT &middot; not for publication until Data 4 The People publishes it</div>
 <div class="wrap">
+<figure style="margin:0 0 22px"><img src="images/{Path(meta.get('hero','')).name}" alt="{H.escape(meta.get('hero_alt',''))}"></figure>
 <h1>{H.escape(title)}</h1>
 <p class="sub">{H.escape(meta.get('subtitle', ''))}</p>
 <p class="meta">Data 4 The People &middot; draft of {H.escape(meta.get('date', ''))}</p>
