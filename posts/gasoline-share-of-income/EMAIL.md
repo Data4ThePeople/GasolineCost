@@ -61,4 +61,4 @@ You are one of those people. So, let's start here. Does CPI capture the impact o
 
 ## 7. Call to action
 
-**[Read the full report](https://www.data4thepeople.com/p/gasoline-share-of-income)**
+**[Find out what gas really costs you](https://www.data4thepeople.com/p/gasoline-share-of-income)**
