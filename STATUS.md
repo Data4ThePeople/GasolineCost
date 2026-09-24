@@ -5,8 +5,8 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 
 ## Current
 
-Post: gasoline-share-of-income
-Step: 2g, in progress
+Post: gasoline-share-of-income  **COMPLETE**
+Step: none; all steps through 2g confirmed
 Since: 2026-09-24
 
 ## Steps
@@ -20,13 +20,15 @@ Since: 2026-09-24
 | 2d | Hero 1680x1080 + alt text | 2026-09-24 | Cassette in a gasoline pool, Gemini, center crop; alt 324 chars |
 | 2e | SEO | 2026-09-24 | meta 46/127 chars, 7 keywords, Article + 4 FAQ entries, 3 internal links |
 | 2f | Pushed to Prismic (draft) | 2026-09-24 | Draft arVlfhEAAC4AMaF5, Migration Release, 49 slices, 7 images |
-| 2g | Mailchimp teaser | | |
+| 2g | Mailchimp teaser | 2026-09-24 | EMAIL.md complete; hero JPG 275 KB; slope chart |
 
 ## Stale
 
 None.
 
 ## Log
+
+- 2026-09-24 Step 2g confirmed done. **Post complete.** Prismic draft arVlfhEAAC4AMaF5 waits in the Migration Release, dated 2026-09-24 19:00 EDT. Tool: data4thepeople.github.io/GasolineCost. Embargoed copy of the post: .../post.html.
 
 - 2026-09-24 Step 2f confirmed done. Draft arVlfhEAAC4AMaF5 in the Migration Release; publication date set to 2026-09-24 19:00 EDT.
 
