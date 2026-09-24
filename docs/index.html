@@ -183,7 +183,7 @@
 <script>
 (function(){
 "use strict";
-var D = {"price":4.478,"price_date":"2026-09-21","cpi":{"now":4.261316881970689,"monthRi":3.7698791700536454,"monthPrice":3.93225,"r":1.0023121308197707,"monthLabel":"July 2026"},"tax":{"ACTC_FLOOR":2500,"ACTC_MAX_PER_CHILD":1700,"ACTC_RATE":0.15,"ADDL_MEDICARE_RATE":0.009,"ADDL_MEDICARE_START":{"single":200000,"mfj":250000,"hoh":200000},"BRACKETS":{"single":[0,12400,50400,105700,201775,256225,640600],"mfj":[0,24800,100800,211400,403550,512450,768700],"hoh":[0,17700,67450,105700,201750,256200,640600]},"CTC_PER_CHILD":2200,"CTC_PHASEOUT_START":{"single":200000,"mfj":400000,"hoh":200000},"EITC_EARNED_FOR_MAX":[8680,13020,18290,18290],"EITC_MAX":[664,4427,7316,8231],"EITC_PHASEOUT_END":{"single":[19540,51593,58629,62974],"mfj":[26820,58863,65899,70244]},"EITC_PHASEOUT_START":{"single":[10860,23890,23890,23890],"mfj":[18140,31160,31160,31160]},"EXTRA_65":{"single":2050,"mfj":1650,"hoh":2050},"MEDICARE_RATE":0.0145,"RATES":[0.1,0.12,0.22,0.24,0.32,0.35,0.37],"SENIOR_DEDUCTION":6000,"SENIOR_PHASEOUT_RATE":0.06,"SENIOR_PHASEOUT_START":{"single":75000,"mfj":150000,"hoh":75000},"SS_BASE1":{"single":25000,"mfj":32000,"hoh":25000},"SS_BASE2":{"single":34000,"mfj":44000,"hoh":34000},"SS_RATE":0.062,"SS_WAGE_BASE":184500,"STD_DEDUCTION":{"single":16100,"mfj":32200,"hoh":24150}},"profiles":[{"id":"median","name":"Median household","blurb":"Married couple, two cars, median household income","income":87460,"tax":{"status":"mfj","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":11092,"mpg":23.43067321694461,"label":"Car 1"},{"miles":11092,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"single","name":"Single young adult","blurb":"One car, $50,000 salary","income":50000,"tax":{"status":"single","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":12188,"mpg":25.58574450748142,"label":"Car"}]},{"id":"rural","name":"Rural family","blurb":"Married, two kids, a car and a pickup, median rural income","income":68670,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":11782,"mpg":25.58574450748142,"label":"Car"},{"miles":11782,"mpg":18.49634843238923,"label":"Pickup"}]},{"id":"lower","name":"Lower-income family","blurb":"Married, two kids, two cars, 20th percentile income","income":35800,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9748,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9748,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"retired","name":"Retired couple","blurb":"Both 65+, one car, Social Security plus a pension","income":59680,"tax":{"status":"mfj","kids":0,"seniors":2,"social_security":38496},"cars":[{"miles":8928,"mpg":23.43067321694461,"label":"Car"}]},{"id":"suburban","name":"Suburban three-car family","blurb":"Married, two kids and a teen driver, median family income","income":112900,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9993,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 2"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 3"}]}],"pctl":[[10,20010],[20,35800],[40,68600],[50,87460],[60,110300],[80,182400],[90,261300],[95,354000]],"built":"September 23, 2026"};
+var D = {"price":4.478,"price_date":"2026-09-21","cpi":{"now":4.261316881970689,"monthRi":3.7698791700536454,"monthPrice":3.93225,"r":1.0023121308197707,"monthLabel":"July 2026"},"tax":{"ACTC_FLOOR":2500,"ACTC_MAX_PER_CHILD":1700,"ACTC_RATE":0.15,"ADDL_MEDICARE_RATE":0.009,"ADDL_MEDICARE_START":{"single":200000,"mfj":250000,"hoh":200000},"BRACKETS":{"single":[0,12400,50400,105700,201775,256225,640600],"mfj":[0,24800,100800,211400,403550,512450,768700],"hoh":[0,17700,67450,105700,201750,256200,640600]},"CTC_PER_CHILD":2200,"CTC_PHASEOUT_START":{"single":200000,"mfj":400000,"hoh":200000},"EITC_EARNED_FOR_MAX":[8680,13020,18290,18290],"EITC_MAX":[664,4427,7316,8231],"EITC_PHASEOUT_END":{"single":[19540,51593,58629,62974],"mfj":[26820,58863,65899,70244]},"EITC_PHASEOUT_START":{"single":[10860,23890,23890,23890],"mfj":[18140,31160,31160,31160]},"EXTRA_65":{"single":2050,"mfj":1650,"hoh":2050},"MEDICARE_RATE":0.0145,"RATES":[0.1,0.12,0.22,0.24,0.32,0.35,0.37],"SENIOR_DEDUCTION":6000,"SENIOR_PHASEOUT_RATE":0.06,"SENIOR_PHASEOUT_START":{"single":75000,"mfj":150000,"hoh":75000},"SS_BASE1":{"single":25000,"mfj":32000,"hoh":25000},"SS_BASE2":{"single":34000,"mfj":44000,"hoh":34000},"SS_RATE":0.062,"SS_WAGE_BASE":184500,"STD_DEDUCTION":{"single":16100,"mfj":32200,"hoh":24150}},"profiles":[{"id":"median","name":"Median household","blurb":"Married couple, two cars, median household income","income":87460,"tax":{"status":"mfj","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":11092,"mpg":23.43067321694461,"label":"Car 1"},{"miles":11092,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"single","name":"Single young adult","blurb":"One car, $50,000 salary","income":50000,"tax":{"status":"single","kids":0,"seniors":0,"social_security":0},"cars":[{"miles":12188,"mpg":25.58574450748142,"label":"Car"}]},{"id":"rural","name":"Rural family","blurb":"Married, two kids, a car and a pickup, median rural income","income":68670,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":11782,"mpg":25.58574450748142,"label":"Car"},{"miles":11782,"mpg":18.49634843238923,"label":"Pickup"}]},{"id":"lower","name":"Lower-income family","blurb":"Married, two kids, two cars, 20th percentile income","income":35800,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9748,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9748,"mpg":23.43067321694461,"label":"Car 2"}]},{"id":"retired","name":"Retired couple","blurb":"Both 65+, one car, Social Security plus a pension","income":59680,"tax":{"status":"mfj","kids":0,"seniors":2,"social_security":38496},"cars":[{"miles":8928,"mpg":23.43067321694461,"label":"Car"}]},{"id":"suburban","name":"Suburban three-car family","blurb":"Married, two kids and a teen driver, median family income","income":112900,"tax":{"status":"mfj","kids":2,"seniors":0,"social_security":0},"cars":[{"miles":9993,"mpg":23.43067321694461,"label":"Car 1"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 2"},{"miles":9993,"mpg":23.43067321694461,"label":"Car 3"}]}],"pctl":[[10,20010],[20,35800],[40,68600],[50,87460],[60,110300],[80,182400],[90,261300],[95,354000]],"built":"September 24, 2026"};
 var T = D.tax;
 var root = document.getElementById("root");
 var framed = false || window.self !== window.top;
@@ -245,7 +245,8 @@ function afterTax(st, wages, kids, seniors, pension, ss){
   var fica = T.SS_RATE * Math.min(wages, T.SS_WAGE_BASE) + T.MEDICARE_RATE * wages
            + T.ADDL_MEDICARE_RATE * Math.max(0, wages - T.ADDL_MEDICARE_START[st]);
   var gross = wages + pension + ss;
-  return {gross: gross, federal: federal, fica: fica, credits: ctcNonref + actc + e, afterTax: gross - federal - fica};
+  return {gross: gross, federal: federal, fica: fica, credits: ctcNonref + actc + e, incomeTax: incomeTax,
+          seniors: seniors, ss: ss, taxableSS: agi - other, afterTax: gross - federal - fica};
 }
 
 /* ---------- model, mirrors src/model.py ---------- */
@@ -377,6 +378,15 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
 }
 
 /* ---------- detail card ---------- */
+function taxNote(t){
+  if (t.federal < -1) return "Refundable credits, the earned income credit and the child tax credit, come to " + money(-t.federal) +
+    " more than this household owes in federal income tax, so take-home pay lands above pre-tax income. Payroll tax of " +
+    money(t.fica) + " is already taken out.";
+  if (t.seniors && t.federal < 1) return "No federal income tax: only " + money(t.taxableSS) + " of this couple's " + money(t.ss) +
+    " in Social Security counts as taxable income, and the standard deduction plus the extra deductions for people 65 and older cover the rest. " +
+    "Retirees pay no Social Security or Medicare payroll tax on this income.";
+  return "";
+}
 function drawDetail(){
   var box = $("detail"), p, name, costPerDollar, at, pre, milesTxt, mpgTxt, hhTxt, isYou = S.sel === "you" && S.you && S.edited;
   if (isYou){
@@ -388,12 +398,14 @@ function drawDetail(){
     milesTxt = p.miles.toLocaleString("en-US"); mpgTxt = (p.miles / p.gal).toFixed(1); hhTxt = p.blurb;
   }
   var cost = costPerDollar * S.price, share = 100 * cost / at;
+  var note = taxNote(isYou ? S.you.t : (p ? p.t : D.profiles[0].t));
   box.innerHTML = "<h2>" + esc(name) + "</h2><p class='intro'>" + esc(hhTxt) + "</p>" +
     "<div class='big'>" + pct(share) + " <small>of after-tax income goes to gas</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(cost) + "</b><span>Gas a month</span><b>" + money(cost / 12) + "</b>" +
     "<span>Miles a year</span><b>" + milesTxt + "</b><span>Average mpg</span><b>" + mpgTxt + "</b>" +
     "<span>Gallons a year</span><b>" + Math.round(costPerDollar).toLocaleString("en-US") + "</b>" +
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
+    (note ? "<p class='note'>" + esc(note) + "</p>" : "") +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
     "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at each price</span></div>" +
     "<div id='line'></div>";
@@ -493,6 +505,7 @@ function drawCustom(){
     "<div class='kv'><span>Gas a year</span><b>" + money(y.cost) + "</b><span>Gas a month</span><b>" + money(y.cost / 12) + "</b>" +
     "<span>Estimated after-tax income</span><b>" + money(y.t.afterTax) + "</b></div>" +
     "<p class='note'>At $" + S.price.toFixed(2) + " a gallon, gasoline would be about " + pct(cpiAt(S.price)) + " of consumer spending in the CPI. Your share of income is " + pct(y.share) + ".</p>" +
+    (taxNote(y.t) ? "<p class='note'>" + esc(taxNote(y.t)) + "</p>" : "") +
     "<p class='note'>" + pctileBelow(y.income) + " U.S. households had a lower pre-tax income than this in 2025.</p>" +
     "<p class='note'>Household: " + esc(y.hhLabel) + ". Federal income tax and payroll tax only; state and local taxes would lower your after-tax income a little and raise your share.</p>";
 }

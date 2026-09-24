@@ -180,5 +180,6 @@ Every number above is recomputed from published data each time we rebuild the pa
 - **The six households are constructions, not real families.** Each input is a published average for a real group, but no single family matches all of them at once.
 - **Miles driven come from a survey with known problems.** About 3% of the vehicles in the 2022 travel survey report impossible mileage, which we drop, and the survey's totals fall short of the Federal Highway Administration's count, which is why we scale to the latter.
 - **Nobody drives the same at $7 as at $2.** Our lines hold miles fixed at every price, so the far right of the price chart is likely a little steep for every household, including the CPI's own line.
+- **Medicare premiums are not subtracted.** Part B premiums come straight out of a Social Security check, so the retired couple's take-home pay here is higher than what actually reaches their bank account.
 - **Gasoline is not the whole story.** A household that spends less on gas may spend more on rent, insurance or medical care, and this post measures one item.
 - **October 2025 has no CPI.** The federal shutdown stopped collection for 43 days, and that month was never published. It is the first gap since January 1921.
