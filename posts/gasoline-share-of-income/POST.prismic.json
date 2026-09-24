@@ -237,7 +237,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A lot has changed since then regarding technology. For example, the tool I have built and am sharing with you was built in minutes by a team of AI agents that I direct, a day if you include all my reviews, stress testing, and writing of the post you are reading. We don't have to have one view of inflation anymore. We can quantify hundreds, thousands, or even millions of experiences of inflation. We could create an immense distribution curve of inflation as experienced by people up and down the economic spectrum and try to manage the distribution. We don't have to be beholden to error-prone single point estimates anymore (the statistical equivalent of a tape deck). We can do much better.",
+            "text": "A lot has changed since then regarding technology. For example, the tool I have built and am sharing with you was built in minutes using the latest technology, a day if you include all my reviews, stress testing, and writing of the post you are reading. We don't have to have one view of inflation anymore. We can quantify hundreds, thousands, or even millions of experiences of inflation. We could create an immense distribution curve of inflation as experienced by people up and down the economic spectrum and try to manage the distribution. We don't have to be beholden to error-prone single point estimates anymore (the statistical equivalent of a tape deck). We can do much better.",
             "spans": [],
             "direction": "ltr"
           },
@@ -353,7 +353,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Here is what that number actually is. The BLS adds up all the gasoline bought by urban consumers and divides it by everything those consumers bought. Households with no car are in the denominator. So is a retired couple who drives to church on Sunday, and so is a contractor who puts 30,000 miles on a pickup. One number comes out the other end, and it belongs to nobody.",
+            "text": "Here is what that number actually is. The BLS adds up all the gasoline bought by urban consumers and divides it by everything those consumers bought. Households with no car are in the denominator. So is a retired couple who drives to church on Sunday, my father who has put 14,000 miles on his car since 2017, and a contractor who puts 30,000 miles on a pickup. One number comes out the other end, and it belongs to nobody.",
             "spans": [],
             "direction": "ltr"
           },
@@ -404,7 +404,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the question in the car is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought. We would rather not build a measure that treats borrowed money like earned money.",
+            "text": "Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the concern is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought. We would rather not build a measure that treats borrowed money like earned money.",
             "spans": [],
             "direction": "ltr"
           },
@@ -547,6 +547,16 @@
           }
         ],
         "embed_height": "780px"
+      }
+    },
+    {
+      "slice_type": "spacer",
+      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
+      "primary": {
+        "spacer_value": "20px"
       }
     },
     {
@@ -758,7 +768,7 @@
           },
           {
             "type": "paragraph",
-            "text": "I don't have any power here beyond this report. All I can do is share data and send my dream out into the world. But who knows how things will play out? Maybe, one day it could come true.",
+            "text": "I don't have any power here beyond this report. All I can do is share data and send my dream out into the world. But who knows how things will play out? Maybe, with your help, one day it could come true.",
             "spans": [],
             "direction": "ltr"
           }
