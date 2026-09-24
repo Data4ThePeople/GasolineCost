@@ -6,8 +6,8 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2b, in progress
-Since: 2026-09-23
+Step: 2c, not started
+Since: 2026-09-24
 
 ## Steps
 
@@ -15,7 +15,7 @@ Since: 2026-09-23
 |---|---|---|---|
 | 1  | Exploration and analysis | 2026-09-22 | Tool, 5 charts, DATASETS.md, tie-out |
 | 2a | Draft with brackets resolved | 2026-09-23 | Case study, 6 charts, tool embedded, closing in |
-| 2b | Eric's edit, Claude's look-over | | |
+| 2b | Eric's edit, Claude's look-over | 2026-09-24 | 8 findings, all resolved; title and subtitle set |
 | 2c | Slice markup | | |
 | 2d | Hero 1680x1080 + alt text | | |
 | 2e | SEO | | |
@@ -27,6 +27,8 @@ Since: 2026-09-23
 None.
 
 ## Log
+
+- 2026-09-24 Step 2b confirmed done. Title: "We still measure inflation with a tape deck." Post also published as a standalone embargoed page at data4thepeople.github.io/GasolineCost/post.html for sharing with a reporter.
 
 - 2026-09-23 Step 2a confirmed done. Step 2b opened: Eric edits POST.md directly, then Claude looks it over.
 
