@@ -5,7 +5,7 @@ slug: gasoline-share-of-income
 date: 2026-09-23
 section: Data 4 Thought
 hero: images/gasoline-share-of-income-hero-1680x1080.png
-hero_alt:
+hero_alt: A cracked audio cassette lies in a pool of spilled gasoline on rough concrete, its brown tape pulled out and tangled in loops across the wet ground. The fuel spreads under the cassette in a slick that catches the light in bands of pink, blue and gold. A dented, rust-streaked red gasoline can stands in the shadow behind it.
 meta_title:
 description:
 keywords:
