@@ -381,7 +381,14 @@ SSA 2026 COLA fact sheet: aged couple, both receiving benefits, $3,208 a month a
 | Retired couple | $59,680, CPS householder 65+; $38,496 Social Security, rest pension | Married, both 65+ | 1 × 8,928 (NHTS everyone 65+, 1 vehicle) | 23.43 |
 | Suburban three-car family | $112,900, CPS family households | Married, 2 children | 3 × 9,993 (NHTS 3-vehicle) | 23.43 |
 
-- All income is wages except the retired couple's. No state or local tax.
+- All income is wages except the retired couple's. No state or local tax, and no Medicare Part B
+  premium, which in real life is deducted from a Social Security check.
+- Two profiles surprise readers, so the tool explains both on screen. The lower-income family's
+  refundable credits ($6,339 earned income credit, $3,760 child tax credit) exceed its $360 of
+  income tax, so take-home pay ($42,800) lands above pre-tax income ($35,800). The retired couple
+  owes no federal income tax: only $4,216 of their $38,496 in Social Security is taxable, and the
+  standard deduction plus the age-65 additions and the 2025-2028 senior deduction ($47,500 in all)
+  cover the rest. Neither pays payroll tax on that income.
 - Rural pickup: 29.5% of vehicles in rural 2-vehicle households are pickups (NHTS,
   checked), so a car and a pickup is a common pairing, not the average.
 - The "Your household" calculator assumes a household from the number of cars: 1 car,

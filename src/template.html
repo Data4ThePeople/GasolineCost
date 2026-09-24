@@ -245,7 +245,8 @@ function afterTax(st, wages, kids, seniors, pension, ss){
   var fica = T.SS_RATE * Math.min(wages, T.SS_WAGE_BASE) + T.MEDICARE_RATE * wages
            + T.ADDL_MEDICARE_RATE * Math.max(0, wages - T.ADDL_MEDICARE_START[st]);
   var gross = wages + pension + ss;
-  return {gross: gross, federal: federal, fica: fica, credits: ctcNonref + actc + e, afterTax: gross - federal - fica};
+  return {gross: gross, federal: federal, fica: fica, credits: ctcNonref + actc + e, incomeTax: incomeTax,
+          seniors: seniors, ss: ss, taxableSS: agi - other, afterTax: gross - federal - fica};
 }
 
 /* ---------- model, mirrors src/model.py ---------- */
@@ -377,6 +378,15 @@ function drawLine(box, costPerDollar, afterTaxInc, name, isYou){
 }
 
 /* ---------- detail card ---------- */
+function taxNote(t){
+  if (t.federal < -1) return "Refundable credits, the earned income credit and the child tax credit, come to " + money(-t.federal) +
+    " more than this household owes in federal income tax, so take-home pay lands above pre-tax income. Payroll tax of " +
+    money(t.fica) + " is already taken out.";
+  if (t.seniors && t.federal < 1) return "No federal income tax: only " + money(t.taxableSS) + " of this couple's " + money(t.ss) +
+    " in Social Security counts as taxable income, and the standard deduction plus the extra deductions for people 65 and older cover the rest. " +
+    "Retirees pay no Social Security or Medicare payroll tax on this income.";
+  return "";
+}
 function drawDetail(){
   var box = $("detail"), p, name, costPerDollar, at, pre, milesTxt, mpgTxt, hhTxt, isYou = S.sel === "you" && S.you && S.edited;
   if (isYou){
@@ -388,12 +398,14 @@ function drawDetail(){
     milesTxt = p.miles.toLocaleString("en-US"); mpgTxt = (p.miles / p.gal).toFixed(1); hhTxt = p.blurb;
   }
   var cost = costPerDollar * S.price, share = 100 * cost / at;
+  var note = taxNote(isYou ? S.you.t : (p ? p.t : D.profiles[0].t));
   box.innerHTML = "<h2>" + esc(name) + "</h2><p class='intro'>" + esc(hhTxt) + "</p>" +
     "<div class='big'>" + pct(share) + " <small>of after-tax income goes to gas</small></div>" +
     "<div class='kv'><span>Gas a year</span><b>" + money(cost) + "</b><span>Gas a month</span><b>" + money(cost / 12) + "</b>" +
     "<span>Miles a year</span><b>" + milesTxt + "</b><span>Average mpg</span><b>" + mpgTxt + "</b>" +
     "<span>Gallons a year</span><b>" + Math.round(costPerDollar).toLocaleString("en-US") + "</b>" +
     "<span>Pre-tax income</span><b>" + money(pre) + "</b><span>After federal taxes</span><b>" + money(at) + "</b></div>" +
+    (note ? "<p class='note'>" + esc(note) + "</p>" : "") +
     "<h2 style='margin-top:10px'>Share of after-tax income by gas price</h2>" +
     "<div class='legend' style='margin-top:6px'><span><b style='color:" + (isYou ? "var(--s2)" : "var(--s1)") + "'>" + esc(name) + "</b></span><span><b>Gray line</b>: CPI gasoline weight at each price</span></div>" +
     "<div id='line'></div>";
@@ -493,6 +505,7 @@ function drawCustom(){
     "<div class='kv'><span>Gas a year</span><b>" + money(y.cost) + "</b><span>Gas a month</span><b>" + money(y.cost / 12) + "</b>" +
     "<span>Estimated after-tax income</span><b>" + money(y.t.afterTax) + "</b></div>" +
     "<p class='note'>At $" + S.price.toFixed(2) + " a gallon, gasoline would be about " + pct(cpiAt(S.price)) + " of consumer spending in the CPI. Your share of income is " + pct(y.share) + ".</p>" +
+    (taxNote(y.t) ? "<p class='note'>" + esc(taxNote(y.t)) + "</p>" : "") +
     "<p class='note'>" + pctileBelow(y.income) + " U.S. households had a lower pre-tax income than this in 2025.</p>" +
     "<p class='note'>Household: " + esc(y.hhLabel) + ". Federal income tax and payroll tax only; state and local taxes would lower your after-tax income a little and raise your share.</p>";
 }
