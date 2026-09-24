@@ -47,17 +47,16 @@ The pattern holds across the households we built. The median American household 
 We built a free tool so you can put in your own miles, mileage and income and find your own line. Nothing you type leaves your browser.
 ```
 
-## 6. Call to action
-
-**[Read the full report](https://www.data4thepeople.com/p/gasoline-share-of-income)**
-
-## 7. Sign-off, after the button
+## 6. The dream
 
 ```
-One more thing, because the tape deck is not just a joke about 1978.
+But this is not really a post about gasoline. It is a post about a dream: a way of measuring inflation that can see the lives of Americans at every income level, instead of averaging them into one person who does not exist.
 
 Imagine a world where cassettes had the same lack of competitive forces that the CPI has. We would all still be carrying Walkmans, maybe a little smaller, maybe with slightly better sound. Instead the whole industry got torn down and rebuilt, and now the entire history of recorded music sits in your pocket.
 
-The post ends with a dream: that one day the brilliant people who study this for a living decide it is time to throw away the tape deck, pull up a whiteboard, and redesign how we measure inflation for the streaming age. The redesign starts with one question. Does this process capture the lived experience of the people it is designed to measure?
+The post ends with that dream: that one day the brilliant people who study this for a living decide it is time to throw away the tape deck, pull up a whiteboard, and redesign how we measure inflation for the streaming age. The redesign starts with one question. Does this process capture the lived experience of the people it is designed to measure?
 ```
 
+## 7. Call to action
+
+**[Read the full report](https://www.data4thepeople.com/p/gasoline-share-of-income)**
