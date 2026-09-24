@@ -6,7 +6,7 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2f, in progress
+Step: 2g, not started
 Since: 2026-09-24
 
 ## Steps
@@ -19,7 +19,7 @@ Since: 2026-09-24
 | 2c | Slice markup | 2026-09-24 | 49 slices: 1 drop cap, 21 text, 18 spacers, 6 images, 1 embed, 2 dividers |
 | 2d | Hero 1680x1080 + alt text | 2026-09-24 | Cassette in a gasoline pool, Gemini, center crop; alt 324 chars |
 | 2e | SEO | 2026-09-24 | meta 46/127 chars, 7 keywords, Article + 4 FAQ entries, 3 internal links |
-| 2f | Pushed to Prismic (draft) | | |
+| 2f | Pushed to Prismic (draft) | 2026-09-24 | Draft arVlfhEAAC4AMaF5, Migration Release, 49 slices, 7 images |
 | 2g | Mailchimp teaser | | |
 
 ## Stale
@@ -27,6 +27,8 @@ Since: 2026-09-24
 None.
 
 ## Log
+
+- 2026-09-24 Step 2f confirmed done. Draft arVlfhEAAC4AMaF5 in the Migration Release; publication date set to 2026-09-24 19:00 EDT.
 
 - 2026-09-24 Step 2e confirmed done. Target searches: gasoline share of income, CPI gasoline weight, gas prices percent of income, cost of gas calculator.
 
