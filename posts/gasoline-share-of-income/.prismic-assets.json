@@ -1,0 +1,51 @@
+{
+  "images/01-timeline.png": {
+    "id": "bo8CorF60gYigsLP",
+    "width": 1600,
+    "height": 1000,
+    "url": "https://images.prismic.io/data4thepeople/bo8CorF60gYigsLP_01-timeline.png?auto=format,compress",
+    "stamp": "141201:1790198231"
+  },
+  "images/02-distribution.png": {
+    "id": "a3Us3jizH6-9zpXx",
+    "width": 1600,
+    "height": 1160,
+    "url": "https://images.prismic.io/data4thepeople/a3Us3jizH6-9zpXx_02-distribution.png?auto=format,compress",
+    "stamp": "122262:1790173342"
+  },
+  "images/03-share-by-household.png": {
+    "id": "nE7C0AbtoDN4Hq3s",
+    "width": 1600,
+    "height": 1080,
+    "url": "https://images.prismic.io/data4thepeople/nE7C0AbtoDN4Hq3s_03-share-by-household.png?auto=format,compress",
+    "stamp": "144562:1790200419"
+  },
+  "images/04-lines-two-incomes.png": {
+    "id": "_bRNxyDrsQK6YBvh",
+    "width": 1600,
+    "height": 1160,
+    "url": "https://images.prismic.io/data4thepeople/_bRNxyDrsQK6YBvh_04-lines-two-incomes.png?auto=format,compress",
+    "stamp": "154588:1790171248"
+  },
+  "images/05-cex-by-income.png": {
+    "id": "kZzfCU66e1Bgf-Uu",
+    "width": 1600,
+    "height": 1080,
+    "url": "https://images.prismic.io/data4thepeople/kZzfCU66e1Bgf-Uu_05-cex-by-income.png?auto=format,compress",
+    "stamp": "110299:1790200419"
+  },
+  "images/06-denominator.png": {
+    "id": "FPR_UV9h7acC3zpr",
+    "width": 1600,
+    "height": 1080,
+    "url": "https://images.prismic.io/data4thepeople/FPR_UV9h7acC3zpr_06-denominator.png?auto=format,compress",
+    "stamp": "148594:1790199984"
+  },
+  "images/gasoline-share-of-income-hero-1680x1080.png": {
+    "id": "ekBoqxRNmePsZX4N",
+    "width": 1680,
+    "height": 1080,
+    "url": "https://images.prismic.io/data4thepeople/ekBoqxRNmePsZX4N_gasoline-share-of-income-hero-1680x1080.png?auto=format,compress",
+    "stamp": "2976532:1790271971"
+  }
+}
