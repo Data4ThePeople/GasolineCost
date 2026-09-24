@@ -6,7 +6,7 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2e, in progress
+Step: 2f, not started
 Since: 2026-09-24
 
 ## Steps
@@ -18,7 +18,7 @@ Since: 2026-09-24
 | 2b | Eric's edit, Claude's look-over | 2026-09-24 | 8 findings, all resolved; title and subtitle set |
 | 2c | Slice markup | 2026-09-24 | 49 slices: 1 drop cap, 21 text, 18 spacers, 6 images, 1 embed, 2 dividers |
 | 2d | Hero 1680x1080 + alt text | 2026-09-24 | Cassette in a gasoline pool, Gemini, center crop; alt 324 chars |
-| 2e | SEO | | |
+| 2e | SEO | 2026-09-24 | meta 46/127 chars, 7 keywords, Article + 4 FAQ entries, 3 internal links |
 | 2f | Pushed to Prismic (draft) | | |
 | 2g | Mailchimp teaser | | |
 
@@ -27,6 +27,8 @@ Since: 2026-09-24
 None.
 
 ## Log
+
+- 2026-09-24 Step 2e confirmed done. Target searches: gasoline share of income, CPI gasoline weight, gas prices percent of income, cost of gas calculator.
 
 - 2026-09-24 Step 2d confirmed done. Hero built from prompt 3 in hero-prompt.md; hero check passes.
 
