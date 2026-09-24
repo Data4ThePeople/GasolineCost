@@ -1,5 +1,5 @@
 ---
-title: We still measure inflation using a "tape deck"
+title: We still measure inflation on a tape deck
 subtitle: The government says gasoline is 3.8% of what Americans spend. For a rural family with a car and a pickup, it is 7.7% of their take-home pay. Here is a tool that shows where you land.
 slug: gasoline-share-of-income
 date: 2026-09-23
@@ -16,7 +16,7 @@ caption_spacer: 20px
 dividers: false
 ---
 
-# We still measure inflation using a "tape deck"
+# We still measure inflation on a tape deck
 
 Last month the Bureau of Labor Statistics (BLS) told us that annual inflation was 3.4%.
 
