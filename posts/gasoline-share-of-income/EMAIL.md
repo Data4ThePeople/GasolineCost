@@ -56,7 +56,7 @@ Imagine a world where cassettes had the same lack of competitive forces that the
 
 The post ends with that dream: that one day the brilliant people who study this for a living decide it is time to throw away the tape deck, pull up a whiteboard, and redesign how we measure inflation for the streaming age. The redesign starts with one question. Does this process capture the lived experience of the people it is designed to measure?
 
-The full report lays out the case, household by household, and hands you the tool to find your own answer. Have a read, then tell us what you think it would take.
+You are one of those people. So, let's start here. Does CPI capture the impact of gasoline inflation on your life? Use our latest tool and find out.
 ```
 
 ## 7. Call to action
