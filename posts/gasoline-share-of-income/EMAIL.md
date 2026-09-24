@@ -25,26 +25,26 @@ We still measure inflation with a tape deck
 Last month the government said annual inflation was 3.4%. Over the whole history of the Consumer Price Index, going back to 1913, the average has been 3.3%. In other words: what you are feeling at the register is normal, and if your experience is different, it is not showing up in the number.
 
 The CPI was built for a different era. The design we still use was rolled out in 1978. One year later Sony released the Walkman. Music has been torn down and rebuilt since then, from cassettes to CDs to MP3s to streaming. The way we measure inflation got better surveys and a few formula changes, and kept the architecture.
+
+Take gasoline, the item the CPI measures best. It says gas is 4.3% of what Americans spend at today's price of $4.48 a gallon. That number is real, but it belongs to nobody: it adds up everyone's gas and divides by everyone's spending, including households with no car. So we built the households back in, using the government's own data on incomes, miles driven and gas mileage, and divided by what a family takes home after federal taxes. Here are two of them. They drive exactly the same way, 20,000 miles a year in a car that gets 25 miles to the gallon. One earns $35,800 before tax, the other $182,400. The gray line is what the CPI reports.
 ```
 
 ## 4. Chart
 
-`images/03-share-by-household.png`
+`images/04-lines-two-incomes.png`
 Alt:
 ```
-Bar chart of gasoline as a share of take-home pay for six households at $4.48 a gallon, against a line marking the CPI gasoline weight of 4.3%. A lower-income family is at 8.7%, a rural family at 7.7%, a suburban three-car family at 5.8%, the median household at 5.7%, a single young adult at 5.0%, and a retired couple at 2.9%.
+Line chart of gasoline as a share of take-home pay at gas prices from $2 to $7 a gallon. A lower-income household earning $35,800 rises from about 5% to 17%. A higher-income household earning $182,400 rises from about 1% to 4%. The CPI's gasoline weight runs between them, from about 2% to 7%. Both households drive 20,000 miles a year at 25 miles per gallon.
 ```
 
 ## 5. Body, part two
 
 ```
-Take gasoline, the item the CPI measures best. It says gas is 4.3% of what Americans spend at today's price of $4.48 a gallon. That number is real, but it belongs to nobody: it adds up everyone's gas and divides by everyone's spending, including households with no car.
+At $4.48 a gallon, gas takes 11.0% of the lower-income household's take-home pay and 2.5% of the higher-income one's. The CPI reports 4.3%. And every dollar added at the pump costs the first household 2.4% more of its pay, the second 0.6%, and the CPI 0.9%. Same car, same commute, same pump, three different experiences.
 
-So we built the households back in, using the government's own data on incomes, miles driven and gas mileage, and we divided by what a family actually takes home after federal taxes. The median household spends $4,240 a year on gas, which is 5.7% of take-home pay. A family at the 20th percentile of income spends less in dollars and more in share: 8.7%. A rural family with a car and a pickup is at 7.7%. A retired couple is at 2.9%, below the CPI's number.
+The pattern holds across the households we built. The median American household spends $4,240 a year on gas, or 5.7% of take-home pay. A family at the 20th percentile of income spends less in dollars and more in share, 8.7%. A rural family with a car and a pickup is at 7.7%. A retired couple is at 2.9%, below the CPI's number, which tells you something too.
 
-The bigger difference is what happens when prices rise. Take two households that drive exactly the same way, 20,000 miles a year at 25 miles per gallon. Every dollar added at the pump costs the lower-income one 2.4% of its take-home pay, the higher-income one 0.6%, and the CPI 0.9%. Same car, same commute, same pump, three different experiences.
-
-We built a free tool so you can put in your own miles, mileage and income and see where you land. Nothing you type leaves your browser.
+We built a free tool so you can put in your own miles, mileage and income and find your own line. Nothing you type leaves your browser.
 ```
 
 ## 6. Call to action
