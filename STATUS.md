@@ -6,7 +6,7 @@ Process: ~/.claude/d4tp-process/PROCESS.md
 ## Current
 
 Post: gasoline-share-of-income
-Step: 2d, in progress
+Step: 2e, not started
 Since: 2026-09-24
 
 ## Steps
@@ -17,7 +17,7 @@ Since: 2026-09-24
 | 2a | Draft with brackets resolved | 2026-09-23 | Case study, 6 charts, tool embedded, closing in |
 | 2b | Eric's edit, Claude's look-over | 2026-09-24 | 8 findings, all resolved; title and subtitle set |
 | 2c | Slice markup | 2026-09-24 | 49 slices: 1 drop cap, 21 text, 18 spacers, 6 images, 1 embed, 2 dividers |
-| 2d | Hero 1680x1080 + alt text | | |
+| 2d | Hero 1680x1080 + alt text | 2026-09-24 | Cassette in a gasoline pool, Gemini, center crop; alt 324 chars |
 | 2e | SEO | | |
 | 2f | Pushed to Prismic (draft) | | |
 | 2g | Mailchimp teaser | | |
@@ -27,6 +27,8 @@ Since: 2026-09-24
 None.
 
 ## Log
+
+- 2026-09-24 Step 2d confirmed done. Hero built from prompt 3 in hero-prompt.md; hero check passes.
 
 - 2026-09-24 Step 2c confirmed done. Importer converts cleanly; the only warnings are the missing hero and hero_alt, which are 2d.
 
