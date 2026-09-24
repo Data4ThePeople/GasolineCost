@@ -102,6 +102,8 @@ Try it yourself. The tool below has those six households and a slider for the pr
 
 <iframe src="https://data4thepeople.github.io/GasolineCost/embed.html" width="100%" height="780" frameborder="0" scrolling="no" title="What gas really costs a household"></iframe>
 
+::: spacer 20px
+
 Now the part that the single number hides completely.
 
 A share is a snapshot. What matters when prices move is the slope: how fast your share climbs when the price at the pump climbs. Take two households that drive exactly the same way, 20,000 miles a year in a car that gets 25 miles to the gallon. One earns $35,800 before tax, the other $182,400. Put their shares next to the CPI's at every price from $2 to $7, and the three lines fan apart. Each dollar at the pump adds 2.4 points to the lower-income household's share, 0.9 points in the CPI, and 0.6 points to the higher-income household's.
