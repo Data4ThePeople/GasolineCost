@@ -83,7 +83,7 @@ We expect this to be the part people argue with, so let us make the case plainly
 
 The CPI divides gasoline spending by all other spending. We divide it by what a household brings home after federal taxes. That single choice changes the answer, and we think ours is the one that matches how people live.
 
-Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the question in the car is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought. We would rather not build a measure that treats borrowed money like earned money.
+Start with the obvious. Nobody pays for gas out of a share of their consumption basket. They pay out of a paycheck. When the pump costs $20 more a week, the concern is whether the paycheck covers it, not whether gasoline has grown as a fraction of everything else they bought. We would rather not build a measure that treats borrowed money like earned money.
 
 So we use take-home pay, after federal income and payroll taxes, because it answers the question a household actually asks: can we afford this on what we earn? Every figure in this post is built that way, and we say so on every chart. There is more on the arithmetic in the questions at the end.
 
