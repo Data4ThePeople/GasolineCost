@@ -132,7 +132,7 @@ Here's my dream. One day, these brilliant people will get together and realize i
 
 Maybe you think this dream is impossible. That says something, because with the technology we have it could be unbelievably easy to build. The impossible part may be to just get people to accept that the world has changed and realize that we need to adapt to better measure it.
 
-I don't have any power here beyond this report. All I can do is share data and send my dream out into the world. But who knows how things will play out? Maybe, one day it could come true.
+I don't have any power here beyond this report. All I can do is share data and send my dream out into the world. But who knows how things will play out? Maybe, with your help, one day it could come true.
 
 ::: divider
 
