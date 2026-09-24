@@ -2,7 +2,8 @@
 title: We still measure inflation with a tape deck
 subtitle: The CPI says gasoline is 4.3% of what Americans spend. For a family at the 20th percentile of income it is 8.7% of their take-home pay. Here is a tool that shows where you land.
 slug: gasoline-share-of-income
-date: 2026-09-23
+date: 2026-09-24
+time: 19:00:00-04:00
 section: Data 4 Thought
 hero: images/gasoline-share-of-income-hero-1680x1080.png
 hero_alt: A cracked audio cassette lies in a pool of spilled gasoline on rough concrete, its brown tape pulled out and tangled in loops across the wet ground. The fuel spreads under the cassette in a slick that catches the light in bands of pink, blue and gold. A dented, rust-streaked red gasoline can stands in the shadow behind it.
