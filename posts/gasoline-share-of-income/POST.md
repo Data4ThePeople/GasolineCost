@@ -73,7 +73,7 @@ Since June 2021, no government employee has stood at a pump writing down prices.
 
 So what does the CPI say gasoline costs? In July 2026, the most recent weight published, gasoline was 3.8% of consumer spending. At the price in the week of September 21, 2026, a national average of $4.48 a gallon for regular, that weight works out to about 4.3%. Call it four and a third cents of every dollar spent.
 
-Here is what that number actually is. The BLS adds up all the gasoline bought by urban consumers and divides it by everything those consumers bought. Households with no car are in the denominator. So is a retired couple who drives to church on Sunday, and so is a contractor who puts 30,000 miles on a pickup. One number comes out the other end, and it belongs to nobody.
+Here is what that number actually is. The BLS adds up all the gasoline bought by urban consumers and divides it by everything those consumers bought. Households with no car are in the denominator. So is a retired couple who drives to church on Sunday, my father who has put 14,000 miles on his car since 2017, and the a contractor who puts 30,000 miles on a pickup. One number comes out the other end, and it belongs to nobody.
 
 So we built the people back in.
 
