@@ -40,7 +40,7 @@ Line chart of gasoline as a share of take-home pay at gas prices from $2 to $7 a
 ## 5. Body, part two
 
 ```
-At $4.48 a gallon, gas takes 11.0% of the lower-income household's take-home pay and 2.5% of the higher-income one's. The CPI reports 4.3%. And every dollar added at the pump costs the first household 2.4% more of its pay, the second 0.6%, and the CPI 0.9%. Same car, same commute, same pump, three different experiences.
+At $4.48 a gallon, gas takes 11.0% of the lower-income household's take-home pay and 2.5% of the higher-income one's. The CPI reports 4.3%. And every dollar added at the pump costs the first household 2.4% more of its pay, the second 0.6%, and the CPI 0.9%. Same car, same commute, same pump, three different experiences of gasoline inflation.
 
 The pattern holds across the households we built. The median American household spends $4,240 a year on gas, or 5.7% of take-home pay. A family at the 20th percentile of income spends less in dollars and more in share, 8.7%. A rural family with a car and a pickup is at 7.7%. A retired couple is at 2.9%, below the CPI's number, which tells you something too.
 
@@ -50,3 +50,14 @@ We built a free tool so you can put in your own miles, mileage and income and fi
 ## 6. Call to action
 
 **[Read the full report](https://www.data4thepeople.com/p/gasoline-share-of-income)**
+
+## 7. Sign-off, after the button
+
+```
+One more thing, because the tape deck is not just a joke about 1978.
+
+Imagine a world where cassettes had the same lack of competitive forces that the CPI has. We would all still be carrying Walkmans, maybe a little smaller, maybe with slightly better sound. Instead the whole industry got torn down and rebuilt, and now the entire history of recorded music sits in your pocket.
+
+The post ends with a dream: that one day the brilliant people who study this for a living decide it is time to throw away the tape deck, pull up a whiteboard, and redesign how we measure inflation for the streaming age. The redesign starts with one question. Does this process capture the lived experience of the people it is designed to measure?
+```
+
