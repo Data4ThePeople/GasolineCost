@@ -3,8 +3,8 @@
 Post URL: https://www.data4thepeople.com/p/gasoline-share-of-income
 
 ```
-Subject:  What gas really costs you
-Preview:  The CPI says 4.3% of spending. Your paycheck says something else.
+Subject:  We all experience inflation differently
+Preview:  We use gasoline to show the spread, then offer a fix for the government measure.
 ```
 
 ## 1. Hero
