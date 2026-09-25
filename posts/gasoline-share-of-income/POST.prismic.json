@@ -5,7 +5,7 @@
   "updated_date": "2026-09-24",
   "meta_title": "What gas really costs: your income vs. the CPI",
   "meta_description": "Gasoline is 4.3% of spending in the CPI. For a lower-income family it is 8.7% of take-home pay. See where your household lands.",
-  "meta_keywords": "gasoline share of income, CPI gasoline weight, gas prices percent of income, cost of gas calculator, inflation by income, consumer price index weights, take-home pay",
+  "meta_keywords": "Inflation 4 The People, I4TP, gasoline share of income, CPI gasoline weight, gas prices percent of income, inflation by income, cost of gas calculator",
   "make_this_main_post": false,
   "slices": [
     {
@@ -705,7 +705,7 @@
           },
           {
             "type": "paragraph",
-            "text": "So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question that is largely meaningless for you and me, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. Although harder, it's likely available for all the other expense items as well. The only thing missing is the will to publish inflation as a distribution instead of a single point.",
+            "text": "So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question that is largely meaningless for you and me, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. Although harder, it's likely available for all the other expense items as well. The only thing missing is the will to publish inflation as a distribution instead of a single point. We have a name for that idea: Inflation 4 The People, or I4TP.",
             "spans": [],
             "direction": "ltr"
           }
@@ -756,7 +756,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Here's my dream. One day, these brilliant people will get together and realize it's time to throw away the tape deck. And then they will pull up a whiteboard and redesign how we measure inflation for the streaming age. The redesign will start with one guiding mission. Does this process capture the lived experience of the people it is designed to measure? And they will build it.",
+            "text": "Here's my dream. One day, these brilliant people will get together and realize it's time to throw away the tape deck. And then they will pull up a whiteboard and redesign how we measure inflation for the streaming age. The redesign will start with one guiding mission. Does this process capture the lived experience of the people it is designed to measure? And they will build it. Inflation 4 The People.",
             "spans": [],
             "direction": "ltr"
           },
@@ -957,13 +957,46 @@
         "paragraph_text": [
           {
             "type": "heading3",
+            "text": "What is Inflation 4 The People?",
+            "spans": [],
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "text": "It is the name we are giving the idea in this post: an inflation measure that reports the range of experiences across real households instead of one average. I4TP for short. This piece is the first piece of it, built on gasoline because gasoline is the easiest place to start. More is coming.",
+            "spans": [],
+            "direction": "ltr"
+          }
+        ]
+      }
+    },
+    {
+      "slice_type": "spacer",
+      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
+      "primary": {
+        "spacer_value": "20px"
+      }
+    },
+    {
+      "slice_type": "paragarph_text",
+      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "items": [],
+      "primary": {
+        "paragraph_text": [
+          {
+            "type": "heading3",
             "text": "Is the CPI wrong?",
             "spans": [],
             "direction": "ltr"
           },
           {
             "type": "paragraph",
-            "text": "No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: how the CPI handles health insurance and how grocery shelf prices compare with the CPI's food basket. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.",
+            "text": "No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: how the CPI handles health insurance and how grocery shelf prices compare with the CPI's food basket. Our argument is about what the single-point estimate is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.",
             "spans": [
               {
                 "start": 228,
@@ -1245,5 +1278,5 @@
       "height": 1080
     }
   },
-  "schema": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"We still measure inflation with a tape deck\",\n      \"description\": \"Gasoline is 4.3% of spending in the CPI. For a lower-income family it is 8.7% of take-home pay. See where your household lands.\",\n      \"image\": \"https://images.prismic.io/data4thepeople/ekBoqxRNmePsZX4N_gasoline-share-of-income-hero-1680x1080.png?auto=format,compress\",\n      \"datePublished\": \"2026-09-24T19:00:00-04:00\",\n      \"dateModified\": \"2026-09-24T19:00:00-04:00\",\n      \"articleSection\": \"Data 4 Thought\",\n      \"license\": \"https://www.data4thepeople.com/terms-of-use\",\n      \"inLanguage\": \"en-US\",\n      \"isAccessibleForFree\": true,\n      \"keywords\": [\n        \"gasoline share of income\",\n        \"CPI gasoline weight\",\n        \"gas prices percent of income\",\n        \"cost of gas calculator\",\n        \"inflation by income\",\n        \"consumer price index weights\",\n        \"take-home pay\"\n      ],\n      \"author\": {\n        \"@type\": \"Person\",\n        \"name\": \"Eric Pachman\",\n        \"url\": \"https://www.data4thepeople.com/authors/eric-pachman\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Data 4 The People\",\n        \"url\": \"https://data4thepeople.com\"\n      },\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income\"\n      },\n      \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income#article\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income#faq\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Why not measure gasoline as a share of spending, the way the CPI does?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Because spending can run well above income. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. That gap gets filled somehow: savings drawn down, a retirement account tapped, family help, assistance the survey does not count as income, and for some households, credit. All of it lands in the denominator, which makes every item look like a smaller slice of life at exactly the income level with the least room to absorb it. Measured against what they earn, the picture changes.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does the CPI already average everyone's spending?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"It averages the spending, not the people. When you add up all the gasoline everyone bought and divide by everything everyone bought, households that spend more count for more. Economists call this a plutocratic index, which is a description of the arithmetic rather than an insult. In 2024 the top fifth of households spent about $150,000 and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Is the CPI wrong?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: how the CPI handles health insurance and how grocery shelf prices compare with the CPI's food basket. Our argument is about what the number is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Why only federal taxes?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Because state income taxes vary by where you live, and adding them would mean picking a state for every household. Leaving them out makes take-home pay higher than it really is for most people, which makes every share in this post smaller than it really is. The direction of that error runs against our own argument, which is how we prefer it.\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  "schema": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"We still measure inflation with a tape deck\",\n      \"description\": \"Gasoline is 4.3% of spending in the CPI. For a lower-income family it is 8.7% of take-home pay. See where your household lands.\",\n      \"image\": \"https://images.prismic.io/data4thepeople/ekBoqxRNmePsZX4N_gasoline-share-of-income-hero-1680x1080.png?auto=format,compress\",\n      \"datePublished\": \"2026-09-24T19:00:00-04:00\",\n      \"dateModified\": \"2026-09-24T19:00:00-04:00\",\n      \"articleSection\": \"Data 4 Thought\",\n      \"license\": \"https://www.data4thepeople.com/terms-of-use\",\n      \"inLanguage\": \"en-US\",\n      \"isAccessibleForFree\": true,\n      \"keywords\": [\n        \"Inflation 4 The People\",\n        \"I4TP\",\n        \"gasoline share of income\",\n        \"CPI gasoline weight\",\n        \"gas prices percent of income\",\n        \"inflation by income\",\n        \"cost of gas calculator\"\n      ],\n      \"author\": {\n        \"@type\": \"Person\",\n        \"name\": \"Eric Pachman\",\n        \"url\": \"https://www.data4thepeople.com/authors/eric-pachman\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Data 4 The People\",\n        \"url\": \"https://data4thepeople.com\"\n      },\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income\"\n      },\n      \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income#article\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"@id\": \"https://www.data4thepeople.com/p/gasoline-share-of-income#faq\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Why not measure gasoline as a share of spending, the way the CPI does?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Because spending can run well above income. In 2024 the lowest fifth of households reported $16,658 of income before taxes and $35,046 of spending. That gap gets filled somehow: savings drawn down, a retirement account tapped, family help, assistance the survey does not count as income, and for some households, credit. All of it lands in the denominator, which makes every item look like a smaller slice of life at exactly the income level with the least room to absorb it. Measured against what they earn, the picture changes.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Does the CPI already average everyone's spending?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"It averages the spending, not the people. When you add up all the gasoline everyone bought and divide by everything everyone bought, households that spend more count for more. Economists call this a plutocratic index, which is a description of the arithmetic rather than an insult. In 2024 the top fifth of households spent about $150,000 and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"What is Inflation 4 The People?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"It is the name we are giving the idea in this post: an inflation measure that reports the range of experiences across real households instead of one average. I4TP for short. This piece is the first piece of it, built on gasoline because gasoline is the easiest place to start. More is coming.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Is the CPI wrong?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"No. As a measure of what a fixed basket of goods costs from month to month, it is careful work, and gasoline is among the best-measured items in it. Other items are built in stranger ways, and we have written about two of them: how the CPI handles health insurance and how grocery shelf prices compare with the CPI's food basket. Our argument is about what the single-point estimate is used for. It sets Social Security raises, tax brackets and drug rebates, all of which land on paychecks, and a spending-weighted average cannot tell you what is happening to any particular paycheck.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Why only federal taxes?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Because state income taxes vary by where you live, and adding them would mean picking a state for every household. Leaving them out makes take-home pay higher than it really is for most people, which makes every share in this post smaller than it really is. The direction of that error runs against our own argument, which is how we prefer it.\"\n          }\n        }\n      ]\n    }\n  ]\n}"
 }
