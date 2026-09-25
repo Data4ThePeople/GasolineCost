@@ -4,7 +4,7 @@ Post URL: https://www.data4thepeople.com/p/gasoline-share-of-income
 
 ```
 Subject:  We all experience inflation differently
-Preview:  We use gasoline to show the spread, then offer a fix for the government measure.
+Preview:  We use gasoline to illustrate the problem, then offer a fix for the government measure.
 ```
 
 ## 1. Hero
