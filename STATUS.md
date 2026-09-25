@@ -28,6 +28,8 @@ None.
 
 ## Log
 
+- 2026-09-25 Final pass after 2g: email subject and preview reworked ("We each feel inflation differently"), closing line and button rewritten, and a handful of prose edits in POST.md, all republished to the Prismic draft. Post stays complete.
+
 - 2026-09-24 Step 2g confirmed done. **Post complete.** Prismic draft arVlfhEAAC4AMaF5 waits in the Migration Release, dated 2026-09-24 19:00 EDT. Tool: data4thepeople.github.io/GasolineCost. Embargoed copy of the post: .../post.html.
 
 - 2026-09-24 Step 2f confirmed done. Draft arVlfhEAAC4AMaF5 in the Migration Release; publication date set to 2026-09-24 19:00 EDT.
