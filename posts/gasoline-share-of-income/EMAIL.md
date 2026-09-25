@@ -50,7 +50,7 @@ We built a free tool so you can put in your own miles, mileage and income and fi
 ## 6. The dream
 
 ```
-But this is not really a post about gasoline. It is a post about a dream: a way of measuring inflation that can see the lives of Americans at every income level, instead of averaging them into one person who does not exist.
+But this post is about way more than gasoline. It is a post about a dream: a way of measuring inflation that can see the lives of Americans at every income level, instead of averaging them into one person who does not exist.
 
 Imagine a world where cassettes had the same lack of competitive forces that the CPI has. We would all still be carrying Walkmans, maybe a little smaller, maybe with slightly better sound. Instead the whole industry got torn down and rebuilt, and now the entire history of recorded music sits in your pocket.
 
