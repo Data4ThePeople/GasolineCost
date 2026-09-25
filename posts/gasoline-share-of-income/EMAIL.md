@@ -24,7 +24,7 @@ We still measure inflation with a tape deck
 ```
 Last month the government said annual inflation was 3.4%. Over the whole history of the Consumer Price Index, going back to 1913, the average has been 3.3%. In other words: what you are feeling at the register is normal, and if your experience is different, it is not showing up in the number.
 
-The CPI was built for a different era. The design we still use was rolled out in 1978. One year later Sony released the Walkman. Music has been torn down and rebuilt since then, from cassettes to CDs to MP3s to streaming. The way we measure inflation got better surveys and a few formula changes, and kept the architecture.
+The CPI was built for a different era. The design we still use was rolled out in 1978. One year later Sony released the Walkman. Music has been torn down and rebuilt since then, from cassettes to CDs to MP3s to streaming. The way we measure inflation got better surveys and a few formula changes, but kept the same architecture.
 
 Take gasoline, the item the CPI measures best. It says gas is 4.3% of what Americans spend at today's price of $4.48 a gallon. That number is real, but it belongs to nobody: it adds up everyone's gas and divides by everyone's spending, including households with no car. So we built the households back in, using the government's own data on incomes, miles driven and gas mileage, and divided by what a family takes home after federal taxes. Here are two of them. They drive exactly the same way, 20,000 miles a year in a car that gets 25 miles to the gallon. One earns $35,800 before tax, the other $182,400. The gray line is what the CPI reports.
 ```
