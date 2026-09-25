@@ -9,7 +9,7 @@ hero: images/gasoline-share-of-income-hero-1680x1080.png
 hero_alt: A cracked audio cassette lies in a pool of spilled gasoline on rough concrete, its brown tape pulled out and tangled in loops across the wet ground. The fuel spreads under the cassette in a slick that catches the light in bands of pink, blue and gold. A dented, rust-streaked red gasoline can stands in the shadow behind it.
 meta_title: What gas really costs: your income vs. the CPI
 description: Gasoline is 4.3% of spending in the CPI. For a lower-income family it is 8.7% of take-home pay. See where your household lands.
-keywords: gasoline share of income, CPI gasoline weight, gas prices percent of income, cost of gas calculator, inflation by income, consumer price index weights, take-home pay
+keywords: Inflation 4 The People, I4TP, gasoline share of income, CPI gasoline weight, gas prices percent of income, inflation by income, cost of gas calculator
 schema_type: article
 drop_cap: true
 heading_spacer: 20px
@@ -120,7 +120,7 @@ You might reasonably ask whether these households are made up. They are built fr
 
 In 2023, the lowest fifth of households by income spent 8.2% of their take-home pay on gasoline and the top fifth spent 1.9%. Move those to today's price and the range runs from about 10.4% down to 2.4%. Our six households sit inside that range, which is validation for the simple math that runs the tool.
 
-So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question that is largely meaningless for you and me, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. Although harder, it's likely available for all the other expense items as well. The only thing missing is the will to publish inflation as a distribution instead of a single point.
+So here is where the case study lands, in our view. The CPI's gasoline number is not wrong. It is a correct answer to a question that is largely meaningless for you and me, which is what gasoline costs the average of all of us at once. The questions people actually ask are what gas costs their household, and what happens to them when the price jumps. The data to answer those questions already exists, and it is public. Although harder, it's likely available for all the other expense items as well. The only thing missing is the will to publish inflation as a distribution instead of a single point. We have a name for that idea: Inflation 4 The People, or I4TP.
 
 ## A start to the discussion, and a dream
 
@@ -130,7 +130,7 @@ I've always hated that person. Tell me my idea is bad—there's no problem with 
 
 But what do we reward these more qualified people for today? To predict what the broken tape deck will say in the future. You can make a nice career out of knowing the ins and outs of how the tape deck works and having an edge on what sounds it will spit out next.
 
-Here's my dream. One day, these brilliant people will get together and realize it's time to throw away the tape deck. And then they will pull up a whiteboard and redesign how we measure inflation for the streaming age. The redesign will start with one guiding mission. Does this process capture the lived experience of the people it is designed to measure? And they will build it.
+Here's my dream. One day, these brilliant people will get together and realize it's time to throw away the tape deck. And then they will pull up a whiteboard and redesign how we measure inflation for the streaming age. The redesign will start with one guiding mission. Does this process capture the lived experience of the people it is designed to measure? And they will build it. Inflation 4 The People.
 
 Maybe you think this dream is impossible. That says something, because with the technology we have it could be unbelievably easy to build. The impossible part may be to just get people to accept that the world has changed and realize that we need to adapt to better measure it.
 
@@ -156,6 +156,10 @@ For the middle fifth of households the two measures give the same answer, 4.1%. 
 It averages the spending, not the people. When you add up all the gasoline everyone bought and divide by everything everyone bought, households that spend more count for more. Economists call this a plutocratic index, which is a description of the arithmetic rather than an insult. In 2024 the top fifth of households spent about $150,000 and the bottom fifth about $35,000, so the habits of the top pull the average toward themselves.
 
 Weight each household equally instead and gasoline's share of spending in 2024 comes out at 3.6% rather than 3.4%. That gap is small for one item, and it leans the same way for every item where lower-income households buy more than their share of the total.
+
+### What is Inflation 4 The People?
+
+It is the name we are giving the idea in this post: an inflation measure that reports the range of experiences across real households instead of one average. I4TP for short. This piece is the first piece of it, built on gasoline because gasoline is the easiest place to start. More is coming.
 
 ### Is the CPI wrong?
 
