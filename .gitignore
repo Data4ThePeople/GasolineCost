@@ -4,3 +4,4 @@
 __pycache__/
 .DS_Store
 data/raw/driving/nhts2022_csv/
+logs/
