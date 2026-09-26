@@ -8,7 +8,7 @@
 #   3. Commit and push. GitHub Pages then serves the new price, on the
 #      standalone tool and inside the Prismic embed.
 # The post's own numbers and charts stay as published.
-# Success posts a macOS notification with the new price. A failure posts one too, undoes any partial change, and leaves
+# Success shows a macOS alert with the new price. A failure shows one too, undoes any partial change, and leaves
 # details in logs/weekly.log.
 set -u
 ROOT="${0:A:h:h}"
@@ -21,10 +21,17 @@ echo "\n=== $(date '+%Y-%m-%d %H:%M %Z') ==="
 
 TRACKED=(data/raw/eia_gasoline_regular_weekly.json data/raw/bls_cpi_u_nsa.json data/processed/model.json dist docs)
 
+# An alert box stays on screen until clicked; a banner notification can come
+# and go unseen. "Open tool" opens the live page.
+alert() {
+  b=$(osascript -e "display alert \"$1\" message \"$2\" buttons {\"Open tool\", \"OK\"} default button \"OK\" giving up after 86400" 2>/dev/null)
+  [[ "$b" == *"Open tool"* ]] && open "https://data4thepeople.github.io/GasolineCost/"
+}
+
 fail() {
   echo "FAILED: $1"
   git checkout -q -- $TRACKED 2>/dev/null
-  osascript -e "display notification \"$1\" with title \"Gas cost weekly update failed\"" 2>/dev/null
+  alert "Gas cost weekly update failed" "$1. Details in logs/weekly.log."
   exit 1
 }
 
@@ -43,4 +50,4 @@ git add $TRACKED
 git commit -q -m "gas-cost tool: automatic weekly update, price for the week of $week" || fail "git commit"
 git push -q || fail "git push"
 echo "pushed: week of $week"
-osascript -e "display notification \"Now showing ${week#* } for the week of ${week%% *}. Live on GitHub Pages in a minute or two.\" with title \"Gas cost tool updated\" sound name \"Glass\"" 2>/dev/null
+alert "Gas cost tool updated" "Now showing ${week#* } for the week of ${week%% *}. Live on GitHub Pages in a minute or two."
