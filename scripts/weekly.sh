@@ -8,7 +8,7 @@
 #   3. Commit and push. GitHub Pages then serves the new price, on the
 #      standalone tool and inside the Prismic embed.
 # The post's own numbers and charts stay as published.
-# A failure posts a macOS notification, undoes any partial change, and leaves
+# Success posts a macOS notification with the new price. A failure posts one too, undoes any partial change, and leaves
 # details in logs/weekly.log.
 set -u
 ROOT="${0:A:h:h}"
@@ -43,3 +43,4 @@ git add $TRACKED
 git commit -q -m "gas-cost tool: automatic weekly update, price for the week of $week" || fail "git commit"
 git push -q || fail "git push"
 echo "pushed: week of $week"
+osascript -e "display notification \"Now showing ${week#* } for the week of ${week%% *}. Live on GitHub Pages in a minute or two.\" with title \"Gas cost tool updated\" sound name \"Glass\"" 2>/dev/null
