@@ -1,6 +1,7 @@
 """Fetch the gas price and CPI inputs into data/raw/.
 
-    .venv/bin/python src/fetch_prices.py
+    .venv/bin/python src/fetch_prices.py            everything
+    .venv/bin/python src/fetch_prices.py --weekly   EIA and CPI only (scripts/weekly.sh)
 
 - EIA weekly U.S. regular gasoline retail price (API v2), full history.
 - BLS CPI relative importance table, December 2025 (xlsx, not in the API).
@@ -8,6 +9,7 @@
   used to carry the December 2025 weight forward to the latest month.
 """
 import json, sys, urllib.parse
+from datetime import date
 from common import RAW, get, keys, write_json
 
 EIA_URL = 'https://api.eia.gov/v2/petroleum/pri/gnd/data/'
@@ -42,7 +44,7 @@ def eia_gasoline(key):
 
 def bls_cpi(key):
     out = {}
-    for start, end in ((2006, 2015), (2016, 2026)):   # API allows 20 years per call
+    for start, end in ((2006, 2015), (2016, date.today().year)):   # API allows 20 years per call
         body = json.dumps({'seriesid': list(CPI_SERIES), 'startyear': str(start), 'endyear': str(end),
                            'registrationkey': key}).encode()
         r = json.loads(get(BLS_URL, data=body, headers={'Content-Type': 'application/json'}))
@@ -66,10 +68,13 @@ def main():
     write_json(RAW / 'eia_gasoline_regular_weekly.json', {'series': EIA_SERIES, 'data': gas})
     print(f'EIA regular gasoline: {len(gas)} weeks, latest {gas[-1]}')
 
-    b = get(RI_URL)
-    assert b.startswith(b'PK'), f'{RI_URL} did not return an xlsx'
-    (RAW / f'cpi_relative_importance_{RI_YEAR}.xlsx').write_bytes(b)
-    print(f'BLS relative importance {RI_YEAR}: {len(b):,} bytes')
+    # The relative importance table comes out once a year; the weekly job
+    # leaves it alone so a re-download never shows up as a change.
+    if '--weekly' not in sys.argv:
+        b = get(RI_URL)
+        assert b.startswith(b'PK'), f'{RI_URL} did not return an xlsx'
+        (RAW / f'cpi_relative_importance_{RI_YEAR}.xlsx').write_bytes(b)
+        print(f'BLS relative importance {RI_YEAR}: {len(b):,} bytes')
 
     cpi = bls_cpi(k('BLS_API_KEY'))
     write_json(RAW / 'bls_cpi_u_nsa.json', cpi, indent=1)
