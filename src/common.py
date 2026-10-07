@@ -1,4 +1,26 @@
 """Shared paths and helpers. Every script imports from here so no path is written twice."""
+# Contact address for the User-Agent: read at run time, never hardcoded in the repo.
+# Set D4TP_CONTACT_EMAIL in the environment or in ~/.claude/d4tp-process/.env.
+import os as _os
+
+
+def _d4tp_contact():
+    v = _os.environ.get("D4TP_CONTACT_EMAIL")
+    if v:
+        return v
+    try:
+        with open(_os.path.expanduser("~/.claude/d4tp-process/.env"), encoding="utf-8") as fh:
+            for line in fh:
+                if line.strip().startswith("D4TP_CONTACT_EMAIL="):
+                    return line.split("=", 1)[1].strip().strip("'\"")
+    except OSError:
+        pass
+    return ""
+
+
+D4TP_CONTACT = _d4tp_contact()
+
+
 import json, os, sys, time, urllib.request
 from pathlib import Path
 
@@ -10,7 +32,7 @@ DIST = ROOT / 'dist'
 
 # BLS rejects anything that does not start like a browser, and asks callers to
 # identify themselves. Do both.
-UA = {'User-Agent': 'Mozilla/5.0 Data4ThePeople-GasolineCost/1.0 (D4TP_CONTACT_EMAIL)'}
+UA = {'User-Agent': f'Mozilla/5.0 Data4ThePeople-GasolineCost/1.0 ({D4TP_CONTACT})'}
 
 
 def keys():
